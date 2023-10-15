@@ -1,0 +1,79 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% load poll_extras %}
+{% block title %}
+ویرایش دسته بندی  | ایزگیم
+{% endblock %}
+{% block header_reference %}
+<link href="{% static 'admin_panel/assets/css/tables/table-basic.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}
+
+<div class="col-lg-10 mx-auto mt-5 ">
+ <div class="table-responsive bg-white p-5">
+     <div class="widget-header">
+         <div class="row">
+                        <div id="flFormsGrid" class="col-lg-12 layout-spacing">
+                            <div class="statbox widget box box-shadow">
+                                <div class="widget-header">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                            <h4>ویرایش ایتم فعلی</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget-content widget-content-area">
+                                    <form method="post" action="{% url 'category_edit_admin' object.id %}">
+                                    {% csrf_token %}
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-12">
+                                                <label for="inputname">نام آیتم</label>
+                                                {{ form.title }}
+
+                                                {% if form.title.errors %}
+                                                       <div style="color: #ef2d2d;margin-bottom: -60px !important;" class="alert alert-arrow-right alert-icon-right alert-light-danger mb-2 mt-2" role="alert">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg>
+                                        <strong>هشدار!</strong>{{ form.title.errors }}
+                                    </div>
+                                                {% endif %}
+                                            </div>
+                                            </div>
+
+    <div class="form-row">
+        <div class="form-group mb-3 col-md-12 position-relative">
+            <div class="input-group-append" style="left: 0;position: absolute;top: 31px;height: 45px">
+                                        <span class="input-group-text text-right" id="basic-addon6" style="direction: ltr">isgame.ir/car/</span>
+                                      </div>
+                                            <label for="inputurl">آدرس</label>
+      {{ form.url }}
+                                                {% if form.url.errors %}
+                                                       <div style="color: #ef2d2d;margin-bottom: -30px !important;" class="alert alert-arrow-right alert-icon-right alert-light-danger mb-2 mt-2" role="alert">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12" y2="16"></line></svg>
+                                        <strong>هشدار!</strong>{{ form.url.errors }}
+                                    </div>
+                                                {% endif %}                                            </div>
+    </div>
+
+
+
+                                      <button type="submit" class="btn btn-primary mt-3">ویرایش آیتم</button>
+                                    </form>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+     </div>
+ </div>
+</div>
+{% endblock %}
+{% block script %}
+    <script>
+    let selectorInput=document.getElementById('inputplace');
+    selectorInput.value="{{ place }}";
+
+
+
+    </script>
+{% endblock %}

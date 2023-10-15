@@ -1,0 +1,14 @@
+{
+  "status": "done",
+  "assets": {
+    "axious_main_bundler.js": {
+      "name": "axious_main_bundler.js",
+      "path": "C:\\Users\\ASUS\\Desktop\\isgame_project\\static\\assets\\webpack_bundles\\axious_main_bundler.js"
+    }
+  },
+  "chunks": {
+    "main": [
+      "axious_main_bundler.js"
+    ]
+  }
+}

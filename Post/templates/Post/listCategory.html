@@ -1,0 +1,182 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block title %}
+    مدیریت دسته ها | ایزگیم
+{% endblock %}
+{% block header_reference %}
+    <link href="{% static 'admin_panel/assets/css/tables/table-basic.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}
+    {% load poll_extras %}
+    <div class="col-lg-10 mx-auto mt-5 ">
+        <div class="table-responsive bg-white p-5">
+            <div class="widget-header">
+                <div class="row">
+                    <div class="col-xl-10 col-md-10 col-sm-10 col-10 mb-4 ">
+                        <h4>مشاهده دسته ها</h4>
+                    </div>
+                    <div class="col-md-2 mb-4">
+
+                        <a href="{% url 'category_add_admin'  %}" class="btn btn-primary mb-2 mr-2 btn-rounded">افزودن
+                            دسته بندی</a>
+
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered table-hover table-condensed mb-4">
+                <thead>
+                <tr>
+                    <th>ردیف</th>
+                    <th>نام</th>
+                    <th>آدرس دسته</th>
+
+                    <th class="text-center">عملیات</th>
+                </tr>
+                </thead>
+                <tbody>
+                {#               {% for item in get_places %}#}
+
+                {% for item in data %}
+                    <tr>
+
+                        <td>
+                            {{ forloop.counter }}
+                        </td>
+                        <td>
+                            {{ item.title }}
+                        </td>
+                        <td>
+
+                            {{ item.url }}
+                        </td>
+
+
+                        <td class="text-center">
+                            <ul class="table-controls">
+                                <li>
+
+
+                                    <a href="{% url 'category_edit_admin' id=item.id  %}"
+                                       style="margin-right: 1x;color: red"
+                                       class="bs-tooltip mr-2 text-or" data-toggle="tooltip" data-placement="top"
+                                       title="" data-original-title="ویرایش">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="feather feather-edit-2 text-info">
+                                            <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+
+                                        </svg>
+                                    </a>
+
+                                    <a href="{% url 'category_delete_admin' item.id %}"
+                                       style="margin-right: 3px;color: red"
+                                       class="bs-tooltip  text-or" data-toggle="tooltip" data-placement="top"
+                                       title="" data-original-title="حذف">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="feather feather-x-octagon table-cancel">
+                                            <polygon
+                                                    points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                                            <line x1="15" y1="9" x2="9" y2="15"></line>
+                                            <line x1="9" y1="9" x2="15" y2="15"></line>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                <tr>
+
+                    <th>ردیف</th>
+                    <th>نام</th>
+                    <th>آدرس دسته</th>
+                    <th class="text-center">عملیات</th>
+
+
+                </tr>
+                </tfoot>
+            </table>
+
+
+        </div>
+    </div>
+
+{% endblock %}
+{% block script %}
+
+
+    <script src="{% static 'assets/webpack_bundles/axious_main_bundler.js' %}"></script>
+    <script>
+        axios.defaults.xsrfCookieName = 'csrftoken'
+        axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
+
+        let changeStatus = (el, id) => {
+
+
+            axios({
+                method: 'post',
+                url: 'editstatus/',
+                data: {
+                    id: id,
+
+                },
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    // "Content-Type": "application/json;charset=utf-8",
+                    // "Content-Type": "multipart/form-data",
+                    Accept: "application/json",
+                }
+            }).then(function (response) {
+                if (response.data['status'] == 'valid_count') {
+                    if (response.data['item'] == 1) {
+                        el.target.className = 'text-success'
+                        el.target.innerHTML = "فعال"
+                    } else {
+                        el.target.className = 'text-danger'
+                        el.target.innerHTML = "غیر فعال"
+                    }
+                }
+
+
+            }).catch(function (error) {
+                console.log(error)
+            });
+
+        }
+
+        let deleteItem = (el, id) => {
+
+            axios({
+                method: 'post',
+                url: 'deleteitem/',
+                data: {
+                    id: id,
+
+                },
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    // "Content-Type": "application/json;charset=utf-8",
+                    // "Content-Type": "multipart/form-data",
+                    Accept: "application/json",
+                }
+            }).then(function (response) {
+                if (response.data['status'] == 'valid_count') {
+                    el.target.parentElement.parentElement.parentElement.parentElement.parentElement.remove()
+
+                }
+
+
+            }).catch(function (error) {
+                console.log(error)
+            });
+
+        }
+
+    </script>
+{% endblock %}

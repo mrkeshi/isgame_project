@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فعالسازی حساب کاربری</title>
+ 
+<style>
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial,Tahoma;
+}
+</style>
+</head>
+<body style="background-color:#f3f4f6">
+    <header style=" height: 80px; display: flex; flex-direction: column; justify-content: center;padding: 20px; overflow: hidden;text-align: center;flex-direction: column">
+        <h1 style="color: #4E4B4B;text-align: center; margin-bottom: 5px;">IsGame.ir</h1>
+        <a href="http://isgame.ir" style="text-decoration: none;font-size: 20px; color: #FFCD17;margin-bottom: 15px;">وبسایت ایزگیم</a>
+    </header>
+    <div class="body" style="background: white; width: 60%;margin: 0 auto; border-radius: 15px;height: auto; padding: 30px;direction: rtl">
+       
+        <main>
+            <div style="margin-top: 20px">
+                <h2 style="color: #FFCD17;  ">سلام {{ name }} </h2>
+                <p style="color: #4E4B4B;margin-top: 15px;line-height: 30px;font-size: 16px">{{ text }}</p>
+
+            </div>
+            <a href="http://127.0.0.1:8000{% url 'resetpassword_confirm' token=link %}" style="color: #FFCD17;font-size: 19px; text-align: center; margin-top: 20px;
+            display: flex;
+            width: 100%;
+            justify-content: center;">{{ btnname }}</a>
+
+        </main>
+    
+    </div>    <footer style="margin-top: 20px;color: #4E4B4B; display: flex;justify-content: center">
+        <ul style="display: flex;margin-bottom: 20px;justify-content: center;font-size: 17px; padding: 23px;" >
+            <li style="list-style: none;">
+                <a href="#" style="text-decoration: none;color: #4E4B4B;margin: 20px;">خانه</a>
+            </li>
+            <li style="list-style: none;">
+                <a href="#" style="text-decoration: none;color: #4E4B4B;margin: 20px;">فروشگاه</a>
+            </li>
+            <li style="list-style: none;">
+                <a href="#" style="text-decoration: none;color: #4E4B4B;margin: 20px;">تماس با ما</a>
+            </li>
+        </ul>
+    </footer>
+  
+</body>
+</html>

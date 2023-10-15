@@ -1,0 +1,294 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% load poll_extras %}
+{% block title %}
+    افزودن نوشته جدید | ایزگیم
+{% endblock %}
+{% block header_reference %}
+<link rel="stylesheet" type="text/css" href="{% static 'admin_panel/assets/css/forms/theme-checkbox-radio.css' %}">
+    <link href="{% static 'admin_panel/assets/css/tables/table-basic.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+
+
+
+    {% block content %}
+
+<form action="{% url 'post_add_admin' %}" method="post" enctype="multipart/form-data"  class="row layout-top-spacing mx-4 flex align-items-start ">
+{% csrf_token    %}
+
+        <div class="col-lg-8 mx-auto mt-3 ">
+        <div class="row">
+                 <div class="  col-lg-12 ">
+                <div class="widget-header">
+                    <div class="row">
+                        <div id="flFormsGrid" class="col-lg-12 layout-spacing">
+                            <div class="row"></div>
+                            <div class=" box-shadow">
+                                <div class="widget-header">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                            <div class="form-group mt-3">
+                                                   {{ form.title }}
+
+                                    <label for="" class="text-danger mt-3 mx-2 text-xl ">{{ form.title.errors }}
+                                    </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          <div class="col-lg-12">
+                            <div class="statbox widget box box-shadow">
+                                <div class="widget-header">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                            <h4>محتوای پست</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget-content widget-content-area">
+              {{ form.content }}
+
+                                    <label for="" class="text-danger mt-3 mx-2 text-xl ">{{ form.content.errors }}
+                                    </label>
+
+
+                                </div>
+                            </div>
+                        </div>
+                      <div class="col-lg-12 mt-5">
+                            <div class="statbox widget box box-shadow">
+                                <div class="widget-header">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                            <h4> توضیحات کوتاه</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget-content widget-content-area">
+
+ <div class="form-group ">
+                                                        {{ form.short_description }}
+
+                                    <label for="" class="text-danger mt-3 mx-2 text-xl ">{{ form.short_description.errors }}
+                                    </label>
+
+                                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+        </div>
+
+        </div>
+
+
+        <div class="col-lg-4">
+            <div class="row ">
+                <div class="col-lg-12 mx-auto mt-3 p-3 px-2 ">
+
+                    <div class=" bg-white p-4  " style="border:1px solid #bfc9d4">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div id="flFormsGrid" class="col-lg-12 ">
+                                    <div class="   box-shadow">
+                                        <div class="widget-header">
+                                            <div class="row">
+                                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                                    <h6 class="mb-2">کلمات کلیدی</h6>
+                                                    <span class="mt-3">لطفا کلمات کلیدی را با ; از هم جدا کنید.</span>
+                                                    <div class="form-group mt-3">
+                                                                   {{ form.keyword }}
+
+                                    <label for="" class="text-danger mt-3 mx-2 text-xl ">{{ form.keyword.errors }}
+                                    </label>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                <div class="col-lg-12 mx-auto mt-3 p-3 px-2 ">
+
+                    <div class=" bg-white p-4  " style="border:1px solid #bfc9d4">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div id="flFormsGrid" class="col-lg-12 ">
+                                    <div class="   box-shadow">
+                                        <div class="widget-header">
+                                            <div class="row">
+                                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                                    <h6 class="mb-2">انتشار </h6>
+                                                    <span class="mt-2">لطفا وضعیت انتشار را مشخص کنید. </span>
+                                                <div class="form-group mb-4 mt-3">
+                                         {{ form.is_active }}
+
+                                        </div>
+                                                    <div class="form-group">
+                                                        <div class="n-chk">
+    <label class="new-control new-checkbox new-checkbox-text checkbox-primary">
+      {{ form.is_pin }}
+      <span class="new-control-indicator"></span><span class="new-chk-content">پست پین شود</span>
+    </label>
+</div>
+                                                    </div>
+                                                    <button type="submit " class="mt-2 mb-2 btn btn-secondary float-right">ارسال </button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 mx-auto mt-2 p-3 px-2 ">
+
+                    <div class=" bg-white p-4  " style="border:1px solid #bfc9d4">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div id="flFormsGrid" class="col-lg-12 ">
+                                    <div class="   box-shadow">
+                                        <div class="widget-header">
+                                            <div class="row">
+                                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                                    <h6 class="mb-2">تصویر شاخص</h6>
+                                                    <span class="mt-3">لطفا یک تصویر برای پست انتخاب کنید</span>
+                                                    <div class="row">
+                                                    <img  class="mx-auto my-3" width="70%" height="70%" alt="" id="myimg">
+
+                                                    </div>
+
+                                                  <div class="form-group mb-4 mt-3">
+                                            <label for="exampleFormControlFile1">ورودیی پرونده نمونه</label>
+                                            {{ form.image }}
+                                           <label for="" class="text-danger mt-3 mx-2 text-xl ">{{ form.image.errors }}
+                                    </label>
+                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 mx-auto mt-2 p-3 px-2 ">
+
+                    <div class=" bg-white p-4  " style="border:1px solid #bfc9d4">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div id="flFormsGrid" class="col-lg-12 ">
+                                    <div class="   box-shadow">
+                                        <div class="widget-header">
+                                            <div class="row">
+                                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                                    <h6 class="mb-2">دسته بندی</h6>
+                                                    <span class="mt-3">لطفا یک یا چند دسته را انتخاب کنید.</span>
+                                           <div class="form-group mt-3">
+
+
+{% for choice_id, choice_label in form.categories.field.choices  %}
+    <div class="n-chk">
+     <label class="new-control new-checkbox new-checkbox-text checkbox-primary">
+      <input name="categories" type="checkbox" class="new-control-input" value="{{ choice_id }}">
+      <span class="new-control-indicator"></span><span class="new-chk-content">{{ choice_label }}</span>
+    </label>
+</div>
+   {% endfor %}
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 mx-auto mt-3 p-3 px-2 ">
+
+                    <div class=" bg-white p-4  " style="border:1px solid #bfc9d4">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div id="flFormsGrid" class="col-lg-12 ">
+                                    <div class="   box-shadow">
+                                        <div class="widget-header">
+                                            <div class="row">
+                                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                                    <h6 class="mb-2"> برچسب ها</h6>
+                                                    <span class="mt-3">لطفا تگ ها  را با ; از هم جدا کنید.</span>
+                                                    <div class="form-group mt-3">
+                                                                                 {{ form.mytag }}
+
+                                    <label for="" class="text-danger mt-3 mx-2 text-xl ">{{ form.mytag.errors }}
+                                    </label>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+ </form>
+    {% endblock %}
+
+
+{% block script %}
+ <script>window.CKEDITOR_BASEPATH = "{% static '/ckeditor/ckeditor/' %}";</script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"
+            data-ckeditor-basepath="{% static 'ckeditor/ckeditor/' %}" id="ckeditor-init-script"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+<script>
+
+let file=document.getElementById('exampleFormControlFile1');
+let img=document.getElementById('myimg');
+file.addEventListener('change',(e)=>{
+    let myfile=e.target.files[0];
+    if(!myfile) return
+    img.src=URL.createObjectURL(myfile)
+})
+var options = {
+
+
+  placeholder: 'Compose an epic...',
+
+  theme: 'snow'
+};
+
+
+</script>
+{% endblock %}

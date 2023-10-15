@@ -1,0 +1,67 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block title %}
+    مدیریت منو ها | ایزگیم
+{% endblock %}
+{% block header_reference %}
+<link href="{% static 'admin_panel/assets/css/tables/table-basic.css' %}" rel="stylesheet" type="text/css">
+<script>window.CKEDITOR_BASEPATH = '/my_static/ckeditor/ckeditor/';</script>
+{% endblock %}
+{% block content %}
+{% load poll_extras %}
+<div class="col-lg-10 mx-auto mt-5 ">
+ <div class="table-responsive bg-white p-5">
+     <div class="widget-header">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 mb-4 ">
+                                            <h4>لیست منوهای فعال</h4>
+                                        </div>
+                                    </div>
+                                </div>
+        <table class="table table-bordered table-hover table-condensed mb-4">
+            <thead>
+            <tr>
+                <th>ردیف</th>
+                <th>Index Name</th>
+                <th>جایگاه جدول</th>
+                <th>تعداد آیتم</th>
+                <th class="text-center">عملیات</th>
+            </tr>
+            </thead>
+            <tbody>
+               {% for item in get_places %}
+
+            <tr>
+                <td>{{ forloop.counter }} </td>
+                <td>{{ item.place_menu }}   </td>
+                <td> {{ item.place_menu | getPlace }}</td>
+                <td>{{ item.value_count }}  </td>
+                <td class="text-center">
+                    <ul class="table-controls">
+                        <li>
+                            <a href="{% url 'Menu' menu=item.place_menu %}" class="btn btn-primary mb-2 mr-2 btn-rounded">ویرایش <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2" style="color: #ffffff"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a>
+{#                        <a href="" data-toggle="tooltip" data-placement="top" title="" data-original-title="ویرایش"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle text-primary"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></a>#}
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+       {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+
+                <th>ردیف</th>
+                <th>Index Name</th>
+                <th>جایگاه جدول</th>
+                <th>تعداد آیتم</th>
+                <th class="text-center">عملیات</th>
+
+            </tr>
+            </tfoot>
+        </table>
+
+
+    </div>
+</div>
+
+{% endblock %}

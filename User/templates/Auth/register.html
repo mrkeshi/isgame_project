@@ -1,0 +1,146 @@
+{% extends 'layout/auth_admin_layout/base.html' %}
+{% load static %}
+{% block reference_css %}
+    <link href="{% static 'admin_panel/assets/css/authentication/form-1.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}
+    <div class="form-container">
+        <div class="form-form">
+            <div class="form-form-wrap">
+                <div class="form-container">
+                    <div class="form-content">
+
+                        <h1 class="">شروع کنید با یک <br> اکانت رایگان</h1>
+                        <p class="signup-link">حساب دارید؟ <a href="{% url 'admin_login' %}">وارد شوید</a></p>
+
+
+                        {#------------------show all error message--------#}
+
+                        {#                        {% if form.errors %}#}
+                        {#                            <div class="alert alert-danger mb-4" style="width: 150%" role="alert">#}
+                        {#                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">#}
+                        {#                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"#}
+                        {#                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"#}
+                        {#                                         stroke-linejoin="round" class="feather feather-x close" data-dismiss="alert">#}
+                        {#                                        <line x1="18" y1="6" x2="6" y2="18"></line>#}
+                        {#                                        <line x1="6" y1="6" x2="18" y2="18"></line>#}
+                        {#                                    </svg>#}
+                        {#                                </button>#}
+                        {#                                <strong>خطا!</strong>#}
+                        {##}
+                        {#                                {% for field in form %}#}
+                        {#                                    {% for error in field.errors %}#}
+                        {#                                        {{ error }}#}
+                        {##}
+                        {#                                    {% endfor %}#}
+                        {#                                {% endfor %}                                                            </div>#}
+                        {##}
+                        {#                        {% endif %}#}
+
+                        {#------------------show all error message--------#}
+                                {% include 'layout/component/message.html' %}
+
+
+                        <form class="text-left" method="post" action="{% url 'admin_register' %}">
+                            {% csrf_token %}
+                            <div class="form">
+
+                                <div id="username-field" class="field-wrapper input">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="feather feather-user">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                    {{ form.first_name }}
+
+                                </div>
+                                <div id="username-field" class="field-wrapper input">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="feather feather-users">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    {{ form.last_name }}
+
+                                </div>
+                                <div id="username-field" class="field-wrapper input">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="feather feather-user-check">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="8.5" cy="7" r="4"></circle>
+                                        <polyline points="17 11 19 13 23 9"></polyline>
+                                    </svg>
+                                    {{ form.username }}
+                                    <label for="" class="text-danger mt-3 mx-2 text-xl ">{{ form.username.errors }}
+                                    </label>
+
+
+                                </div>
+                                <div id="email-field" class="field-wrapper input">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="feather feather-at-sign">
+                                        <circle cx="12" cy="12" r="4"></circle>
+                                        <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
+                                    </svg>
+                                    {{ form.email }}
+
+                                    <label for="" class="text-danger mt-3 mx-2 text-xl ">{{ form.email.errors }}
+                                    </label>
+                                </div>
+                                <div id="password-field" class="field-wrapper input mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="feather feather-lock">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
+                                    {{ form.password }}
+                                    <label for="" class="text-danger mt-3 mx-2 text-xl ">  {{ form.password.errors }}
+                                    </label>
+                                </div>
+                                <div id="password-field" class="field-wrapper input mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="feather feather-lock">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
+                                    {{ form.password_confirm }}
+                                    <label for=""
+                                           class="text-danger mt-3 mx-2 text-xl ">   {{ form.password_confirm.errors }}</label>
+                                </div>
+                                <div class="field-wrapper terms_condition">
+                                    <div class="n-chk new-checkbox checkbox-outline-primary">
+                                        <label class="new-control new-checkbox checkbox-outline-primary">
+                                            {{ form.checkBox }} <span class="new-control-indicator"></span><span>من موافقم با <a
+                                                href="javascript:void(0);">  شرایط و ضوابط </a></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="d-sm-flex justify-content-between">
+
+                                    <div class="field-wrapper">
+                                        <button type="submit" class="btn btn-primary" value="">ثبت نام</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                        <p class="terms-conditions">© کپی رایت</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-image">
+            <div class="l-image">
+            </div>
+        </div>
+    </div>
+{% endblock %}
