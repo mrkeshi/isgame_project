@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="change template color">
+    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="We returned">
       <change afterPath="$PROJECT_DIR$/.venv/bin/Activate.ps1" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.venv/bin/activate" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.venv/bin/activate.csh" afterDir="false" />
@@ -7415,7 +7415,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697306216352</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="We returned">
+      <option name="closed" value="true" />
+      <created>1703342089980</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703342089980</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -7491,6 +7499,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="change template color" />
-    <option name="LAST_COMMIT_MESSAGE" value="change template color" />
+    <MESSAGE value="We returned" />
+    <option name="LAST_COMMIT_MESSAGE" value="We returned" />
   </component>
 </project>
