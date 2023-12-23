@@ -222,7 +222,7 @@ span.red {
   .form-control[type="range"] {
     padding: 0; }
   .form-control:focus {
-    box-shadow: 0 0 5px 2px rgba(194, 213, 255, 0.619608);
+    box-shadow: 0 0 5px 2px rgba(255, 251, 12, 0.319608);
     border-color: #ffcd17;
     color: #3b3f5c; }
   .form-control::-webkit-input-placeholder, .form-control::-ms-input-placeholder, .form-control::-moz-placeholder {
@@ -351,7 +351,7 @@ select.form-control.form-custom {
 
 .input-group:hover .input-group-prepend .input-group-text svg {
   color: #ffcd17;
-  fill: rgba(27, 85, 226, 0.239216); }
+  fill: #ffcd17; }
 
 .input-group .input-group-append .input-group-text {
   border: 1px solid #bfc9d4;

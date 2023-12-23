@@ -159,7 +159,7 @@
     border: none; }
 
 .input-group .input-group-prepend .input-group-text svg {
-  color: #1b55e2; }
+  color: #ffcd17; }
 
 .social .info input {
   border-radius: 0.25rem !important; }
@@ -288,7 +288,7 @@
   z-index: 5; }
   .account-settings-footer .as-footer-container {
     display: flex;
-    justify-content: space-between; }
+    justify-content: flex-end; }
 
 .sidebar-closed .account-settings-footer {
   width: calc(100% - 94px); }
