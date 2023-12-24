@@ -1,0 +1,1340 @@
+{% extends 'HomeShared/base.html' %}
+{% load static %}
+{% block title %} صفحه اصلی {% endblock %}
+
+{% block main %}
+
+  <div class="container mx-auto">
+    <!-- Start Nabar Menu -->
+
+
+    <!-- search box -->
+    <div class="fixed w-full h-screen bg-black-700  search-modal  lg:h	 top-0 z-[9999] right-0"
+      style="background-color: rgba(0,0,0,0);">
+      <div class="bg-white shadow-lg rounded w-[450px] p-5 h-auto box box-show transition ease-in" id="formsea">
+        <div class="w-full md:w-full flex flex-col mt-2  ">
+
+          <input
+            class="appearance-none block w-full  bg-gray-200 text-black-700 bg-gray-300    rounded py-3 transition ease-in px-4 leading-tight focus:outline-gold-100 h-14 focus:bg-white  text-base"
+            id="grid-first-name" type="text" placeholder="لطفا چیزی را برای جستجو وارد نمایید.">
+          <a href="#"
+            class="bg-gold-500 hover:bg-blue-700 text-center  text-white mt-5  py-[10px] px-4 rounded  w-full text-base">
+            جستجو
+          </a>
+          <span onclick="closeSearch()"
+            class="material-symbols-outlined transition-all ease-in   cursor-pointer shadow-sm text-gold-500 absolute text-[18px] bg-gray-300 p-[4px] -top-[10px] -right-[8px] rounded-full hover:bg-black-700 hover:text-white">
+            close
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- end search box -->
+    <!-- End Navbar Menu -->
+
+    <main class="overflow-x-hidden">
+      <section>
+        <div class="main px-6 max-lg:px-4 mx-auto max-xl:px-0">
+          <div class=" flex  mx-auto items-center max-lg:flex-wrap max-lg:mt-20 max-md:mt-14">
+            <!-- Slider main container -->
+
+            <div class="slider_container w-3/5 max-xl:w-4/6  max-lg:w-full relative max-lg:mb-2 cursor-grabbing	">
+
+              <!-- Slider main container -->
+              <!-- Slider main container -->
+              <div class="animate-slider-before bg-gold-100 h-full  rounded-3xl absolute  max-sm:hidden">
+
+              </div>
+              <div id="swiper" class="swiper h-full  rounded-[10px]">
+
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper relative">
+                  <!-- Slides -->
+                  <div class="swiper-slide relative">
+
+                    <div class=" ">
+                      <div class="content-slider absolute z-20 bottom-[55px] right-[70px] w-4/5  max-xl:bottom-[35px] max-sm:text-center max-sm:center-element">
+                        <a href="#" class="text-gold-500 text-[20px] max-xl:text-[19px] font-IRsansBold max-sm:text-[17px]">دانلود آخرین چیت بازی زولا</a>
+                        <p class="text-white text-xl w-4-6 max-xl:text-mxl max-sm:text-base   mt-2">سلام. امیدوارم حاتون خوب باشه! دوستان وب سایت های
+                          استاتیکی در گوکل ایندکس میتونند بشوند یا خیر؟ منظور وب سایت هایی هست که ساده هستند و هیچ بک
+                          اندی ندارند</p>
+                      </div>
+                      <img src="{% static 'Home/images/item11.jpg' %}"
+                        class=" block w-full h-full brightness-30	 rounded-[10px] " alt="...">
+                    </div>
+
+                  </div>
+                  <div class="swiper-slide relative">
+
+                    <div class=" ">
+                      <div class="content-slider absolute z-20 bottom-[55px] right-[70px] w-4/5  max-xl:bottom-[35px] max-sm:text-center max-sm:center-element">
+                        <a href="#" class="text-gold-500 text-[20px] max-xl:text-[19px] font-IRsansBold max-sm:text-[17px]">دانلود آخرین چیت بازی زولا</a>
+                        <p class="text-white text-xl w-4-6 max-xl:text-mxl max-sm:text-base   mt-2">سلام. امیدوارم حاتون خوب باشه! دوستان وب سایت های
+                          استاتیکی در گوکل ایندکس میتونند بشوند یا خیر؟ منظور وب سایت هایی هست که ساده هستند و هیچ بک
+                          اندی ندارند</p>
+                      </div>
+                      <img src="{% static 'Home/'%}images/item11.jpg"
+                        class=" block w-full h-full brightness-30	 rounded-[10px] " alt="...">
+                    </div>
+
+                  </div>
+                  <div class="swiper-slide relative">
+
+                    <div class=" ">
+                      <div class="content-slider absolute z-20 bottom-[55px] right-[70px] w-4/5  max-xl:bottom-[35px] max-sm:text-center max-sm:center-element">
+                        <a href="#" class="text-gold-500 text-[20px] max-xl:text-[19px] font-IRsansBold max-sm:text-[17px]">دانلود آخرین چیت بازی زولا</a>
+                        <p class="text-white text-xl w-4-6 max-xl:text-mxl max-sm:text-base   mt-2">سلام. امیدوارم حاتون خوب باشه! دوستان وب سایت های
+                          استاتیکی در گوکل ایندکس میتونند بشوند یا خیر؟ منظور وب سایت هایی هست که ساده هستند و هیچ بک
+                          اندی ندارند</p>
+                      </div>
+                      <img src="{% static 'Home/'%}images/item11.jpg"
+                        class=" block w-full h-full brightness-30	 rounded-[10px] " alt="...">
+                    </div>
+
+                  </div>
+
+                  <!-- Slider indicators -->
+
+                </div>
+
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- If we need navigation buttons -->
+
+                <!-- Slider controls -->
+
+
+
+                <!-- If we need scrollbar -->
+
+              </div>
+
+              <button type="button"
+                class="absolute top-0 -left-2 max-sm:-left-7 z-40 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+              >
+                <span  data-carousel-prev   id="prevslide"
+                  class="inline-flex items-center justify-center w-8 h-8 max-sm:w-7 max-sm:h-7  rounded-full shadow-gold  bg-gold-500  group-hover:bg-gold-500/90   group-focus:outline-none">
+                  <svg aria-hidden="true" class="w-4 h-4 text-white sm:w-6 sm:h-6 " fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                  <span class="sr-only">Previous</span>
+                </span>
+              </button>
+              <button type="button"
+                class="absolute top-0 -right-2 max-sm:-right-7 z-30 flex items-center justify-center h-full  px-4 cursor-pointer group focus:outline-none"
+               >
+                <span id="nextslide"  data-carousel-next
+                  class="inline-flex items-center justify-center w-8 h-8 max-sm:w-7 max-sm:h-7 rounded-full shadow-2xl  bg-gold-500  group-hover:bg-gold-500/90   group-focus:outline-none">
+                  <svg aria-hidden="true" class="w-4 h-4 text-white sm:w-6 sm:h-6 " fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                  <span class="sr-only">Next</span>
+                </span>
+              </button>
+
+
+            </div>
+            <!-- Two Box  -->
+            <div class="boxs flex flex-col px-8 w-2/5 py-2 pl-0 ml-0 mr-10 max-xl:mr-4 max-lg:w-full
+              max-lg:flex-row  mx-4 h-[570px] max-2xl:h-[470px] max-xl:h-[430px] max-lg:h-auto max-xl:w-2/6  max-sm:pt-1 max-lg:px-0 max-lg:mr-0 max-sm:flex-wrap  ">
+              <div class="item1  max-lg:px-0 pb-3 max-lg:ml-2  px-2 max-lg:pb-0 w-full h-1/2 rounded-[10px] relative text-center max-sm:w-full max-sm:mx-0 max-sm:mb-3 max-sm:h-[170px]">
+                <img src="{% static 'Home/'%}images/items1.jpg" class="w-full h-full rounded-[10px] brightness-30" alt="">
+                <div class="center-element">
+
+                  <span class="material-symbols-outlined text-[41px] text-white max-xl:text-[37px] ">
+                    stadia_controller
+                  </span>
+                  <a href="category_blog.html" class="text-white text-[18px] mr-4  flex justify-center items-center mt-2 max-xl:text-[17px] ">چیت و ترینر
+                    <span class="material-symbols-outlined text-gold-500 text-3xl ">
+                      navigate_before
+                    </span>
+                  </a>
+
+                </div>
+              </div>
+              <div class="item1  max-lg:px-0 max-lg:mr-2 px-2  pt-3 w-full h-1/2 rounded-[10px] relative text-center max-lg:pt-0 max-sm:w-full max-sm:mx-0 max-sm:h-[170px] ">
+                <img src="{% static 'Home/'%}images/items2.jpg" class="w-full h-full rounded-[10px] brightness-30" alt="">
+                <div class="center-element">
+
+                  <span class="material-symbols-outlined text-[41px] text-white max-xl:text-[37px] ">
+                    shopping_cart
+                  </span>
+                  <a href="shop.html" class="text-white text-[18px] mr-4 mt-2 flex justify-center items-center max-xl:text-[17px] max-lg:text-[17px]">فروشگاه فایل
+                    <span class="material-symbols-outlined text-gold-500 text-3xl">
+                      navigate_before
+                    </span>
+                  </a>
+
+                </div>
+              </div>
+
+            </div>
+            <!-- End Two Box -->
+
+
+          </div>
+        </div>
+      </section>
+
+
+      <div class="flex p-2 mt-12 home_page max-xl:mt-6  max-sm:mt-4  max-lg:mx-0  ">
+        <div class="aside ml-6  max-xl:ml-0 ">
+          <!-- Start Sidebar -->
+          <aside class="max-sm:mx-4">
+
+            <!-- start last cheat  -->
+
+            <section class="mb-10 max-sm:mb-6 ">
+
+
+
+                <div class="last_cheats relative  h-[320px] max-sm:h-[300px] rounded-[10px] ">
+                  <div id="swiper2" class="swiper  h-full rounded-[10px]  ">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper  ">
+                      <!-- Slides -->
+                      <div class="swiper-slide">
+                        <div class="slide  justify-center items-center h-full ">
+                          <img src="{% static 'Home/'%}images/20.jpg" alt="" class="h-full absolute brightness-30 -z-20  w-full rounded-[10px] ">
+                          <div class="p-3 flex justify-center h-full mb-6 items-center flex-col  max-sm:mb-4 ">
+                            <h2  class="text-[18px]  max-xl:text-[17px] max-sm:text-xl text-white ">
+                              <a href="single_product .html" class="font-IRsansBold">
+                                ترینر بازی ماشینی
+
+                              </a>
+
+                            </h2>
+                            <p class="text-xl max-sm:text-base mt-5 px-2 text-white font-IRsansLight leading-7 text-center max-xl:text-mxl">
+                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+                              صنعت چاپ، و با استفاده از طراحان گرافیک است،
+                              چاپگرها و متون بلکه روزنامه و مجله در ستون و
+                              ..سطرآنچنان که لازم است، و برای شرایط فعلی
+                              <a href="single_product .html" class="text-gold-500">[...]</a>
+                            </p>
+                            <div class="mt-7 max-sm:mt-6 max-sm:mb-1 flex items-center justify-around w-[330px] max-sm:w-full">
+                                  <div class="flex flex-col">
+                                      <span class="text-gold-500 text-[17px]  max-xl:text-xl font-IRsansBold max-sm:text-mxl">354</span>
+                                      <span class="text-[17px] font-IRsansBold  max-xl:text-xl text-white max-sm:text-mxl">فروش</span>
+                                  </div>
+                                  <div class="flex flex-col  font-IRsansBold ">
+                                    <span class="text-gold-500 text-[17px]  max-xl:text-xl font-IRsansBold max-sm:text-mxl">84%</span>
+                                    <span class="text-[17px] font-IRsansBold  max-xl:text-xl text-white max-sm:text-mxl">رضایت</span>
+                                </div>
+                                <span class="text-white"> |</span>
+
+                                <span class="text-gold-500 text-[17px] max-xl:text-xl font-IRsansBold max-sm:text-mxl">130,000  تومان</span>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="slide  justify-center items-center h-full ">
+                          <img src="{% static 'Home/'%}images/20.jpg" alt="" class="h-full absolute brightness-30 -z-20  w-full rounded-[10px] ">
+                          <div class="p-3 flex justify-center h-full mb-6 items-center flex-col  max-sm:mb-4 ">
+                            <h2  class="text-[18px]  max-xl:text-[17px] max-sm:text-xl text-white font-IRsansBold">
+                              <a href="single_product .html" class="font-IRsansBold">
+                                ترینر بازی ماشینی
+
+                              </a>
+
+                            </h2>
+                            <p class="text-xl max-sm:text-base mt-5 px-2 text-white font-IRsansLight leading-7 text-center max-xl:text-mxl">
+                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+                              صنعت چاپ، و با استفاده از طراحان گرافیک است،
+                              چاپگرها و متون بلکه روزنامه و مجله در ستون و
+                              ..سطرآنچنان که لازم است، و برای شرایط فعلی
+                              <a href="single_product .html" class="text-gold-500">[...]</a>
+                            </p>
+                            <div class="mt-7 max-sm:mt-6 max-sm:mb-1 flex items-center justify-around w-[330px] max-sm:w-full">
+                                  <div class="flex flex-col">
+                                      <span class="text-gold-500 text-[17px]  max-xl:text-xl font-IRsansBold max-sm:text-mxl">354</span>
+                                      <span class="text-[17px] font-IRsansBold  max-xl:text-xl text-white max-sm:text-mxl">فروش</span>
+                                  </div>
+                                  <div class="flex flex-col  font-IRsansBold ">
+                                    <span class="text-gold-500 text-[17px]  max-xl:text-xl font-IRsansBold max-sm:text-mxl">84%</span>
+                                    <span class="text-[17px] font-IRsansBold  max-xl:text-xl text-white max-sm:text-mxl">رضایت</span>
+                                </div>
+                                <span class="text-white"> |</span>
+
+                                <span class="text-gold-500 text-[17px] max-xl:text-xl font-IRsansBold max-sm:text-mxl">130,000  تومان</span>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="slide  justify-center items-center h-full ">
+                          <img src="{% static 'Home/'%}images/20.jpg" alt="" class="h-full absolute brightness-30 -z-20  w-full rounded-[10px] ">
+                          <div class="p-3 flex justify-center h-full mb-6 items-center flex-col  max-sm:mb-4 ">
+                            <h2  class="text-[18px]  max-xl:text-[17px] max-sm:text-xl text-white font-IRsansBold">
+                              <a href="single_product .html" class="font-IRsansBold">
+                                ترینر بازی ماشینی
+
+                              </a>
+
+                            </h2>
+                            <p class="text-xl max-sm:text-base mt-5 px-2 text-white font-IRsansLight leading-7 text-center max-xl:text-mxl">
+                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+                              صنعت چاپ، و با استفاده از طراحان گرافیک است،
+                              چاپگرها و متون بلکه روزنامه و مجله در ستون و
+                              ..سطرآنچنان که لازم است، و برای شرایط فعلی
+                              <a href="single_product .html" class="text-gold-500">[...]</a>
+                            </p>
+                            <div class="mt-7 max-sm:mt-6 max-sm:mb-1 flex items-center justify-around w-[330px] max-sm:w-full">
+                                  <div class="flex flex-col">
+                                      <span class="text-gold-500 text-[17px]  max-xl:text-xl font-IRsansBold max-sm:text-mxl">354</span>
+                                      <span class="text-[17px] font-IRsansBold  max-xl:text-xl text-white max-sm:text-mxl">فروش</span>
+                                  </div>
+                                  <div class="flex flex-col  font-IRsansBold ">
+                                    <span class="text-gold-500 text-[17px]  max-xl:text-xl font-IRsansBold max-sm:text-mxl">84%</span>
+                                    <span class="text-[17px] font-IRsansBold  max-xl:text-xl text-white max-sm:text-mxl">رضایت</span>
+                                </div>
+                                <span class="text-white"> |</span>
+
+                                <span class="text-gold-500 text-[17px] max-xl:text-xl font-IRsansBold max-sm:text-mxl">130,000  تومان</span>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+    <!-- If we need pagination -->
+    <div class="swiper-pagination" id="swiper-pagination2"></div>
+    <!-- If we need navigation buttons -->
+              </div>
+              <button type="button"
+              class="absolute top-0 max-sm:hidden -left-7  z-40 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+             >
+              <span  id="prevslide2" data-carousel-prev
+                class="inline-flex items-center justify-center w-[29px] h-[29px] rounded-full shadow-gold  bg-gold-500  group-hover:bg-gold-500/90   group-focus:outline-none">
+                <svg aria-hidden="true" class="w-[16px] h-[16px] text-white sm:w-6 sm:h-6 " fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                <span class="sr-only">Previous</span>
+              </span>
+            </button>
+            <button type="button"
+              class="absolute top-0 max-sm:hidden -right-7 z-30 flex items-center justify-center h-full  px-4 cursor-pointer group focus:outline-none"
+              >
+              <span id="nextslide2" data-carousel-next
+                class="inline-flex items-center justify-center w-[29px] h-[29px] rounded-full shadow-2xl  bg-gold-500  group-hover:bg-gold-500/90   group-focus:outline-none">
+                <svg aria-hidden="true" class="w-[16px] h-[16px] text-white sm:w-6 sm:h-6 " fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                <span class="sr-only">Next</span>
+              </span>
+            </button>
+
+
+              </div>
+            </section>
+            <!-- end last cheats -->
+
+         <!-- Start Lates Post -->
+         <section>
+
+          <div class="lates_post bg-white shadow-md rounded-[10px] px-6 py-6 pb-8 flex flex-col mb-10 max-sm:mb-6 max-sm:p-4 max-sm:pl-0 max-sm:mb-6">
+            <div class="header-title mb-6  items-center relative -right-2 flex justify-between">
+              <div class="flex items-center">
+                <div class="bg-gray-300 w-[38px] h-[38px] text-center p-2 ml-2 rounded-md ">
+                  <span class="material-symbols-outlined text-gold-500 text-[22px]">
+                    menu
+                  </span>
+                </div>
+                <h4 class="text-[17px] font-bold text-black-300 mx-[6px] max-sm:text-[16px]">بر اساس </h4>
+              </div>
+              <div class="flex">
+                <span id="recent" class="bg-gray-300 active_tab_btn pointer-events-auto hover:text-gray-800 text-black-500 transition ease-in hover:opacity-75 rounded text-center px-4 py-2 text-sm cursor-pointer max-sm:px-2 max-sm:text-[13px] ml-2">
+                  اخیر
+                </span>
+                <span id="population" class="bg-gray-300 hover:text-gray-800 pointer-events-auto text-black-500 transition ease-in hover:opacity-75 rounded text-center px-4 py-2 text-sm cursor-pointer max-sm:px-2 max-sm:text-[13px] ml-2">
+                  پرطرفدار
+                </span>
+                <span>
+
+                </span>
+              </div>
+
+            </div>
+
+            <ul>
+              <div
+                class="posts recent flex flex-col mt-3 overflow-y-auto h-[440px] scrollbar scrollbar-thumb-gold-100 scrollbar-track-[#F5F4F4] scrollbar-w-[3px] scrollbar-track-rounded-md scrollbar-thumb-rounded">
+                <li>
+
+                  <div class="post flex items-center w-full   mb-3">
+                    <div class="img h-[48px] w-[48PX]">
+                      <a href="single_post.html" class="h-[48px] w-[48PX]">
+                        <img src="{% static 'Home/'%}images/lates_post.jpg" alt="" class="h-[48px] w-[48PX] rounded">
+
+                      </a>
+                    </div>
+
+                    <div class="head mx-3 flex flex-col w-[288px] max-lg:w-full  max-sm:ml-1">
+                      <h2><a href="single_post.html"
+                          class="text-black-700 text-mxl font-IRsansBold max-sm:text-base transition-all ease-linear hover:opacity-70 ">دانلود
+                          آخرین نسخه تبهنسخه
+                          اساسین کرید3 + ا</a></h2>
+                      <div class="details flex mt-2">
+                        <span class="text-sm font-IRsansLight text-black-500 font-light ">14 آذر 1400</span>
+                        <span class="text-sm font-IRsansLight text-black-500 font-light mx-6">64 بازدید</span>
+                        <span class="text-sm font-IRsansLight text-black-500 font-light">3 نظر</span>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                </li>
+                <li>
+
+                  <div class="post flex items-center w-full   mb-3">
+                    <div class="img h-[48px] w-[48PX]">
+                      <a href="single_post.html">
+                        <img src="{% static 'Home/'%}images/lates_post.jpg" alt="" class="h-[48px] w-[48PX] rounded">
+
+                      </a>
+                    </div>
+
+                    <div class="head mx-3 flex flex-col w-[288px] max-lg:w-full  max-sm:ml-1">
+                      <h2><a href="single_post.html"
+                          class="text-black-700 text-mxl font-IRsansBold max-sm:text-base transition-all ease-linear hover:opacity-70 ">دانلود
+                          آخرین نسخه تبهنسخه
+                          اساسین کرید3 + ا</a></h2>
+                      <div class="details flex mt-2">
+                        <span class="text-sm font-IRsansLight text-black-500 font-light ">14 آذر 1400</span>
+                        <span class="text-sm font-IRsansLight text-black-500 font-light mx-6">64 بازدید</span>
+                        <span class="text-sm font-IRsansLight text-black-500 font-light">3 نظر</span>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                </li>
+                <li>
+
+                  <div class="post flex items-center w-full   mb-3">
+                    <div class="img h-[48px] w-[48PX]">
+                      <a href="single_post.html">
+                        <img src="{% static 'Home/'%}images/lates_post.jpg" alt="" class="h-[48px] w-[48PX] rounded">
+
+                      </a>
+                    </div>
+
+                    <div class="head mx-3 flex flex-col w-[288px] max-lg:w-full  max-sm:ml-1">
+                      <h2><a href="single_post.html"
+                          class="text-black-700 text-mxl font-IRsansBold max-sm:text-base transition-all ease-linear hover:opacity-70 ">دانلود
+                          آخرین نسخه تبهنسخه
+                          اساسین کرید3 + ا</a></h2>
+                      <div class="details flex mt-2">
+                        <span class="text-sm font-IRsansLight text-black-500 font-light ">14 آذر 1400</span>
+                        <span class="text-sm font-IRsansLight text-black-500 font-light mx-6">64 بازدید</span>
+                        <span class="text-sm font-IRsansLight text-black-500 font-light">3 نظر</span>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                </li>
+                <li>
+
+                  <div class="post flex items-center w-full   mb-3">
+                    <div class="img h-[48px] w-[48PX]">
+                      <a href="single_post.html">
+                        <img src="{% static 'Home/'%}images/lates_post.jpg" alt="" class="h-[48px] w-[48PX] rounded">
+
+                      </a>
+                    </div>
+
+                    <div class="head mx-3 flex flex-col w-[288px] max-lg:w-full  max-sm:ml-1">
+                      <h2><a href="single_post.html"
+                          class="text-black-700 text-mxl font-IRsansBold max-sm:text-base transition-all ease-linear hover:opacity-70 ">دانلود
+                          آخرین نسخه تبهنسخه
+                          اساسین کرید3 + ا</a></h2>
+                      <div class="details flex mt-2">
+                        <span class="text-sm font-IRsansLight text-black-500 font-light ">14 آذر 1400</span>
+                        <span class="text-sm font-IRsansLight text-black-500 font-light mx-6">64 بازدید</span>
+                        <span class="text-sm font-IRsansLight text-black-500 font-light">3 نظر</span>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                </li>
+                <li>
+
+                  <div class="post flex items-center w-full   mb-3">
+                    <div class="img h-[48px] w-[48PX]">
+                      <a href="single_post.html">
+                        <img src="{% static 'Home/'%}images/lates_post.jpg" alt="" class="h-[48px] w-[48PX] rounded">
+
+                      </a>
+                    </div>
+
+                    <div class="head mx-3 flex flex-col w-[288px] max-lg:w-full  max-sm:ml-1">
+                      <h2><a href="single_post.html"
+                          class="text-black-700 text-mxl font-IRsansBold max-sm:text-base transition-all ease-linear hover:opacity-70 ">دانلود
+                          آخرین نسخه تبهنسخه
+                          اساسین کرید3 + ا</a></h2>
+                      <div class="details flex mt-2">
+                        <span class="text-sm font-IRsansLight text-black-500 font-light ">14 آذر 1400</span>
+                        <span class="text-sm font-IRsansLight text-black-500 font-light mx-6">64 بازدید</span>
+                        <span class="text-sm font-IRsansLight text-black-500 font-light">3 نظر</span>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                </li>
+                <li>
+
+                  <div class="post flex items-center w-full   mb-3">
+                    <div class="img h-[48px] w-[48PX]">
+                      <a href="single_post.html">
+                        <img src="{% static 'Home/'%}images/lates_post.jpg" alt="" class="h-[48px] w-[48PX] rounded">
+
+                      </a>
+                    </div>
+
+                    <div class="head mx-3 flex flex-col w-[288px] max-lg:w-full  max-sm:ml-1">
+                      <h2><a href="single_post.html"
+                          class="text-black-700 text-mxl font-IRsansBold max-sm:text-base transition-all ease-linear hover:opacity-70 ">دانلود
+                          آخرین نسخه تبهنسخه
+                          اساسین کرید3 + ا</a></h2>
+                      <div class="details flex mt-2">
+                        <span class="text-sm font-IRsansLight text-black-500 font-light ">14 آذر 1400</span>
+                        <span class="text-sm font-IRsansLight text-black-500 font-light mx-6">64 بازدید</span>
+                        <span class="text-sm font-IRsansLight text-black-500 font-light">3 نظر</span>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                </li>
+                <li>
+
+                  <div class="post flex items-center w-full   mb-3">
+                    <div class="img h-[48px] w-[48PX]">
+                      <a href="single_post.html">
+                        <img src="{% static 'Home/'%}images/lates_post.jpg" alt="" class="h-[48px] w-[48PX] rounded">
+
+                      </a>
+                    </div>
+
+                    <div class="head mx-3 flex flex-col w-[288px] max-lg:w-full  max-sm:ml-1">
+                      <h2><a href="single_post.html"
+                          class="text-black-700 text-mxl font-IRsansBold max-sm:text-base transition-all ease-linear hover:opacity-70 ">دانلود
+                          آخرین نسخه تبهنسخه
+                          اساسین کرید3 + ا</a></h2>
+                      <div class="details flex mt-2">
+                        <span class="text-sm font-IRsansLight text-black-500 font-light ">14 آذر 1400</span>
+                        <span class="text-sm font-IRsansLight text-black-500 font-light mx-6">64 بازدید</span>
+                        <span class="text-sm font-IRsansLight text-black-500 font-light">3 نظر</span>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                </li>
+                <li>
+
+                  <div class="post flex items-center w-full   mb-3">
+                    <div class="img h-[48px] w-[48PX]">
+                      <a href="single_post.html">
+                        <img src="{% static 'Home/'%}images/lates_post.jpg" alt="" class="h-[48px] w-[48PX] rounded">
+
+                      </a>
+                    </div>
+
+                    <div class="head mx-3 flex flex-col w-[288px] max-lg:w-full  max-sm:ml-1">
+                      <h2><a href="single_post.html"
+                          class="text-black-700 text-mxl font-IRsansBold max-sm:text-base transition-all ease-linear hover:opacity-70 ">دانلود
+                          آخرین نسخه تبهنسخه
+                          اساسین کرید3 + ا</a></h2>
+                      <div class="details flex mt-2">
+                        <span class="text-sm font-IRsansLight text-black-500 font-light ">14 آذر 1400</span>
+                        <span class="text-sm font-IRsansLight text-black-500 font-light mx-6">64 بازدید</span>
+                        <span class="text-sm font-IRsansLight text-black-500 font-light">3 نظر</span>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                </li>
+              </div>
+              <div
+              class="posts population  flex flex-col mt-3 overflow-y-auto h-[440px] scrollbar scrollbar-thumb-gold-100 scrollbar-track-[#F5F4F4] hidden scrollbar-w-[3px] scrollbar-track-rounded-md scrollbar-thumb-rounded">
+
+              <li>
+
+                <div class="post flex items-center w-full   mb-3">
+                  <div class="img h-[48px] w-[48PX]">
+                    <a href="single_post.html">
+                      <img src="{% static 'Home/'%}images/lates_post.jpg" alt="" class="h-[48px] w-[48PX] rounded">
+
+                    </a>
+                  </div>
+
+                  <div class="head mx-3 flex flex-col w-[288px] max-lg:w-full  max-sm:ml-1">
+                    <h2><a href="single_post.html"
+                        class="text-black-700 text-mxl font-IRsansBold max-sm:text-base transition-all ease-linear hover:opacity-70 ">دانلود
+                        آخرین نسخه تبهنسخه
+                        اساسین کرید3 + ا</a></h2>
+                    <div class="details flex mt-2">
+                      <span class="text-sm font-IRsansLight text-black-500 font-light ">14 آذر 1400</span>
+                      <span class="text-sm font-IRsansLight text-black-500 font-light mx-6">64 بازدید</span>
+                      <span class="text-sm font-IRsansLight text-black-500 font-light">3 نظر</span>
+
+                    </div>
+                  </div>
+
+                </div>
+
+
+              </li>
+              <li>
+
+                <div class="post flex items-center w-full   mb-3">
+                  <div class="img h-[48px] w-[48PX]">
+                    <a href="single_post.html">
+                      <img src="{% static 'Home/'%}images/lates_post.jpg" alt="" class="h-[48px] w-[48PX] rounded">
+
+                    </a>
+                  </div>
+
+                  <div class="head mx-3 flex flex-col w-[288px] max-lg:w-full  max-sm:ml-1">
+                    <h2><a href="single_post.html"
+                        class="text-black-700 text-mxl font-IRsansBold max-sm:text-base transition-all ease-linear hover:opacity-70 ">دانلود
+                        آخرین نسخه تبهنسخه
+                        اساسین کرید3 + ا</a></h2>
+                    <div class="details flex mt-2">
+                      <span class="text-sm font-IRsansLight text-black-500 font-light ">14 آذر 1400</span>
+                      <span class="text-sm font-IRsansLight text-black-500 font-light mx-6">64 بازدید</span>
+                      <span class="text-sm font-IRsansLight text-black-500 font-light">3 نظر</span>
+
+                    </div>
+                  </div>
+
+                </div>
+
+
+              </li>
+              <li>
+
+                <div class="post flex items-center w-full   mb-3">
+                  <div class="img h-[48px] w-[48PX]">
+                    <a href="single_post.html">
+                      <img src="{% static 'Home/'%}images/lates_post.jpg" alt="" class="h-[48px] w-[48PX] rounded">
+
+                    </a>
+                  </div>
+
+                  <div class="head mx-3 flex flex-col w-[288px] max-lg:w-full  max-sm:ml-1">
+                    <h2><a href="single_post.html"
+                        class="text-black-700 text-mxl font-IRsansBold max-sm:text-base transition-all ease-linear hover:opacity-70 ">دانلود
+                        آخرین نسخه تبهنسخه
+                        اساسین کرید3 + ا</a></h2>
+                    <div class="details flex mt-2">
+                      <span class="text-sm font-IRsansLight text-black-500 font-light ">14 آذر 1400</span>
+                      <span class="text-sm font-IRsansLight text-black-500 font-light mx-6">64 بازدید</span>
+                      <span class="text-sm font-IRsansLight text-black-500 font-light">3 نظر</span>
+
+                    </div>
+                  </div>
+
+                </div>
+
+
+              </li>
+              <li>
+
+                <div class="post flex items-center w-full   mb-3">
+                  <div class="img h-[48px] w-[48PX]">
+                    <a href="single_post.html">
+                      <img src="{% static 'Home/'%}images/lates_post.jpg" alt="" class="h-[48px] w-[48PX] rounded">
+
+                    </a>
+                  </div>
+
+                  <div class="head mx-3 flex flex-col w-[288px] max-lg:w-full  max-sm:ml-1">
+                    <h2><a href="single_post.html"
+                        class="text-black-700 text-mxl font-IRsansBold max-sm:text-base transition-all ease-linear hover:opacity-70 ">دانلود
+                        آخرین نسخه تبهنسخه
+                        اساسین کرید3 + ا</a></h2>
+                    <div class="details flex mt-2">
+                      <span class="text-sm font-IRsansLight text-black-500 font-light ">14 آذر 1400</span>
+                      <span class="text-sm font-IRsansLight text-black-500 font-light mx-6">64 بازدید</span>
+                      <span class="text-sm font-IRsansLight text-black-500 font-light">3 نظر</span>
+
+                    </div>
+                  </div>
+
+                </div>
+
+
+              </li>
+              <li>
+
+                <div class="post flex items-center w-full   mb-3">
+                  <div class="img h-[48px] w-[48PX]">
+                    <a href="single_post.html">
+                      <img src="{% static 'Home/'%}images/lates_post.jpg" alt="" class="h-[48px] w-[48PX] rounded">
+
+                    </a>
+                  </div>
+
+                  <div class="head mx-3 flex flex-col w-[288px] max-lg:w-full  max-sm:ml-1">
+                    <h2><a href="single_post.html"
+                        class="text-black-700 text-mxl font-IRsansBold max-sm:text-base transition-all ease-linear hover:opacity-70 ">دانلود
+                        آخرین نسخه تبهنسخه
+                        اساسین کرید3 + ا</a></h2>
+                    <div class="details flex mt-2">
+                      <span class="text-sm font-IRsansLight text-black-500 font-light ">14 آذر 1400</span>
+                      <span class="text-sm font-IRsansLight text-black-500 font-light mx-6">64 بازدید</span>
+                      <span class="text-sm font-IRsansLight text-black-500 font-light">3 نظر</span>
+
+                    </div>
+                  </div>
+
+                </div>
+
+
+              </li>
+            </div>
+
+            </ul>
+          </div>
+        </section>
+        <!-- End Lates Post -->
+
+            <!-- Start CateGory SideBar -->
+
+            <section>
+              <div class="lates_post bg-white shadow-md rounded-[10px] px-8 py-6  flex flex-col mb-10 max-sm:mb-6 max-sm:p-4">
+                <div class="header-title mb-2  items-center relative -right-2 ">
+                  <div class="flex items-center">
+                    <div class="bg-gray-300 w-[38px] h-[38px] text-center p-2 ml-2 rounded-md ">
+                      <span class="material-symbols-outlined text-gold-500 text-[22px]">
+                        category
+                      </span>
+                    </div>
+                    <h4 class="text-[17px] font-bold text-black-300 mx-[6px] max-sm:text-xl">دسته بندی</h4>
+                  </div>
+                  <div class="py-3 px-3 mt-6 category-home relative h-auto max-sm:mt-4">
+                    <ul class="flex flex-col relative z-2">
+                      <li class="flex items-center py-4 max-sm:py-3">
+                        <span class="w-4 h-4 border-[3px] bg-white rounded-full  border-gray-500 shadow-narm "></span>
+                        <a href="category_blog.html" class="text-mxl font-IRsansBold mx-4 text-black-700 max-sm:text-base ">ترینر بازی</a>
+                      </li>
+                      <li class="flex items-center py-4  max-sm:py-3">
+                        <span class="w-4 h-4 border-[3px] bg-white rounded-full  border-gray-500 shadow-narm "></span>
+                        <a href="category_blog.html" class="text-mxl font-IRsansBold mx-4 text-black-700 max-sm:text-base ">چیت vip</a>
+                      </li>
+                      <li class="flex items-center py-4  max-sm:py-3">
+                        <span class="w-4 h-4 border-[3px] bg-white rounded-full  border-gray-500 shadow-narm "></span>
+                        <a href="category_blog.html" class="text-mxl font-IRsansBold mx-4 text-black-700 max-sm:text-base ">آموزش ساخت چیت</a>
+                      </li>
+                      <li class="flex items-center py-4  max-sm:py-3">
+                        <span class="w-4 h-4 border-[3px] bg-white rounded-full  border-gray-500 shadow-narm "></span>
+                        <a href="category_blog.html" class="text-mxl font-IRsansBold mx-4 text-black-700 max-sm:text-base ">چیت vip</a>
+                      </li>
+                      <li class="flex items-center py-4  max-sm:py-3">
+                        <span class="w-4 h-4 border-[3px] bg-white rounded-full  border-gray-500 shadow-narm "></span>
+                        <a href="category_blog.html" class="text-mxl font-IRsansBold mx-4 text-black-700 max-sm:text-base ">چیت vip</a>
+                      </li>
+                      <li class="flex items-center py-4  max-sm:py-3">
+                        <span class="w-4 h-4 border-[3px] bg-white rounded-full  border-gray-500 shadow-narm "></span>
+                        <a href="category_blog.html" class="text-mxl font-IRsansBold mx-4 text-black-700 max-sm:text-base ">چیت vip</a>
+                      </li>
+                      <li class="flex items-center py-4  max-sm:py-3">
+                        <span class="w-4 h-4 border-[3px] bg-white rounded-full  border-gray-500 shadow-narm "></span>
+                        <a href="category_blog.html" class="text-mxl font-IRsansBold mx-4 text-black-700 max-sm:text-base ">چیت vip</a>
+                      </li>
+                      <li class="flex items-center py-4  max-sm:py-3">
+                        <span class="w-4 h-4 border-[3px] bg-white rounded-full  border-gray-500 shadow-narm "></span>
+                        <a href="category_blog.html" class="text-mxl font-IRsansBold mx-4 text-black-700 max-sm:text-base ">چیت vip</a>
+                      </li>
+                      <li class="flex items-center py-4  max-sm:py-3">
+                        <span class="w-4 h-4 border-[3px] bg-white rounded-full  border-gray-500 shadow-narm "></span>
+                        <a href="category_blog.html" class="text-mxl font-IRsansBold mx-4 text-black-700 max-sm:text-base ">چیت vip</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+
+
+              </div>
+            </section>
+            <!-- End CateGory Aside -->
+
+
+
+
+            <!-- Start Social link Network -->
+            <section>
+              <div
+                class="social-box shadow-md justify-between flex mt-8 bg-gradient-to-r p-4 from-[#4f0fbe] to-[#B113BC] rounded-[8px] h-[86px] ">
+                <div class="flex flex-col">
+                  <span class="text-white text-base">اینیستاگرام ما</span>
+                  <span
+                    class="text-white text-base mt-2 font-light font-IRsansLight tracking-widest	">keshavarz_28@</span>
+                </div>
+                <div
+                class="bg-white rounded text-center p-[6px] px-3 h-[36px] transition-all ease-linear hover:opacity-70">
+                  <a href="http://instagram.com/keshavarz_28" class="text-sm    text-black-500">دنبال کردن</a>
+                </div>
+              </div>
+            </section>
+
+            <section class="mb-10 max-sm:mb-6">
+
+              <div
+                class="social-box shadow-md justify-between flex mt-6 bg-gradient-to-r p-4 from-[#4056E6] to-[#1AA6EE] rounded-[8px] h-[86px] ">
+                <div class="flex flex-col">
+                  <span class="text-white text-base">تلگرام ما</span>
+                  <span
+                    class="text-white text-base mt-2 font-light font-IRsansLight tracking-widest	">keshavarz_28@</span>
+                </div>
+                <div
+                  class="bg-white rounded text-center p-[6px] px-3 h-[36px] transition-all ease-linear hover:opacity-70">
+                  <a href="http://t.me/pares28" class="text-sm    text-black-500">دنبال کردن</a>
+                </div>
+              </div>
+            </section>
+            <!-- End Social -->
+
+            <!-- Start Ads -->
+            <section>
+              <div class="ads bg-white shadow-md rounded-[10px] px-6 py-6 max-md:p-4 flex flex-col">
+                <div class="header-title mb-6 flex items-center relative -right-2">
+                  <div class="bg-gray-300 w-[40px] h-[40px] text-center p-2 ml-2 rounded-md">
+                    <span class="material-symbols-outlined text-gold-500 text-[22px]">
+                      ads_click
+                    </span>
+                  </div>
+                  <h4 class="text-[17px] font-bold text-black-300 mx-[6px] max-sm:text-mxl">تبلیغات</h4>
+
+                </div>
+                <a href="http://mr-keshi.ir">
+                  <img src="{% static 'Home/'%}images/banner-for-hamyarpng.png" height="100%" width="100%" alt="تبلیغات"
+                  title="باکس تبلیغات">
+                </a>
+
+              </div>
+            </section>
+            <!-- End Ads -->
+
+
+          </aside>
+          <!-- End Sidebar -->
+        </div>
+        <!-- Start Section posts -->
+        <div class="article mr-8 bg-gray-300  max-lg:mr-0 ">
+          <section class="posts max-sm:mx-4 ">
+            <div class="flex flex-col w-full">
+              <!-- Start Article -->
+              <article class="mb-8 max-sm:mb-6 shadow-md ">
+                <div class="box bg-white h-[250px] rounded-[10px] p-2 flex max-2xl:h-[290px]  relative ">
+                 <a href="" class="w-[270px] max-lg:w-[270px] h-full mx-auto">
+                  <img src="{% static 'Home/'%}images/image_post_2.png" class="w-[270px] max-lg:w-[270px] h-full p-4 max-sm:p-2 brightness-75 transition ease hover:brightness-100 " alt="">
+
+                 </a>
+                  <div class="post w-full">
+                    <header>
+                      <a href="single_post.html">
+                        <h2 class="text-black-300 text-[17px] font-IRsansBold m-4 hover:opacity-80  max-sm:mt-3">Stay Human 2 Dying Light دانلود ترینر
+                          بازی</h2>
+                      </a>
+
+                      <div class="details flex items-center px-3 w-3/4 justify-between -mt-2  max-sm:flex-wrap max-md:w-full max-sm:justify-center max-sm:w-full max-sm:my-1">
+                        <div class="date flex items-center">
+                          <span class="material-symbols-outlined text-red-500 text-2xl">
+                            calendar_month
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            5 آذر 1399
+                          </span>
+                        </div>
+                        <div class="tag flex items-center">
+                          <span class="material-symbols-outlined text-green text-2xl">
+                            bookmark
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            چیت و ترینر
+                          </span>
+                        </div>
+                        <div class="tag flex items-center">
+                          <span class="material-symbols-outlined text-purple text-2xl">
+                            comment
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            5
+                          </span>
+                        </div>
+                      </div>
+                    </header>
+                    <div class="flex w-full">
+
+                    </div>
+                    <p class="text-[15px] p-3 pb-0 pt-1 text-black-500 leading-7 max-xl:leading-6  max-xl:text-base  ">
+                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                      چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                      نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در بیشتری را برای
+                      طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد
+                    </p> <a href="single_post.html" class="text-gold-500 text-[14px] md:hidden  max-sm:md-6">ادامه مطلب  </a>
+
+
+                    <div class="btn-continue absolute left-6 bottom-7">
+                      <a href="single_post.html"
+                        class="bg-transparent max-md:hidden font-light transition ease-in  hover:bg-gold-500 text-gold-500  hover:text-white py-1.5 px-4  border border-gold-500 hover:border-transparent rounded text-base">
+                        ادامه مطلب</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="mb-8 max-sm:mb-6 shadow-md ">
+                <div class="box bg-white h-[250px] rounded-[10px] p-2 flex max-2xl:h-[290px]  relative ">
+                 <a href="" class="w-[270px] max-lg:w-[270px] h-full mx-auto">
+                  <img src="{% static 'Home/'%}images/image_post_2.png" class="w-[270px] max-lg:w-[270px] h-full p-4 max-sm:p-2 brightness-75 transition ease hover:brightness-100 " alt="">
+
+                 </a>
+                  <div class="post w-full">
+                    <header>
+                      <a href="single_post.html">
+                        <h2 class="text-black-300 text-[17px] font-IRsansBold m-4 hover:opacity-80  max-sm:mt-3">Stay Human 2 Dying Light دانلود ترینر
+                          بازی</h2>
+                      </a>
+
+                      <div class="details flex items-center px-3 w-3/4 justify-between -mt-2  max-sm:flex-wrap max-md:w-full max-sm:justify-center max-sm:w-full max-sm:my-1">
+                        <div class="date flex items-center">
+                          <span class="material-symbols-outlined text-red-500 text-2xl">
+                            calendar_month
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            5 آذر 1399
+                          </span>
+                        </div>
+                        <div class="tag flex items-center">
+                          <span class="material-symbols-outlined text-green text-2xl">
+                            bookmark
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            چیت و ترینر
+                          </span>
+                        </div>
+                        <div class="tag flex items-center">
+                          <span class="material-symbols-outlined text-purple text-2xl">
+                            comment
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            5
+                          </span>
+                        </div>
+                      </div>
+                    </header>
+                    <div class="flex w-full">
+
+                    </div>
+                    <p class="text-[15px] p-3 pb-0 pt-1 text-black-500 leading-7 max-xl:leading-6  max-xl:text-base  ">
+                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                      چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                      نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در بیشتری را برای
+                      طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد
+                    </p> <a href="single_post.html" class="text-gold-500 text-[14px] md:hidden  max-sm:md-6">ادامه مطلب  </a>
+
+
+                    <div class="btn-continue absolute left-6 bottom-7">
+                      <a href="single_post.html"
+                        class="bg-transparent max-md:hidden font-light transition ease-in  hover:bg-gold-500 text-gold-500  hover:text-white py-1.5 px-4  border border-gold-500 hover:border-transparent rounded text-base">
+                        ادامه مطلب</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="mb-8 max-sm:mb-6 shadow-md ">
+                <div class="box bg-white h-[250px] rounded-[10px] p-2 flex max-2xl:h-[290px]  relative ">
+                 <a href="" class="w-[270px] max-lg:w-[270px] h-full mx-auto">
+                  <img src="{% static 'Home/'%}images/image_post_2.png" class="w-[270px] max-lg:w-[270px] h-full p-4 max-sm:p-2 brightness-75 transition ease hover:brightness-100 " alt="">
+
+                 </a>
+                  <div class="post w-full">
+                    <header>
+                      <a href="single_post.html">
+                        <h2 class="text-black-300 text-[17px] font-IRsansBold m-4 hover:opacity-80  max-sm:mt-3">Stay Human 2 Dying Light دانلود ترینر
+                          بازی</h2>
+                      </a>
+
+                      <div class="details flex items-center px-3 w-3/4 justify-between -mt-2  max-sm:flex-wrap max-md:w-full max-sm:justify-center max-sm:w-full max-sm:my-1">
+                        <div class="date flex items-center">
+                          <span class="material-symbols-outlined text-red-500 text-2xl">
+                            calendar_month
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            5 آذر 1399
+                          </span>
+                        </div>
+                        <div class="tag flex items-center">
+                          <span class="material-symbols-outlined text-green text-2xl">
+                            bookmark
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            چیت و ترینر
+                          </span>
+                        </div>
+                        <div class="tag flex items-center">
+                          <span class="material-symbols-outlined text-purple text-2xl">
+                            comment
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            5
+                          </span>
+                        </div>
+                      </div>
+                    </header>
+                    <div class="flex w-full">
+
+                    </div>
+                    <p class="text-[15px] p-3 pb-0 pt-1 text-black-500 leading-7 max-xl:leading-6  max-xl:text-base  ">
+                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                      چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                      نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در بیشتری را برای
+                      طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد
+                    </p> <a href="single_post.html" class="text-gold-500 text-[14px] md:hidden  max-sm:md-6">ادامه مطلب  </a>
+
+
+                    <div class="btn-continue absolute left-6 bottom-7">
+                      <a href="single_post.html"
+                        class="bg-transparent max-md:hidden font-light transition ease-in  hover:bg-gold-500 text-gold-500  hover:text-white py-1.5 px-4  border border-gold-500 hover:border-transparent rounded text-base">
+                        ادامه مطلب</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="mb-8 max-sm:mb-6 shadow-md ">
+                <div class="box bg-white h-[250px] rounded-[10px] p-2 flex max-2xl:h-[290px]  relative ">
+                 <a href="" class="w-[270px] max-lg:w-[270px] h-full mx-auto">
+                  <img src="{% static 'Home/'%}images/image_post_2.png" class="w-[270px] max-lg:w-[270px] h-full p-4 max-sm:p-2 brightness-75 transition ease hover:brightness-100 " alt="">
+
+                 </a>
+                  <div class="post w-full">
+                    <header>
+                      <a href="single_post.html">
+                        <h2 class="text-black-300 text-[17px] font-IRsansBold m-4 hover:opacity-80  max-sm:mt-3">Stay Human 2 Dying Light دانلود ترینر
+                          بازی</h2>
+                      </a>
+
+                      <div class="details flex items-center px-3 w-3/4 justify-between -mt-2  max-sm:flex-wrap max-md:w-full max-sm:justify-center max-sm:w-full max-sm:my-1">
+                        <div class="date flex items-center">
+                          <span class="material-symbols-outlined text-red-500 text-2xl">
+                            calendar_month
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            5 آذر 1399
+                          </span>
+                        </div>
+                        <div class="tag flex items-center">
+                          <span class="material-symbols-outlined text-green text-2xl">
+                            bookmark
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            چیت و ترینر
+                          </span>
+                        </div>
+                        <div class="tag flex items-center">
+                          <span class="material-symbols-outlined text-purple text-2xl">
+                            comment
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            5
+                          </span>
+                        </div>
+                      </div>
+                    </header>
+                    <div class="flex w-full">
+
+                    </div>
+                    <p class="text-[15px] p-3 pb-0 pt-1 text-black-500 leading-7 max-xl:leading-6  max-xl:text-base  ">
+                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                      چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                      نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در بیشتری را برای
+                      طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد
+                    </p> <a href="single_post.html" class="text-gold-500 text-[14px] md:hidden  max-sm:md-6">ادامه مطلب  </a>
+
+
+                    <div class="btn-continue absolute left-6 bottom-7">
+                      <a href="single_post.html"
+                        class="bg-transparent max-md:hidden font-light transition ease-in  hover:bg-gold-500 text-gold-500  hover:text-white py-1.5 px-4  border border-gold-500 hover:border-transparent rounded text-base">
+                        ادامه مطلب</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="mb-8 max-sm:mb-6 shadow-md ">
+                <div class="box bg-white h-[250px] rounded-[10px] p-2 flex max-2xl:h-[290px]  relative ">
+                 <a href="" class="w-[270px] max-lg:w-[270px] h-full mx-auto">
+                  <img src="{% static 'Home/'%}images/image_post_2.png" class="w-[270px] max-lg:w-[270px] h-full p-4 max-sm:p-2 brightness-75 transition ease hover:brightness-100 " alt="">
+
+                 </a>
+                  <div class="post w-full">
+                    <header>
+                      <a href="single_post.html">
+                        <h2 class="text-black-300 text-[17px] font-IRsansBold m-4 hover:opacity-80  max-sm:mt-3">Stay Human 2 Dying Light دانلود ترینر
+                          بازی</h2>
+                      </a>
+
+                      <div class="details flex items-center px-3 w-3/4 justify-between -mt-2  max-sm:flex-wrap max-md:w-full max-sm:justify-center max-sm:w-full max-sm:my-1">
+                        <div class="date flex items-center">
+                          <span class="material-symbols-outlined text-red-500 text-2xl">
+                            calendar_month
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            5 آذر 1399
+                          </span>
+                        </div>
+                        <div class="tag flex items-center">
+                          <span class="material-symbols-outlined text-green text-2xl">
+                            bookmark
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            چیت و ترینر
+                          </span>
+                        </div>
+                        <div class="tag flex items-center">
+                          <span class="material-symbols-outlined text-purple text-2xl">
+                            comment
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            5
+                          </span>
+                        </div>
+                      </div>
+                    </header>
+                    <div class="flex w-full">
+
+                    </div>
+                    <p class="text-[15px] p-3 pb-0 pt-1 text-black-500 leading-7 max-xl:leading-6  max-xl:text-base  ">
+                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                      چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                      نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در بیشتری را برای
+                      طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد
+                    </p> <a href="single_post.html" class="text-gold-500 text-[14px] md:hidden  max-sm:md-6">ادامه مطلب  </a>
+
+
+                    <div class="btn-continue absolute left-6 bottom-7">
+                      <a href="single_post.html"
+                        class="bg-transparent max-md:hidden font-light transition ease-in  hover:bg-gold-500 text-gold-500  hover:text-white py-1.5 px-4  border border-gold-500 hover:border-transparent rounded text-base">
+                        ادامه مطلب</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="mb-8 max-sm:mb-6 shadow-md ">
+                <div class="box bg-white h-[250px] rounded-[10px] p-2 flex max-2xl:h-[290px]  relative ">
+                 <a href="" class="w-[270px] max-lg:w-[270px] h-full mx-auto">
+                  <img src="{% static 'Home/'%}images/image_post_2.png" class="w-[270px] max-lg:w-[270px] h-full p-4 max-sm:p-2 brightness-75 transition ease hover:brightness-100 " alt="">
+
+                 </a>
+                  <div class="post w-full">
+                    <header>
+                      <a href="single_post.html">
+                        <h2 class="text-black-300 text-[17px] font-IRsansBold m-4 hover:opacity-80  max-sm:mt-3">Stay Human 2 Dying Light دانلود ترینر
+                          بازی</h2>
+                      </a>
+
+                      <div class="details flex items-center px-3 w-3/4 justify-between -mt-2  max-sm:flex-wrap max-md:w-full max-sm:justify-center max-sm:w-full max-sm:my-1">
+                        <div class="date flex items-center">
+                          <span class="material-symbols-outlined text-red-500 text-2xl">
+                            calendar_month
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            5 آذر 1399
+                          </span>
+                        </div>
+                        <div class="tag flex items-center">
+                          <span class="material-symbols-outlined text-green text-2xl">
+                            bookmark
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            چیت و ترینر
+                          </span>
+                        </div>
+                        <div class="tag flex items-center">
+                          <span class="material-symbols-outlined text-purple text-2xl">
+                            comment
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            5
+                          </span>
+                        </div>
+                      </div>
+                    </header>
+                    <div class="flex w-full">
+
+                    </div>
+                    <p class="text-[15px] p-3 pb-0 pt-1 text-black-500 leading-7 max-xl:leading-6  max-xl:text-base  ">
+                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                      چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                      نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در بیشتری را برای
+                      طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد
+                    </p> <a href="single_post.html" class="text-gold-500 text-[14px] md:hidden  max-sm:md-6">ادامه مطلب  </a>
+
+
+                    <div class="btn-continue absolute left-6 bottom-7">
+                      <a href="single_post.html"
+                        class="bg-transparent max-md:hidden font-light transition ease-in  hover:bg-gold-500 text-gold-500  hover:text-white py-1.5 px-4  border border-gold-500 hover:border-transparent rounded text-base">
+                        ادامه مطلب</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article class="mb-8 max-sm:mb-6 shadow-md ">
+                <div class="box bg-white h-[250px] rounded-[10px] p-2 flex max-2xl:h-[290px]  relative ">
+                 <a href="" class="w-[270px] max-lg:w-[270px] h-full mx-auto">
+                  <img src="{% static 'Home/'%}images/image_post_2.png" class="w-[270px] max-lg:w-[270px] h-full p-4 max-sm:p-2 brightness-75 transition ease hover:brightness-100 " alt="">
+
+                 </a>
+                  <div class="post w-full">
+                    <header>
+                      <a href="single_post.html">
+                        <h2 class="text-black-300 text-[17px] font-IRsansBold m-4 hover:opacity-80  max-sm:mt-3">Stay Human 2 Dying Light دانلود ترینر
+                          بازی</h2>
+                      </a>
+
+                      <div class="details flex items-center px-3 w-3/4 justify-between -mt-2  max-sm:flex-wrap max-md:w-full max-sm:justify-center max-sm:w-full max-sm:my-1">
+                        <div class="date flex items-center">
+                          <span class="material-symbols-outlined text-red-500 text-2xl">
+                            calendar_month
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            5 آذر 1399
+                          </span>
+                        </div>
+                        <div class="tag flex items-center">
+                          <span class="material-symbols-outlined text-green text-2xl">
+                            bookmark
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            چیت و ترینر
+                          </span>
+                        </div>
+                        <div class="tag flex items-center">
+                          <span class="material-symbols-outlined text-purple text-2xl">
+                            comment
+                          </span>
+                          <span class="text-black-500 text-sm mx-2">
+                            5
+                          </span>
+                        </div>
+                      </div>
+                    </header>
+                    <div class="flex w-full">
+
+                    </div>
+                    <p class="text-[15px] p-3 pb-0 pt-1 text-black-500 leading-7 max-xl:leading-6  max-xl:text-base  ">
+                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                      چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                      نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در بیشتری را برای
+                      طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد
+                    </p> <a href="single_post.html" class="text-gold-500 text-[14px] md:hidden  max-sm:md-6">ادامه مطلب  </a>
+
+
+                    <div class="btn-continue absolute left-6 bottom-7">
+                      <a href="single_post.html"
+                        class="bg-transparent max-md:hidden font-light transition ease-in  hover:bg-gold-500 text-gold-500  hover:text-white py-1.5 px-4  border border-gold-500 hover:border-transparent rounded text-base">
+                        ادامه مطلب</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <!-- End Article -->
+            </div>
+          </section>
+        </div>
+
+
+        <!-- End Section Posts -->
+      </div>
+
+
+    </main>
+  </div><br><br>
+{% endblock %}
+
+
+{% block custom_footer_references %}
+  <script src=" {% static 'Home/dist/slider_bundle.js' %}"></script>
+
+<script>
+
+
+let seatcrmodal = document.querySelector('.search-modal');
+    let formsearch = seatcrmodal.querySelector('#formsea');
+    let btnsearch = document.getElementById('btnsearch');
+    let checkopenedsearc=false
+    function closeSearch() {
+      seatcrmodal.classList.remove('search-modal_show')
+      filterBody.classList.add('hidden')
+       checkopenedsearc=false
+
+    }
+    btnsearch.addEventListener('click', () => {
+      seatcrmodal.classList.add('search-modal_show')
+      filterBody.classList.remove('hidden')
+      checkopenedsearc=true
+
+    })
+
+    const Boxes=new MangeBoxDropDown()
+    const mobilemenu=new MobileMenu()
+
+    window.addEventListener('click', (event) => {
+      if(!Boxes.personBox.contains(event.target) && event.target.contains(filterBody)){
+        Boxes.closePersonBox()
+      }
+      if(!formsearch.contains(event.target) && !event.target.classList.contains('material-symbols-outlined') && checkopenedsearc==true){
+        closeSearch()
+      }
+      if(!mobilemenu.SiteMenu.contains(event.target) && mobilemenu.StatusMobile && event.target.contains(filterBody)){
+        mobilemenu.close()
+      }
+
+    })
+
+
+
+
+    new TabHome()
+
+ </script>
+
+{% endblock %}
+
+

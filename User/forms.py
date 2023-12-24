@@ -2,7 +2,8 @@ from django import forms
 from django.db.models import Q
 from .models import User
 from django.core import validators
-
+from django.forms import ModelForm, CharField, TextInput
+from SiteModule import models
 
 class RegisterForm(forms.Form):
     def __init__(self, *args, **kwargs):
@@ -157,3 +158,43 @@ class ProfileForm(forms.Form):
         'placeholder': "لطفا نام خود را وارد کنید",
 
     }))
+
+
+class SocialLinkForm(ModelForm):
+    class Meta:
+        model = models.SocialMediaLink
+        fields = "__all__"
+        widgets = {
+            'telegram': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'username telegram'
+            }),
+            'aparat': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'username aparat channel'
+            }),
+            'github': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': '@github username'
+            }),
+            'twitter': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'twitter username'
+            }),
+            'youtube': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'youtube username'
+            }),
+            'instagram': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'instagram username'
+            }),
+            'facebook': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'facebook username'
+            }),
+            'linkedin': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'linkedin username'
+            }),
+        }

@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from User import views as UserView
+from Home import views as HomeView
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
@@ -25,7 +26,7 @@ urlpatterns = [
     path('dashbaord/',include('admin_panel.urls')),
     path('user/resetpassword',UserView.ResetPassword.as_view(),name="resetpassword"),
     path('user/resetpassword/<token>', UserView.ResetPasswordConfirm.as_view(), name="resetpassword_confirm"),
-    path('',UserView.index)
+    path('',HomeView.HomePage)
 ]
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
