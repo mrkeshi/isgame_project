@@ -2,7 +2,7 @@ from django import forms
 from django.db.models import Q
 from .models import User
 from django.core import validators
-from django.forms import ModelForm, CharField, TextInput
+from django.forms import ModelForm, CharField, TextInput,Textarea,FileInput
 from SiteModule import models
 
 class RegisterForm(forms.Form):
@@ -163,7 +163,7 @@ class ProfileForm(forms.Form):
 class SocialLinkForm(ModelForm):
     class Meta:
         model = models.SocialMediaLink
-        fields = "__all__"
+        fields = ["telegram","aparat","github","twitter","youtube","instagram","facebook","linkedin"]
         widgets = {
             'telegram': TextInput(attrs={
                 'class': 'form-control',
@@ -197,4 +197,33 @@ class SocialLinkForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'linkedin username'
             }),
+        }
+
+class UserProfileForm(ModelForm):
+    class Meta:
+        model=models.User
+        fields=["first_name","last_name","about","avatar"]
+        widgets={
+            'first_name':TextInput(attrs={
+                'id':'firs_tname',
+                'placeholder':'نام',
+                'class':'form-control'
+            }),
+
+            'last_name': TextInput(attrs={
+                'id': 'last_name',
+                'placeholder': 'نام خانوادگی',
+                'class': 'form-control'
+            }),
+            'avatar':FileInput(attrs={
+                'id':'file-upload',
+                'class':'dropify'
+            }),
+            'about': Textarea(attrs={
+                'id': 'aboutBio',
+                'placeholder': 'درباره خود توضیح دهید',
+                'class': 'form-control',
+                'rows':10,
+            }),
+
         }

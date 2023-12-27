@@ -1,5 +1,5 @@
 from django.core.mail import send_mail
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth import login, logout
 from django.views.generic.edit import FormView
@@ -7,10 +7,13 @@ from django.views.generic import ListView, DetailView, TemplateView
 from django.utils.crypto import get_random_string
 from django.http import HttpResponse
 
+from SiteModule.models import SocialMediaLink
 from utils.Email_Service import Email
 from utils.Http_service import get_client_ip
 from . import forms, models
 from django.contrib import messages
+
+from .forms import UserProfileForm, SocialLinkForm
 from .models import incorrect_attempts, TokenAuth, User
 from django.utils import timezone
 from datetime import timedelta
@@ -180,8 +183,25 @@ class ResetPasswordConfirm(FormView):
 
 
 def Profile(request):
-    return render(request,'User/Profile.html',{})
+    form1 = UserProfileForm(instance=request.user)
+    social_link_instance = get_object_or_404(SocialMediaLink, user=request.user)
+    form2=SocialLinkForm(instance=social_link_instance)
+    if (request.method == "POST"):
+        form1 = UserProfileForm(request.POST, request.FILES, instance=request.user)
+        form2 = SocialLinkForm(request.POST,instance=social_link_instance)
+        if (form1.is_valid() and form2.is_valid()):
+
+            form2.save()
+            form1.save()
+        return redirect(reverse('profile_admin'))
+    # form1 =request.user.select_related('socialmedialink').get(pk=6)
     # formUser=
+    else:
+        return render(request,'User/Profile.html',{
+            'User':request.user,
+            'form1':form1,
+             'form2':form2
+        })
 
 def index(request):
     return  HttpResponse('<h1>hellow world</h1>')

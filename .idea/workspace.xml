@@ -5,20 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="We returned">
-      <change afterPath="$PROJECT_DIR$/Home/templates/Home/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home/templates/HomeComponent/footer1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home/templates/HomeComponent/header1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home/templates/HomeShared/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home/templates/HomeShared/footer_references.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home/templates/HomeShared/header_references.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/migrations/0007_alter_user_avatar.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2023-12-24_18-50-25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Profile/-2147483648_-210468.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/templates/Auth/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/User/templates/Auth/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User/templates/User/Profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/User/templates/User/Profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel/templates/component/sidebar_component.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/templates/component/sidebar_component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isgame_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/isgame_project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isgame_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/isgame_project/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +53,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/alireza/isgame_project&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;ChangesTree.GroupingKeys&quot;: [
@@ -95,7 +94,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703342327846</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="We returned">
+      <option name="closed" value="true" />
+      <created>1703445820937</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703445820937</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

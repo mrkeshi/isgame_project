@@ -21,4 +21,4 @@ class SocialMediaLink(models.Model):
     is_setting = models.CharField(blank=True, null=True,max_length=10,unique=True)
 
     def __str__(self):
-        return self.user.get_full_name()
+        return self.user.get_full_name() +'social link'
