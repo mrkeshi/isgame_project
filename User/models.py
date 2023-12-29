@@ -38,9 +38,10 @@ def delete_old_images(sender,instance,**kwargs):
         return False
     try:
         old_file = sender.objects.get(pk=instance.pk).avatar
+
     except sender.DoesNotExist:
         return False
     file = instance.avatar
-    if not old_file == file:
+    if not old_file == file and old_file:
         if os.path.isfile(old_file.path):
             os.remove(old_file.path)

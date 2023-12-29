@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from SiteModule import models
+
+admin.site.register(models.SocialMediaLink)
+admin.site.register(models.PublicSettings)

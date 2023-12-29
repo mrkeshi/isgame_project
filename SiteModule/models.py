@@ -18,7 +18,19 @@ class SocialMediaLink(models.Model):
     github = models.CharField(blank=True, null=True,max_length=100)
 
     user = models.OneToOneField(User, on_delete=models.CASCADE,unique=True,null=True)
-    is_setting = models.CharField(blank=True, null=True,max_length=10,unique=True)
 
     def __str__(self):
-        return self.user.get_full_name() +'social link'
+        return self.pk +'social link'
+
+
+class PublicSettings(models.Model):
+    title=models.CharField(max_length=100)
+    description=models.TextField()
+    socialLinks=models.OneToOneField(SocialMediaLink,on_delete=models.CASCADE,unique=True,blank=True,null=True)
+    url=models.URLField(default="isgame.ir")
+    email=models.EmailField(default="admin@gmail.com")
+    logoIcon=models.ImageField(upload_to='SiteSetting/Logo',null=True,blank=True)
+    logoSite=models.ImageField(upload_to='SiteSetting/Logo',null=True,blank=True)
+    post_per_homePage=models.IntegerField(max_length=3,default=10) #Number of posts per page
+    post_per_cat=models.IntegerField(max_length=3,default=10) #Number of posts per page
+    is_Register=models.BooleanField(default=1)

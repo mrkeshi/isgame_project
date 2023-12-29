@@ -5,7 +5,9 @@
         <div class="profile-info">
             <figure class="user-cover-image"></figure>
             <div class="user-info">
+                {% if user.avatar %}
                 <img src="{{user.avatar.url}}" alt="avatar">
+                {% endif %}
                 <h6 class=""> {{ user | getName }}</h6>
                 <p class="">{{ user.username }}</p>
             </div>
