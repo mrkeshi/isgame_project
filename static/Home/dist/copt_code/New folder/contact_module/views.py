@@ -10,7 +10,7 @@ from .models import UserProfile
 class ContactUsView(CreateView):
     form_class = ContactUsModelForm
     template_name = 'contact_module/contact_us_page.html'
-    success_url = '/contact-us/'
+    success_url = '/Contact-us/'
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -30,7 +30,7 @@ class CreateProfileView(CreateView):
     template_name = 'contact_module/create_profile_page.html'
     model = UserProfile
     fields = '__all__'
-    success_url = '/contact-us/create-profile'
+    success_url = '/Contact-us/create-profile'
 
 
 class ProfilesView(ListView):

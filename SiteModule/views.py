@@ -74,3 +74,8 @@ def delete_item(request, id):
         pass
         # Todo: send message
     return redirect(request.META.get('HTTP_REFERER'))
+
+
+def Manage_Settings(requst):
+
+    return render(requst,"Settings/Setting.html",{})

@@ -1,8 +1,8 @@
 
 from django import forms
-from django.forms import models
+from django.forms import models, TextInput
 
-from SiteModule.models import SocialMediaLink
+from SiteModule.models import SocialMediaLink, PublicSettings
 
 
 class AddSocialForm(forms.ModelForm):
@@ -78,4 +78,57 @@ class AddSocialForm(forms.ModelForm):
 
         }
 
-    
+class SettingForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        x = super(SettingForm, self).__init__(*args, **kwargs)
+        if self.errors:
+            for f_name in self.fields:
+                if f_name in self.errors:
+                    classes = self.fields[f_name].widget.attrs.get('class')
+                    classes += " form-error"
+                    self.fields[f_name].widget.attrs['class'] = classes
+        return x
+    class Meta:
+        model=PublicSettings
+        fields=["title","description","url","email","logoIcon","logoSite","post_per_homePage","post_per_cat","is_Register"]
+        post_per_homePage = forms.IntegerField(widget=forms.TextInput(attrs={
+            'id': 'post_per_homePage',
+            'class': 'form-control',
+        }))
+        post_per_cat = forms.IntegerField(widget=forms.TextInput(attrs={
+            'id': 'post_per_cat',
+            'class': 'form-control',
+        }))
+        widgets={
+            'title':TextInput(attrs={
+                'id':'title',
+                'placeholder':'عنوان سایت',
+                'class':'form-control'
+            }),
+            'url': TextInput(attrs={
+                'id': 'url',
+                'placeholder': 'آدرس سایت',
+                'class': 'form-control'
+            }),
+            'logoIcon':forms.FileInput(attrs={
+                'id':'logoIcon',
+                'class':'dropify'
+            }),
+            'logoSite': forms.FileInput(attrs={
+                'id': 'logoSite',
+                'class': 'dropify'
+            }),
+            'description': forms.Textarea(attrs={
+                'id': 'description',
+                'placeholder': 'توضیحات کوتاه در مورد سایت',
+                'class': 'form-control',
+                'rows':5,
+            }),
+
+            'is_Register': forms.CheckboxInput(attrs={
+                'id': 'is_Register',
+                'class': 'form-control',
+            }),
+        }
+
+
