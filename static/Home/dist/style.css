@@ -5185,3 +5185,6 @@ body {
     margin-top: 1rem;
   }
 }
+.border-error{
+border: 2px solid #DE4A4A;
+}

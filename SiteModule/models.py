@@ -34,3 +34,4 @@ class PublicSettings(models.Model):
     post_per_homePage=models.IntegerField(max_length=3,default=10) #Number of posts per page
     post_per_cat=models.IntegerField(max_length=3,default=10) #Number of posts per page
     is_Register=models.BooleanField(default=1)
+    is_Comment=models.BooleanField(default=1)
