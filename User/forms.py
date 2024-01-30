@@ -199,6 +199,7 @@ class SocialLinkForm(ModelForm):
             }),
         }
 
+
 class UserProfileForm(ModelForm):
     class Meta:
         model=models.User

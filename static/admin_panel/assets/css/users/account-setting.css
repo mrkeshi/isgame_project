@@ -44,7 +44,7 @@
   .general-info .info, .general-info .save-info {
     padding: 20px; }
   .general-info .info .form {
-    width: 92%; }
+    width: 100%; }
   .general-info .info .upload {
     border-left: 1px solid #ebedf2; }
     .general-info .info .upload p {

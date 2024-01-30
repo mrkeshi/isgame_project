@@ -1,18 +1,14 @@
 from django.contrib import messages
-from django.db.models import Count, F
-from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
+
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
-from django.views.generic.base import TemplateView
+
 from django.views.generic import FormView, UpdateView, ListView
-from django.views import View
-# Create your views here.
-from django.views.generic.detail import BaseDetailView
+from django.urls import reverse
 
-from SiteModule.forms import AddSocialForm
-from SiteModule.models import SocialMediaLink
-
-
+from SiteModule.forms import AddSocialForm,SettingForm
+from SiteModule.models import SocialMediaLink,PublicSettings
+from User.forms import SocialLinkForm
 class addSocialLink(FormView):
     template_name = 'Social/addSocialLink.html'
     success_url = reverse_lazy('social_link')
@@ -76,6 +72,21 @@ def delete_item(request, id):
     return redirect(request.META.get('HTTP_REFERER'))
 
 
-def Manage_Settings(requst):
+def Manage_Settings(request):
+    print(PublicSettings.objects.first())
+    form1 = SettingForm(instance=PublicSettings.objects.first())
+    social_link_instance =SocialMediaLink.objects.filter(user=None).first()
+    form2=SocialLinkForm(instance=social_link_instance)
+    if (request.method == "POST"):
+        form1 = SettingForm(request.POST, request.FILES, instance=PublicSettings.objects.first())
+        form2 = SocialLinkForm(request.POST,instance=social_link_instance)
+        if (form1.is_valid() and form2.is_valid()):
+            form2.save()
+            form1.save()
+        return redirect(reverse('manage_settings'))
+    else:
+        return render(request,'Settings/Setting.html',{
+            'form1':form1,
+             'form2':form2
+        })
 
-    return render(requst,"Settings/Setting.html",{})

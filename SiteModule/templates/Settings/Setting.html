@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="{% static 'admin_panel/assets/css/users/account-setting.css' %}">
     <link rel="stylesheet" href="{% static 'admin_panel/plugins/dropify/dropify.min.css' %}">
-
+            <link rel="stylesheet" href="{% static 'admin_panel/plugins/sweetalerts/sweetalert2.min.css' %}">
 {% endblock %}
 {% block content %}
 
@@ -23,13 +23,13 @@
                          data-offset="-100">
                         <div class="row">
                             <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
-                                <form id="general-info" class="section general-info">
+                                <div id="general-info" class="section general-info">
                                     <div class="info">
                                         <div class="row">
                                             <div class="col-lg-11 mx-auto">
-                                                <div class="row">
-                                                    <div class="upload mx-auto mt-4 pr-md-4">
-                                                            <div class="dropify-wrapper mx-auto has-preview">
+                                                <div class="row " style="justify-content:center">
+                                                    <div class="upload  mt-4 pr-md-4">
+                                                            <div class="dropify-wrapper mx-auto has-preview"  style="width:100px;height:100px">
 
                                                                 <div class="dropify-loader" style="display: none;"></div>
                                                                 <div class="dropify-errors-container">
@@ -37,9 +37,9 @@
                                                                 </div>
                                                                 <input type="file" id="input-file-max-fs" class="dropify" data-default-file="assets/img/200x200.jpg" data-max-file-size="2M">
                                                                 <button type="button" class="dropify-clear"><i class="flaticon-close-fill"></i></button>
-                                                                <div class="dropify-preview" style="display: block;"><span class="dropify-render"><img src="/static/admin_panel/assets/img/200x200.jpg"></span>
+                                                                <div class="dropify-preview" style="display: block;"><span class="dropify-render"><img id="file-preview" src="{% if form1.logoIcon.url %} {{ form1.logoIcon.url }} {% endif %}"></span>
                                                                     <div class="dropify-infos">
-                                                                        <div class="dropify-infos-inner"><p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner">200x200.jpg</span>
+                                                                        <div class="dropify-infos-inner"><p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner">50*50.jpg</span>
                                                                         </p>
                                                                             <p class="dropify-infos-message">Upload or
                                                                                 Drag
@@ -49,38 +49,29 @@
                                                             </div>
                                                             <p class="mt-2 text-center mx-auto"><i class="flaticon-cloud-upload mr-1"></i>
                                                                 آپلود
-                                                                لوگو </p>
+                                                                 آیکون لوگو </p>
                                                         </div>
                                                     <div class="col-xl-10 col-lg-12 col-md-8 mt-md-0 mt-4">
                                                         <div class="form">
                                                             <div class="row">
                                                                 <div class="col-sm-6">
                                                                     <div class="form-group">
-                                                                        <label for="fullName">عنوان</label>
-                                                                        <input type="text" class="form-control mb-4"
-                                                                               id="firstname"
-                                                                               placeholder="عنوان سایت"
-                                                                               value="ایمان پاکروح">
+                                                                        <label for="title">عنوان</label>
+                                                                        {{form1.title}}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-6">
                                                                     <div class="form-group">
-                                                                        <label for="fullName">آدرس سایت</label>
-                                                                        <input type="text" class="form-control mb-4"
-                                                                               id="lastname"
-                                                                               placeholder="isgame.ir"
-                                                                               value="ایمان پاکروح">
+                                                                        <label for="url">آدرس سایت</label>
+                                                                        {{form1.url}}
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                  <div class="col-sm-12">
                                                                     <div class="form-group">
-                                                                        <label for="fullName">ایمیل اطلاع رسانی</label>
-                                                                        <input type="text" class="form-control mb-4"
-                                                                               id="lastname"
-                                                                               placeholder="isgame.ir"
-                                                                               value="alireza@gmail.com">
+                                                                        <label for="email">ایمیل اطلاع رسانی</label>
+                                                                     {{form1.email}}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -91,39 +82,39 @@
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
 
                             <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
-                                <form id="about" class="section about">
+                                <div id="about" class="section about">
                                     <div class="info">
-                                        <div class="row">
-                                            <div class="col-md-4 ">
+                                        <div class="row mt-2" style="height:200px">
+                                            <div class="col-md-3 ">
 
                                                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                                        <div class="upload mx-auto mt-4 ">
-                                                            <div class="dropify-wrapper mx-auto has-preview">
+                                                        <div class="upload mx-auto mt-2 ">
+                                                            <div class="dropify-wrapper mx-auto has-preview-my">
 
                                                                 <div class="dropify-loader"
                                                                      style="display: none;"></div>
                                                                 <div class="dropify-errors-container">
                                                                     <ul></ul>
                                                                 </div>
-                                                                <input type="file" id="input-file-max-fs"
+                                                                <input type="file" id="input-file-max-fs2"
                                                                        class="dropify"
                                                                        data-default-file="assets/img/200x200.jpg"
                                                                        data-max-file-size="2M">
                                                                 <button type="button" class="dropify-clear"><i
                                                                         class="flaticon-close-fill"></i></button>
-                                                                <div class="dropify-preview"
-                                                                     style="display: block;"><span
-                                                                        class="dropify-render"><img
-                                                                        src="{% static 'admin_panel/assets/img/200x200.jpg' %}"></span>
+                                                                <div class="dropify-preview p-0"
+                                                                     style="display: block; border-radius:20px"><span
+                                                                        class="dropify-render"><img id="file-prew"
+                                                                        src="{% if form1.logoSite.url %} {{ form1.logoSite.url }} {% endif %}"></span>
                                                                     <div class="dropify-infos">
                                                                         <div class="dropify-infos-inner"><p
                                                                                 class="dropify-filename"><span
                                                                                 class="file-icon"></span> <span
-                                                                                class="dropify-filename-inner">200x200.jpg</span>
+                                                                                class="dropify-filename-inner">200*150.jpg</span>
                                                                         </p>
                                                                             <p class="dropify-infos-message">Upload or
                                                                                 Drag
@@ -133,62 +124,59 @@
                                                             </div>
                                                             <p class="mt-2 text-center mx-auto"><i class="flaticon-cloud-upload mr-1"></i>
                                                                 آپلود
-                                                                لوگو</p>
+                                                                لوگوی هدر</p>
                                                         </div>
                                                     </div>
 
-                                                        <div class="n-chk col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                                <label class="new-control new-checkbox checkbox-success">
-                                                  <input type="checkbox" class="new-control-input">
-                                                  <span class="new-control-indicator"></span>قابلیت ثبت نام
-                                                </label>
-                                            </div>
-                                                    <div class="n-chk col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                                <label class="new-control new-checkbox checkbox-success">
-                                                  <input type="checkbox" class="new-control-input">
-                                                  <span class="new-control-indicator"></span>  ارسال کامنت فعال باشد
-                                                </label>
-                                            </div>
+
                                             </div>
                                             <div class="col-md-8 ">
                                                 <div class="form-group">
-                                                    <label for="aboutBio">توضیحات کوتاه</label>
-                                                    <textarea class="form-control" id="aboutBio"
-                                                              placeholder="در مورد خودتان چیز جالبی بگویید" rows="5">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شرائه گیرد.</textarea>
-                                                </div>
+                                                    <label for="description">توضیحات کوتاه</label>
+                                                        {{form1.description}}
+                                                    </div>
 
                                                         <div class="row">
                                                                  <div class="col-sm-6">
                                                                     <div class="form-group">
-                                                                        <label for="fullName">تعداد پست در صفحه اصلی </label>
-                                                                        <input type="number" class="form-control mb-4"
-                                                                               id="lastname"
-                                                                               placeholder="51"
-                                                                               value="5 ">
+                                                                        <label for="post_per_homePage">تعداد پست در صفحه اصلی </label>
+                                                                        {{form1.post_per_homePage}}
                                                                     </div>
                                                                 </div>
 
 
                                                                  <div class="col-sm-6">
                                                                     <div class="form-group">
-                                                                        <label for="fullName">تعداد پست در هر صفحه</label>
-                                                                        <input type="number" class="form-control mb-4"
-                                                                               id="lastname"
-                                                                               placeholder="51"
-                                                                               value="5 ">
+                                                                        <label for="post_per_cat">تعداد پست در هر صفحه</label>
+                                                                        {{form1.post_per_cat}}
                                                                     </div>
                                                                 </div>
                                                             </div>
                                             </div>
 
                                         </div>
+                                        <div class="row mx-auto">
+                                                        <div class="n-chk col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                                <label class="new-control new-checkbox checkbox-success">
+                                                  {{form1.is_Register}}
+                                                  <span class="new-control-indicator"></span>قابلیت ثبت نام
+                                                </label>
+                                            </div>
+
+                                                    <div class="n-chk col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                                <label class="new-control new-checkbox checkbox-success">
+                                                    {{form1.is_Comment}}
+                                                  <span class="new-control-indicator"></span>  ارسال کامنت فعال باشد
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
 
 
                             <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
-                                <form id="social" class="section social">
+                                <div id="social" class="section social">
                                     <div class="info">
                                         <h5 class="">اجتماعی</h5>
                                         <div class="row">
@@ -208,10 +196,7 @@
                                                                     x="2" y="9" width="4" height="12"></rect><circle
                                                                     cx="4" cy="4" r="2"></circle></svg></span>
                                                             </div>
-                                                            <input type="text" class="form-control"
-                                                                   placeholder="نام کاربری لینکدین"
-                                                                   aria-label="Username"
-                                                                   aria-describedby="linkedin" value="iman">
+                                                            {{form2.linkedin}}
                                                         </div>
                                                     </div>
 
@@ -226,9 +211,7 @@
                                                                     class="feather feather-twitter"><path
                                                                     d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></span>
                                                             </div>
-                                                            <input type="text" class="form-control"
-                                                                   placeholder="نام کاربری توییتر" aria-label="Username"
-                                                                   aria-describedby="tweet" value="@iman">
+                                                          {{form2.twitter}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -247,9 +230,7 @@
                                                                     class="feather feather-facebook"><path
                                                                     d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></span>
                                                             </div>
-                                                            <input type="text" class="form-control"
-                                                                   placeholder="نام کاربری فیسبوک" aria-label="Username"
-                                                                   aria-describedby="fb" value="iman.pakrouh">
+                                                        {{form2.facebook}}
                                                         </div>
                                                     </div>
 
@@ -264,10 +245,7 @@
                                                                     class="feather feather-github"><path
                                                                     d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></span>
                                                             </div>
-                                                            <input type="text" class="form-control"
-                                                                   placeholder="نام کاربری گیت هاب"
-                                                                   aria-label="Username"
-                                                                   aria-describedby="github" value="@iman1300">
+                                                          {{form2.github}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -277,35 +255,20 @@
                                                     <div class="col-md-6">
                                                         <div class="input-group social-fb mb-3">
                                                             <div class="input-group-prepend mr-3">
-                                                            <span class="input-group-text" id="fb"><svg
-                                                                    xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round"
-                                                                    class="feather feather-facebook"><path
-                                                                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></span>
+                                       <span class="input-group-text" id="fb"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></span>
                                                             </div>
-                                                            <input type="text" class="form-control"
-                                                                   placeholder="نام کاربری فیسبوک" aria-label="Username"
-                                                                   aria-describedby="fb" value="iman.pakrouh">
+                                                    {{form2.telegram}}
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <div class="input-group social-github mb-3">
                                                             <div class="input-group-prepend mr-3">
-                                                            <span class="input-group-text" id="github"><svg
-                                                                    xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round"
-                                                                    class="feather feather-github"><path
-                                                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></span>
+                                                            <span class="input-group-text">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                                            </span>
                                                             </div>
-                                                            <input type="text" class="form-control"
-                                                                   placeholder="نام کاربری گیت هاب"
-                                                                   aria-label="Username"
-                                                                   aria-describedby="github" value="@iman1300">
+                                                         {{form2.instagram}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -315,80 +278,30 @@
                                                     <div class="col-md-6">
                                                         <div class="input-group social-fb mb-3">
                                                             <div class="input-group-prepend mr-3">
-                                                            <span class="input-group-text" id="fb"><svg
-                                                                    xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round"
-                                                                    class="feather feather-facebook"><path
-                                                                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></span>
+                                                            <span class="input-group-text" id="fb"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-youtube"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></span>
                                                             </div>
-                                                            <input type="text" class="form-control"
-                                                                   placeholder="نام کاربری فیسبوک" aria-label="Username"
-                                                                   aria-describedby="fb" value="iman.pakrouh">
+                                                         {{form2.youtube}}
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <div class="input-group social-github mb-3">
                                                             <div class="input-group-prepend mr-3">
-                                                            <span class="input-group-text" id="github"><svg
-                                                                    xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round"
-                                                                    class="feather feather-github"><path
-                                                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></span>
-                                                            </div>
-                                                            <input type="text" class="form-control"
-                                                                   placeholder="نام کاربری گیت هاب"
-                                                                   aria-label="Username"
-                                                                   aria-describedby="github" value="@iman1300">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                              <div class="col-md-11 mx-auto">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="input-group social-fb mb-3">
-                                                            <div class="input-group-prepend mr-3">
-                                                            <span class="input-group-text" id="fb"><svg
-                                                                    xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round"
-                                                                    class="feather feather-facebook"><path
-                                                                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></span>
-                                                            </div>
-                                                            <input type="text" class="form-control"
-                                                                   placeholder="نام کاربری فیسبوک" aria-label="Username"
-                                                                   aria-describedby="fb" value="iman.pakrouh">
-                                                        </div>
-                                                    </div>
+                                                            <span class="input-group-text" id="github">
+                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
 
-                                                    <div class="col-md-6">
-                                                        <div class="input-group social-github mb-3">
-                                                            <div class="input-group-prepend mr-3">
-                                                            <span class="input-group-text" id="github"><svg
-                                                                    xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                                    stroke="currentColor" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round"
-                                                                    class="feather feather-github"><path
-                                                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></span>
+            <path d="M12.0014 1.5938C2.7317 1.5906-1.9119 12.7965 4.641 19.3515c2.975 2.976 7.4496 3.8669 11.3374 2.257 3.8877-1.61 6.4228-5.4036 6.4228-9.6116 0-5.7441-4.6555-10.4012-10.3997-10.4031zM6.11 6.783c.5011-2.5982 3.8927-3.2936 5.376-1.1028 1.4834 2.1907-.4216 5.0816-3.02 4.5822-1.6118-.3098-2.6668-1.868-2.356-3.4794zm4.322 8.9882c-.5045 2.5971-3.8965 3.288-5.377 1.0959-1.4807-2.1922.427-5.0807 3.0247-4.5789 1.612.3114 2.6655 1.8714 2.3524 3.483zm1.2605-2.405c-1.1528-.2231-1.4625-1.7273-.4917-2.3877.9708-.6604 2.256.18 2.0401 1.3343-.1347.7198-.8294 1.1924-1.5484 1.0533zm6.197 3.8375c-.501 2.5981-3.8927 3.2935-5.376 1.1028-1.4834-2.1908.4217-5.0817 3.0201-4.5822 1.6117.3097 2.6667 1.8679 2.356 3.4794zm-1.9662-5.5018c-2.5981-.501-3.2935-3.8962-1.1027-5.3795 2.1907-1.4834 5.0816.4216 4.5822 3.02-.3082 1.6132-1.8668 2.6701-3.4795 2.3595zm-2.3348 11.5618l2.2646.611c1.9827.5263 4.0167-.6542 4.5433-2.6368l.639-2.4016a11.3828 11.3828 0 0 1-7.4469 4.4274zM21.232 3.5985l-2.363-.6284a11.3757 11.3757 0 0 1 4.3538 7.619l.6495-2.4578c.5194-1.9804-.6615-4.0076-2.6403-4.5328zM.6713 13.8086l-.5407 2.04c-.5263 1.9826.6542 4.0166 2.6368 4.5432l2.1066.5618a11.3792 11.3792 0 0 1-4.2027-7.145zM10.3583.702L8.1498.1261C6.166-.4024 4.1296.7785 3.603 2.763l-.5512 2.082A11.3757 11.3757 0 0 1 10.3583.702Z"></path></svg>
+                                                            </span>
                                                             </div>
-                                                            <input type="text" class="form-control"
-                                                                   placeholder="نام کاربری گیت هاب"
-                                                                   aria-label="Username"
-                                                                   aria-describedby="github" value="@iman1300">
+                                                         {{form2.aparat}}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
 
 
@@ -419,4 +332,43 @@
     <script type="module" src="{% static 'admin_panel/plugins/dropify/dropify.min.js' %}"></script>
     <script type="module" src="{% static 'admin_panel/plugins/blockui/jquery.blockUI.min.js' %}"></script>
     <script type="module" src="{% static 'admin_panel/assets/js/users/account-settings.js' %}"></script>
+    <script  src="{% static 'admin_panel/plugins/sweetalerts/sweetalert2.min.js' %}"></script>
+
+
+       <script>
+
+{% for msg in messages%}
+
+{% endfor %}
+        const input = document.getElementById('input-file-max-fs');
+
+            const previewPhoto = () => {
+            const file = input.files;
+            if (file) {
+                const fileReader = new FileReader();
+                const preview = document.getElementById('file-preview');
+                fileReader.onload = event => {
+                    preview.setAttribute('src', event.target.result);
+                }
+                fileReader.readAsDataURL(file[0]);
+            }
+        }
+        input.addEventListener('change', previewPhoto);
+
+
+        const input2 = document.getElementById('input-file-max-fs2');
+
+            const previewPhoto2 = () => {
+            const file2 = input2.files;
+            if (file2) {
+                const fileReader2 = new FileReader();
+                const preview2 = document.getElementById('file-prew');
+                fileReader2.onload = event => {
+                    preview2.setAttribute('src', event.target.result);
+                }
+                fileReader2.readAsDataURL(file2[0]);
+            }
+        }
+        input2.addEventListener('change', previewPhoto2);
+        </script>
 {% endblock %}

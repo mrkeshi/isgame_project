@@ -2,7 +2,7 @@
         {% load static %}
         {% load poll_extras %}
         {% block title %}
-        پروفایل کاربری | ‌ایزگیم
+        پروفایل کاربری
         {% endblock %}
         {% block header_reference %}
 
@@ -256,9 +256,9 @@
                                        <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
 
                                             <div class="info mb-4">
-                                                <h5 class="mb-4"> پسورد</h5>
-                                                <div class="row " style="margin-right:0">
-                                                    <h6 class="mt-n1 mr-4 ">
+                                                <h5 class="mb-8"> پسورد</h5>
+                                                <div class="row  mt-4" style="margin-right:0">
+                                                    <h6 class="mt-n1 mr-4 mb-4 ">
                                            <a class="text-info" href="{% url 'resetpassword' %}" >لطفا جهت تغییر پسورد بر روی این لینک کلیک کنید.</a>
 
                                                     </h6>
@@ -287,8 +287,12 @@
             <script type="module" src="{% static 'admin_panel/plugins/dropify/dropify.min.js' %}"></script>
             <script type="module" src="{% static 'admin_panel/plugins/blockui/jquery.blockUI.min.js' %}"></script>
             <script type="module" src="{% static 'admin_panel/assets/js/users/account-settings.js' %}"></script>
+
+
         <script>
-        const input = document.getElementById('file-upload');
+
+
+            const input = document.getElementById('file-upload');
 
             const previewPhoto = () => {
             const file = input.files;

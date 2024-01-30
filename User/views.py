@@ -190,12 +190,13 @@ def Profile(request):
         form1 = UserProfileForm(request.POST, request.FILES, instance=request.user)
         form2 = SocialLinkForm(request.POST,instance=social_link_instance)
         if (form1.is_valid() and form2.is_valid()):
-
+            messages.success(request, 'اطلاعات شما با موفقیت ذخیره شد')
             form2.save()
             form1.save()
+        else:
+            messages.error(request, 'لطفا ورودی ها را کنترل کرده و مجددا تلاش فرمایید.')
         return redirect(reverse('profile_admin'))
-    # form1 =request.user.select_related('socialmedialink').get(pk=6)
-    # formUser=
+
     else:
         return render(request,'User/Profile.html',{
             'User':request.user,

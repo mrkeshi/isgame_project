@@ -8,7 +8,5 @@ from User.models import User
 def addProfileSocialToUser(sender, instance, created, **kwargs):
 
     if created:
-
         links, created = SocialMediaLink.objects.get_or_create(user=instance)
-
         print("ProfileSocial created")

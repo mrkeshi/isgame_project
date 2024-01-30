@@ -19,8 +19,7 @@ class SocialMediaLink(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE,unique=True,null=True)
 
-    def __str__(self):
-        return self.pk +'social link'
+
 
 
 class PublicSettings(models.Model):
@@ -31,7 +30,7 @@ class PublicSettings(models.Model):
     email=models.EmailField(default="admin@gmail.com")
     logoIcon=models.ImageField(upload_to='SiteSetting/Logo',null=True,blank=True)
     logoSite=models.ImageField(upload_to='SiteSetting/Logo',null=True,blank=True)
-    post_per_homePage=models.IntegerField(max_length=3,default=10) #Number of posts per page
-    post_per_cat=models.IntegerField(max_length=3,default=10) #Number of posts per page
+    post_per_homePage=models.IntegerField(max_length=3,default=10)
+    post_per_cat=models.IntegerField(max_length=3,default=10)
     is_Register=models.BooleanField(default=1)
     is_Comment=models.BooleanField(default=1)

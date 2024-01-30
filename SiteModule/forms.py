@@ -1,6 +1,6 @@
 
 from django import forms
-from django.forms import models, TextInput
+from django.forms import models, TextInput, NumberInput
 
 from SiteModule.models import SocialMediaLink, PublicSettings
 
@@ -66,6 +66,7 @@ class AddSocialForm(forms.ModelForm):
                 'class': 'form-control h-100 ',
                 'placeholder': "paressep28@gmail.com",
             }),
+
             'twitter': forms.TextInput(attrs={
                 'class': 'form-control h-100 ',
                 'placeholder': "twitter.com/mrkafold",
@@ -90,25 +91,31 @@ class SettingForm(forms.ModelForm):
         return x
     class Meta:
         model=PublicSettings
-        fields=["title","description","url","email","logoIcon","logoSite","post_per_homePage","post_per_cat","is_Register"]
-        post_per_homePage = forms.IntegerField(widget=forms.TextInput(attrs={
-            'id': 'post_per_homePage',
-            'class': 'form-control',
-        }))
-        post_per_cat = forms.IntegerField(widget=forms.TextInput(attrs={
-            'id': 'post_per_cat',
-            'class': 'form-control',
-        }))
+        fields=["title","description","url","email","logoIcon","logoSite","post_per_homePage","post_per_cat","is_Register","is_Comment"]
+
         widgets={
             'title':TextInput(attrs={
                 'id':'title',
                 'placeholder':'عنوان سایت',
                 'class':'form-control'
             }),
+            'post_per_homePage':NumberInput(attrs={
+                'class': 'form-control mb-4',
+                'id': 'post_per_homePage',
+            }),
+            'post_per_cat': NumberInput(attrs={
+                'class': 'form-control mb-4',
+                'id': 'post_per_cat',
+            }),
             'url': TextInput(attrs={
                 'id': 'url',
                 'placeholder': 'آدرس سایت',
                 'class': 'form-control'
+            }),
+            'email': TextInput(attrs={
+                'id': 'url',
+                'placeholder': 'ایمیل اطلاع رسانی',
+                'class': 'form-control mb-4'
             }),
             'logoIcon':forms.FileInput(attrs={
                 'id':'logoIcon',
@@ -122,13 +129,17 @@ class SettingForm(forms.ModelForm):
                 'id': 'description',
                 'placeholder': 'توضیحات کوتاه در مورد سایت',
                 'class': 'form-control',
-                'rows':5,
+                'rows':4,
             }),
 
             'is_Register': forms.CheckboxInput(attrs={
                 'id': 'is_Register',
-                'class': 'form-control',
+                'class': 'new-control-input',
             }),
+            'is_Comment':forms.CheckboxInput(attrs={
+                'id':'is_Comment',
+                'class':'new-control-input'
+            })
         }
 
 

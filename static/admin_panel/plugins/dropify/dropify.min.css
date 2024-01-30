@@ -425,3 +425,8 @@
   100% {
     -webkit-transform: rotateZ(0);
     transform: rotateZ(0); } }
+.has-preview-my{
+width:150px;
+height:150px;
+border:none
+}

@@ -4,8 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="create contact form">
+    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/SiteModule/migrations/0006_publicsettings_is_comment.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contact/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Contact/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contact/templates/Contact/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/Contact/templates/Contact/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/signals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/templates/Settings/Setting.html" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/templates/Settings/Setting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/templates/User/Profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/User/templates/User/Profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Home/dist/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Home/dist/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin_panel/assets/css/users/account-setting.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin_panel/assets/css/users/account-setting.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin_panel/plugins/dropify/dropify.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin_panel/plugins/dropify/dropify.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout/HomeLayout/HomeShared/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/HomeLayout/HomeShared/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704524230035</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update">
+      <option name="closed" value="true" />
+      <created>1706516826289</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1706516826289</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,6 +296,7 @@
     <MESSAGE value="We returned" />
     <MESSAGE value="update profile" />
     <MESSAGE value="create contact form" />
-    <option name="LAST_COMMIT_MESSAGE" value="create contact form" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>
