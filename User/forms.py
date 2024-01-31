@@ -47,7 +47,7 @@ class RegisterForm(forms.Form):
     checkBox = forms.BooleanField(widget=forms.CheckboxInput(attrs={
         'class': 'new-control-input'
     }), error_messages={
-        'required': 'طفا فیلد تایید قوانین را وارد کنید.'
+        'required': 'لطفا فیلد تایید قوانین را وارد کنید.'
     })
 
     def clean_password_confirm(self):
@@ -74,6 +74,9 @@ class LoginForm(forms.Form):
         'class': 'form-control',
         'placeholder': 'پسورد'
     }))
+    checkBox = forms.BooleanField(widget=forms.CheckboxInput(attrs={
+        'class': 'new-control-input'
+    }),required=False)
 
     def clean_username(self):
         user = User.objects.filter(

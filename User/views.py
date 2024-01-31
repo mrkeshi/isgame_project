@@ -77,7 +77,9 @@ class auth_admin_login(FormView):
         else:
             messages.error(self.request, "نام کاربری با رمز عبور مطابقت ندارد")
             return redirect(self.request.META.get('HTTP_REFERER'))
-
+        if(form.cleaned_data.get('checkBox')):
+            print("checked")
+            self.request.session.set_expiry(43200) #for 12 hours
         login(self.request, user)
         Add_Attempt(user, 1, self.request)
         return redirect(reverse_lazy('dashboard'))

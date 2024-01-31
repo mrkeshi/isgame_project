@@ -30,14 +30,14 @@ class addSocialLink(FormView):
             return self.form_invalid(form)
 
         data=form.save(commit=False)
-        if(self.request.POST.get('my!user')=='1'):
+        if(self.request.POST.get('myuser')=='1'):
             data.user=self.request.user
         data.save()
 
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        print("form is not valid")
+
         return super(addSocialLink, self).form_invalid(form)
 
 
@@ -73,7 +73,8 @@ def delete_item(request, id):
 
 
 def Manage_Settings(request):
-    print(PublicSettings.objects.first())
+
+
     form1 = SettingForm(instance=PublicSettings.objects.first())
     social_link_instance =SocialMediaLink.objects.filter(user=None).first()
     form2=SocialLinkForm(instance=social_link_instance)
@@ -83,10 +84,18 @@ def Manage_Settings(request):
         if (form1.is_valid() and form2.is_valid()):
             form2.save()
             form1.save()
-        return redirect(reverse('manage_settings'))
+            messages.success(request,'تنظیمات با موفقیت بروزرسانی شد')
+            return redirect(reverse('manage_settings'))
+        else:
+            return render(request,'Settings/Setting.html',{
+            'form1':form1,
+            'form2':form2,
+            'logos':PublicSettings.objects.only('logoSite','logoIcon').first()
+        })
     else:
         return render(request,'Settings/Setting.html',{
             'form1':form1,
-             'form2':form2
+            'form2':form2,
+            'logos':PublicSettings.objects.only('logoSite','logoIcon').first()
         })
 

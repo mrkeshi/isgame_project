@@ -71,12 +71,6 @@ class AddSocialForm(forms.ModelForm):
                 'class': 'form-control h-100 ',
                 'placeholder': "twitter.com/mrkafold",
             }),
-
-
-
-
-
-
         }
 
 class SettingForm(forms.ModelForm):
@@ -86,7 +80,7 @@ class SettingForm(forms.ModelForm):
             for f_name in self.fields:
                 if f_name in self.errors:
                     classes = self.fields[f_name].widget.attrs.get('class')
-                    classes += " form-error"
+                    classes += " set-error"
                     self.fields[f_name].widget.attrs['class'] = classes
         return x
     class Meta:
@@ -131,7 +125,6 @@ class SettingForm(forms.ModelForm):
                 'class': 'form-control',
                 'rows':4,
             }),
-
             'is_Register': forms.CheckboxInput(attrs={
                 'id': 'is_Register',
                 'class': 'new-control-input',

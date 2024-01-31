@@ -1,0 +1,182 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% load render_partial %}
+{% block title %}
+مدیریت تماس ها  | ایزگیم
+{% endblock %}
+
+{% block header_reference %}
+<!-- BEGIN PAGE LEVEL CUSTOM STYLES -->
+<link rel="stylesheet" type="text/css" href="{% static 'admin_panel/plugins/table/datatable/datatables.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'admin_panel/assets/css/forms/theme-checkbox-radio.css' %}">
+
+<link rel="stylesheet" type="text/css"
+      href="{% static 'admin_panel/plugins/table/datatable/custom_dt_custom.css' %}">
+<link rel="stylesheet" type="text/css"
+      href="{% static 'admin_panel/plugins/table/datatable/dt-global_style.css' %}">
+
+<!-- END PAGE LEVEL CUSTOM STYLES -->
+{% endblock %}
+
+{% block content %}
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">حذف ایتم</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-text">آیا شما برای حذف این پست مطمئن هستید؟ در صورت تایید این پست در پایگاه داده پاک
+                    می گردد. </p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info" data-dismiss="modal"><i class="flaticon-cancel-12"></i> بستن</button>
+                <button type="button" class="btn btn-danger text-center" id="btn_confirm_delete">
+                    <span>تایید</span>
+                    <svg style="display: none" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round" class="feather feather-loader spin ">
+                        <line x1="12" y1="2" x2="12" y2="6"></line>
+                        <line x1="12" y1="18" x2="12" y2="22"></line>
+                        <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                        <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+                        <line x1="2" y1="12" x2="6" y2="12"></line>
+                        <line x1="18" y1="12" x2="22" y2="12"></line>
+                        <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+                        <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+                    </svg>
+
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+    <div class="widget-content widget-content-area br-6" style="    box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.0901961), 0 1px 20px 0 rgba(0, 0, 0, 0.08), 0px 1px 11px 0px rgba(0, 0, 0, 0.06) !important;">
+        <div class="table-responsive mb-4 mt-4">
+            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table class="multi-table table table-hover dataTable" style="width:100%"
+                               id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                            <thead>
+                            <tr role="row">
+                        <th rowspan="1" colspan="1">نام</th>
+                                <th rowspan="1" colspan="1"> ایمیل</th>
+                                <th class="text-center" rowspan="1" colspan="1">وضیعت</th>
+                                <th class="text-center" rowspan="1" colspan="1">عمل</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+    {% for c in list %}
+                            <tr role="row">
+                                <td class="sorting_1">{{c.name}}  </td>
+                                <td> {{c.email}}</td>
+
+
+
+                                <td class="text-center">
+                                    {%if c.is_Displayed %}
+                                    <p class="text-success">خوانده شده</p>
+                                    {% else %}
+                                    <p class="text-danger">خوانده نشده</p>
+                                    {% endif %}
+
+                                </td>
+                                <td class="text-center">
+                                    <button class="btn btn-outline-primary">مشاهده</button>
+                                    <a href="{% url 'delete_contact' pk=c.id %}" class="btn btn-outline-danger">حذف</a>
+
+
+                                </td>
+
+                            </tr>
+{% endfor %}
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th rowspan="1" colspan="1">نام</th>
+                                <th rowspan="1" colspan="1"> ایمیل</th>
+                                <th class="text-center" rowspan="1" colspan="1">وضیعت</th>
+                                <th class="text-center" rowspan="1" colspan="1">عمل</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                   <div class="row">
+                <div class="col-sm-12 col-md-5">
+                    <div class="dataTables_info" id="zero-config_info" role="status" aria-live="polite">
+                        صفحه {{ page_obj.number }} از
+                        {{ paginator.num_pages }}
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-7">
+                    <div class="dataTables_paginate paging_simple_numbers" id="zero-config_paginate">
+                        <ul class="pagination">
+                            {% if page_obj.has_previous %}
+                                <li class="paginate_button page-item next" id="zero-config_next">
+                                    <a href="?page={{ page_obj.previous_page_number }}"
+                                       aria-controls="zero-config"
+                                       data-dt-idx="5"
+                                       tabindex="0"
+                                       class="page-link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24"
+                                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                             stroke-linejoin="round" class="feather feather-arrow-right">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </a></li>
+                            {% endif %}
+                            {% for pageNumber in paginator.page_range %}
+                                <li></li>
+                                <li class="paginate_button page-item {% if page_obj.number == pageNumber %} active  {% endif %}">
+                                    <a href="?page={{ pageNumber }}" aria-controls="zero-config" data-dt-idx="1"
+                                       tabindex="0" class="page-link">{{ pageNumber }}</a>
+                                </li>
+                            {% endfor %}
+                            <li></li>
+                            {% if page_obj.has_next %}
+                                <li class="paginate_button page-item previous " id="zero-config_previous"><a
+                                        href="?page={{ page_obj.next_page_number }}" aria-controls="zero-config"
+                                        data-dt-idx="0" tabindex="0" class="page-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="feather feather-arrow-left">
+                                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                                        <polyline points="12 19 5 12 12 5"></polyline>
+                                    </svg>
+                                </a></li>
+
+                            {% endif %}
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block script %}
+
+
+<script src="{% static 'admin_panel/plugins/table/datatable/datatables.js' %}"></script>
+<script src="{% static 'assets/webpack_bundles/axious_main_bundler.js' %}"></script>
+<script>
+
+</script>
+    <script  src="{% static 'admin_panel/plugins/sweetalerts/sweetalert2.min.js' %}"></script>
+{% endblock %}

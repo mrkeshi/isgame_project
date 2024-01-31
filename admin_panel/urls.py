@@ -5,5 +5,6 @@ urlpatterns=[
     path('',dasboard_class.dashboard_view,name="dashboard"),
     path('Menu/',include('Menu.urls')),
     path('setting/',include('SiteModule.urls')),
-    path('',include('Post.urls'))
+    path('',include('Post.urls')),
+    path('contacts',include('Contact.urls')),
 ]

@@ -305,3 +305,6 @@
     border-left: none; }
   .skill .input-form {
     width: 100%; } }
+
+.set-error{
+border:1px solid #BE0F0F}
