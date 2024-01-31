@@ -6,5 +6,5 @@ urlpatterns=[
     path('Menu/',include('Menu.urls')),
     path('setting/',include('SiteModule.urls')),
     path('',include('Post.urls')),
-    path('contacts',include('Contact.urls')),
+    path('contacts/',include('Contact.urls')),
 ]

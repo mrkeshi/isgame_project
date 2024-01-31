@@ -43,6 +43,7 @@
                                                                         <div class="dropify-errors-container">
                                                                             <ul></ul>
                                                                         </div>
+
                                                                         {{form1.avatar}}
 
                                                                         <button type="button" class="dropify-clear"><i
@@ -51,8 +52,8 @@
                                                                              style="display: block;"><span
                                                                                 class="dropify-render"><img
                                                                              id="file-preview" height="200px" width="200px" src="
-                                                                             {% if User.avatar.url  %}
-                                                                             {{User.avatar.url}}
+                                                                             {% if User.avatar  %}
+                                                                             {{ User.avatar.url }}
                                                                              {% endif %}
         "></span>
                                                                             <div class="dropify-infos">

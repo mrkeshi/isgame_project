@@ -33,7 +33,7 @@ class ContactList(ListView):
     paginate_by = 10
     template_name = 'Contact/contactList.html'
     context_object_name = "list"
-    ordering = ['is_Displayed','id']
+    ordering = ['is_Displayed','-date']
 
 def Delete_Contact(request, pk):
     item = Contact.objects.filter(id=pk).first()

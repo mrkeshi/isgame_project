@@ -31,4 +31,5 @@ class TokenAuth(models.Model):
     time = models.DateTimeField(auto_now_add=True)
     token = models.TextField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    date = models.DateTimeField(auto_created=True, auto_now_add=True)
 
