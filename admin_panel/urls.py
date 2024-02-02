@@ -7,4 +7,7 @@ urlpatterns=[
     path('setting/',include('SiteModule.urls')),
     path('',include('Post.urls')),
     path('contacts/',include('Contact.urls')),
+    path('gallery/', ),
+    path('gallery/add',),
+
 ]

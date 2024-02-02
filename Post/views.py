@@ -19,7 +19,7 @@ from django.core.paginator import Paginator
 def FindOrCreateTag(tags):
     item = []
     for tag in tags:
-        obj = ArticleTags.objects.get_or_create(title=tag, defaults={'title': tag, 'url': slugify(tag)})
+        obj = ArticleTags.objects.get_or_create(title=tag, defaults={'title': tag, 'url': slugify(tag,allow_unicode=True)})
         item.append(obj[0].id)
     return item
 

@@ -34,3 +34,10 @@ class PublicSettings(models.Model):
     post_per_cat=models.IntegerField(max_length=3,default=10)
     is_Register=models.BooleanField(default=1)
     is_Comment=models.BooleanField(default=1)
+
+
+
+class MediaGallery(models.Model):
+    title=models.CharField(max_length=100,null=True,blank=True)
+    alt=models.CharField(max_length=100,null=True,blank=True)
+    image=models.ImageField(upload_to='gallery',null=False,blank=False)
