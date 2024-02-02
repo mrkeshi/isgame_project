@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy,reverse
 from django.contrib import messages
 from django.views.generic.list import ListView
 
-from django.views.generic import FormView
+from django.views.generic import FormView, DetailView
 
 from Contact.forms import ContactForm
 from .models import Contact
@@ -35,6 +35,7 @@ class ContactList(ListView):
     context_object_name = "list"
     ordering = ['is_Displayed','-date']
 
+
 def Delete_Contact(request, pk):
     item = Contact.objects.filter(id=pk).first()
     if (item is not None):
@@ -42,5 +43,16 @@ def Delete_Contact(request, pk):
         messages.success(request,"آیتم انتخابی با موفقیت حذف شد.")
     else:
        messages.error(request,"خطا در حذف آیتم انتخابی، لطفا مجددا تلاش نمایید.")
-    return redirect(request.META.get('HTTP_REFERER'))
+    return redirect(reverse('contact_list'))
 
+
+class SingleContact(DetailView):
+    model = Contact
+    template_name = "Contact/SingleContact.html"
+    context_object_name = 'c'
+    def get_context_data(self,*args,**kwargs):
+        context = super().get_context_data(**kwargs)
+        contact = self.get_object()
+        contact.is_Displayed = True
+        contact.save()
+        return context

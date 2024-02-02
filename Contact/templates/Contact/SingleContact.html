@@ -1,0 +1,70 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% load render_partial %}
+{% block title %}
+{% load poll_extras %}
+مدیریت تماس ها  | ایزگیم
+{% endblock %}
+
+{% block header_reference %}
+<!-- BEGIN PAGE LEVEL CUSTOM STYLES -->
+
+<link rel="stylesheet" type="text/css" href="{% static 'admin_panel/assets/css/forms/theme-checkbox-radio.css' %}">
+<link href="{%static 'admin_panel/assets/css/elements/infobox.css'%}" rel="stylesheet" type="text/css">
+
+<!-- END PAGE LEVEL CUSTOM STYLES -->
+{% endblock %}
+
+{% block content %}
+
+
+<!--modal-->
+
+
+<div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+    <div class="widget-content widget-content-area infobox-1 br-6" style=" width:100%;   box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.0901961), 0 1px 20px 0 rgba(0, 0, 0, 0.08), 0px 1px 11px 0px rgba(0, 0, 0, 0.06) !important;">
+  <div class="fq-comman-question-wrapper">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="flex" style="display: flex;
+    justify-content: space-between;
+    align-items: center;">
+
+                              <h3 class="info-heading">{{c.name}}</h3>
+
+                        <div>
+                                 <p class="info-link">{{c.email}}</p>
+                                   <p class="info-link">{{ c.date | jalali_date }}</p>
+                        </div>
+
+
+                        </div>
+
+
+                        <div class="row  ml-2">
+                    <p class="info-text">
+                        {{c.description}}
+                    </p>
+
+                            </div>
+                                       <a href="{% url 'delete_contact' pk=c.id %}" class="btn btn-outline-danger" style="float:left">حذف</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block script %}
+
+
+<script src="{% static 'admin_panel/plugins/table/datatable/datatables.js' %}"></script>
+<script src="{% static 'assets/webpack_bundles/axious_main_bundler.js' %}"></script>
+
+<script>
+
+
+
+</script>
+{% endblock %}

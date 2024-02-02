@@ -5,45 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="complete Setting.html">
-      <change afterPath="$PROJECT_DIR$/Post/migrations/0002_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SiteModule/migrations/0002_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Contact/templates/Contact/SingleContact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/SiteSetting/Logo/Untitled-1-min_Pc1Wgk3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/SiteSetting/Logo/logo2-min-300x300_l8ov7hl.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contact/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Contact/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contact/migrations/0002_rename_title_contact_name.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contact/migrations/0003_contact_is_displayed.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contact/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Contact/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contact/templates/Contact/contactList.html" beforeDir="false" afterPath="$PROJECT_DIR$/Contact/templates/Contact/contactList.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contact/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Contact/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contact/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Contact/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/migrations/0002_alter_menu_icon_color_alter_menu_icon_name_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/migrations/0003_alter_menu_url.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/migrations/0002_remove_articlecategories_is_active_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/migrations/0003_alter_articletags_url.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/migrations/0004_alter_articlecategories_url_alter_articles_url_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/migrations/0005_alter_articles_content.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/migrations/0006_articles_image_alter_articles_categories_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/migrations/0007_alter_articles_content.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/migrations/0008_articles_keyword_alter_articles_content.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/migrations/0009_alter_articles_is_active_alter_articles_tags_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/templates/Post/ListPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/ListPost.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiteModule/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiteModule/migrations/0002_alter_socialmedialink_is_setting.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiteModule/migrations/0003_remove_socialmedialink_pinterest_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiteModule/migrations/0004_publicsettings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiteModule/migrations/0005_auto_20231229_2204.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiteModule/migrations/0006_publicsettings_is_comment.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/migrations/0002_incorrect_attempts.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/migrations/0003_incorrect_attempts_browser_incorrect_attempts_device_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/migrations/0004_tokenauth.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/migrations/0005_user_about.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/migrations/0006_user_avatar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/migrations/0007_alter_user_avatar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/templates/User/Profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/User/templates/User/Profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_panel/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/templates/Settings/Setting.html" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/templates/Settings/Setting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel/items/partial.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/items/partial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel/templates/component/header_component.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/templates/component/header_component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +70,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/alireza/isgame_project/templates/layout/HomeLayout&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/alireza/isgame_project/Contact/templates/Contact&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
@@ -108,6 +81,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Contact/templates/Contact" />
       <recent name="$PROJECT_DIR$/templates/layout/HomeLayout" />
       <recent name="$PROJECT_DIR$/SiteModule/templates/Settings" />
     </key>
@@ -220,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706700164185</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="complete Setting.html">
+      <option name="closed" value="true" />
+      <created>1706712824952</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1706712824952</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

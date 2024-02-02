@@ -112,11 +112,11 @@ class SettingForm(forms.ModelForm):
                 'class': 'form-control mb-4'
             }),
             'logoIcon':forms.FileInput(attrs={
-                'id':'logoIcon',
-                'class':'dropify'
+                'id':'input-file-max-fs',
+                'class':'dropify',
             }),
             'logoSite': forms.FileInput(attrs={
-                'id': 'logoSite',
+                'id': 'input-file-max-fs2',
                 'class': 'dropify'
             }),
             'description': forms.Textarea(attrs={

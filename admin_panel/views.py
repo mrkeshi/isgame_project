@@ -11,3 +11,9 @@ class admin_panel:
 # class dashboard(admin_panel):
 #     def dashboard_view(self, request):
 #         return render(request, 'dashbaord/dashbaord.html')
+
+
+def header_component(request):
+    return render(request,'component/header_component.html',{
+
+    })
