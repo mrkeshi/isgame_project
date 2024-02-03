@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.http import JsonResponse
 
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
@@ -6,7 +7,7 @@ from django.urls import reverse_lazy
 from django.views.generic import FormView, UpdateView, ListView
 from django.urls import reverse
 
-from SiteModule.forms import AddSocialForm,SettingForm
+from SiteModule.forms import AddSocialForm,SettingForm,GalleryForm
 from SiteModule.models import SocialMediaLink,PublicSettings
 from User.forms import SocialLinkForm
 class addSocialLink(FormView):
@@ -73,41 +74,54 @@ def delete_item(request, id):
 
 
 def Manage_Settings(request):
+    public_settings_instance = PublicSettings.objects.first()
+    social_link_instance = SocialMediaLink.objects.filter(user=None).first()
 
+    form1 = SettingForm(instance=public_settings_instance)
+    form2 = SocialLinkForm(instance=social_link_instance)
 
-    form1 = SettingForm(instance=PublicSettings.objects.first())
-    social_link_instance =SocialMediaLink.objects.filter(user=None).first()
-    form2=SocialLinkForm(instance=social_link_instance)
-    if (request.method == "POST"):
-        form1 = SettingForm(request.POST, request.FILES, instance=PublicSettings.objects.first())
-        form2 = SocialLinkForm(request.POST,instance=social_link_instance)
-        if (form1.is_valid() and form2.is_valid()):
+    if request.method == "POST":
+        form1 = SettingForm(request.POST, request.FILES, instance=public_settings_instance)
+        form2 = SocialLinkForm(request.POST, instance=social_link_instance)
+
+        if form1.is_valid() and form2.is_valid():
             form2.save()
             form1.save()
-            messages.success(request,'تنظیمات با موفقیت بروزرسانی شد')
+            messages.success(request, 'تنظیمات با موفقیت بروزرسانی شد')
             return redirect(reverse('manage_settings'))
-        else:
-            return render(request,'Settings/Setting.html',{
-            'form1':form1,
-            'form2':form2,
-            'logos':PublicSettings.objects.only('logoSite','logoIcon').first()
-        })
-    else:
-        return render(request,'Settings/Setting.html',{
-            'form1':form1,
-            'form2':form2,
-            'logos':PublicSettings.objects.only('logoSite','logoIcon').first()
-        })
 
+    context = {
+        'form1': form1,
+        'form2': form2,
+        'logos': PublicSettings.objects.only('logoSite', 'logoIcon').first(),
+    }
 
-
+    return render(request, 'Settings/Setting.html', context)
 
 # Gallery
-
 def GalleryPage(request):
     return render(request,"SiteModule/Gallery/index.html")
 def Add(request):
-    return render(request, "Gallery/add.html")
+    form = GalleryForm(request.POST or None, request.FILES or None)
+    if request.is_ajax():
+        if form.is_valid():
+            form.save()
+            return JsonResponse(
+                {'status':True,
+                 'message':'تصویر با موفقیت آپلود شد!'
+                 }
+            )
+        else:
+            return JsonResponse(
+                {'status': False,
+                 'message':'خطا در آپلود فایل. لطفا مجددا امتحان فرمایید',
+                 }
+            )
+    context = {
+        'form': form,
+    }
+    print(form)
+    return render(request, "Gallery/add.html",context)
 
 
 

@@ -137,15 +137,6 @@ class SettingForm(forms.ModelForm):
 
 
 class GalleryForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        x = super(SettingForm, self).__init__(*args, **kwargs)
-        if self.errors:
-            for f_name in self.fields:
-                if f_name in self.errors:
-                    classes = self.fields[f_name].widget.attrs.get('class')
-                    classes += " set-error"
-                    self.fields[f_name].widget.attrs['class'] = classes
-        return x
     class Meta:
         model=MediaGallery
         fields=["image"]
