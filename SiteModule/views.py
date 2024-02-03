@@ -99,3 +99,16 @@ def Manage_Settings(request):
             'logos':PublicSettings.objects.only('logoSite','logoIcon').first()
         })
 
+
+
+
+# Gallery
+
+def GalleryPage(request):
+    return render(request,"SiteModule/Gallery/index.html")
+def Add(request):
+    return render(request, "Gallery/add.html")
+
+
+
+

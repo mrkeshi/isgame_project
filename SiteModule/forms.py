@@ -2,7 +2,7 @@
 from django import forms
 from django.forms import models, TextInput, NumberInput
 
-from SiteModule.models import SocialMediaLink, PublicSettings
+from SiteModule.models import SocialMediaLink, PublicSettings,MediaGallery
 
 
 class AddSocialForm(forms.ModelForm):
@@ -136,3 +136,23 @@ class SettingForm(forms.ModelForm):
         }
 
 
+class GalleryForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        x = super(SettingForm, self).__init__(*args, **kwargs)
+        if self.errors:
+            for f_name in self.fields:
+                if f_name in self.errors:
+                    classes = self.fields[f_name].widget.attrs.get('class')
+                    classes += " set-error"
+                    self.fields[f_name].widget.attrs['class'] = classes
+        return x
+    class Meta:
+        model=MediaGallery
+        fields=["image"]
+        widgets={
+            'image':forms.FileInput(attrs={
+                'id':'input-file-max-fs',
+                'class':'custom-file-container__custom-file__custom-file-input',
+            }),
+
+        }
