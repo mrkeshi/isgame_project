@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment=" gallery module">
-      <change afterPath="$PROJECT_DIR$/Pages/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/migrations/0002_incorrect_attempts_is_checked.py" afterDir="false" />
+    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="Completing the gallery uploader">
       <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_0qek2tz.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_1wvGuPE.jpg" afterDir="false" />
@@ -123,13 +114,9 @@
       <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_rgSIuoN.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_uha69eJ.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiteModule/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SiteModule/templates/Gallery/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/templates/Gallery/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiteModule/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_panel/items/partial.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/items/partial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_panel/templates/component/header_component.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/templates/component/header_component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -340,7 +327,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706971183929</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Completing the gallery uploader">
+      <option name="closed" value="true" />
+      <created>1707075418471</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1707075418471</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -461,6 +456,7 @@
     <MESSAGE value="Complete the contact module" />
     <MESSAGE value="start gallery module" />
     <MESSAGE value=" gallery module" />
-    <option name="LAST_COMMIT_MESSAGE" value=" gallery module" />
+    <MESSAGE value="Completing the gallery uploader" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completing the gallery uploader" />
   </component>
 </project>

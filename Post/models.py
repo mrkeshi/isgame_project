@@ -22,6 +22,7 @@ class ArticleCategories(models.Model):
         return self.title
 
 
+
 class Articles(models.Model):
     title = models.CharField(max_length=50, verbose_name="عنوان پست")
     short_description = models.TextField(verbose_name="توضیحات کوتاه")
@@ -41,5 +42,5 @@ class Articles(models.Model):
     
     def save(self,*args, **kwargs):
 
-        self.url=slugify(self.title)
+        self.url=slugify(self.title,allow_unicode=True)
         super(Articles, self).save(args,kwargs)
