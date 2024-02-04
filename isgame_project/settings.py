@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'SiteModule',
     'Home',
     'Contact',
+    'Pages',
 
     # external package
     'polls',
