@@ -145,5 +145,4 @@ class GalleryForm(forms.ModelForm):
                 'id':'input-file-max-fs',
                 'class':'custom-file-container__custom-file__custom-file-input',
             }),
-
         }

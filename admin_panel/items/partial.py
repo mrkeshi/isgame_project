@@ -1,12 +1,16 @@
 from django.shortcuts import render
-from User.models import User
+from User.models import User, incorrect_attempts
 from SiteModule.models import PublicSettings
 from Contact.models import Contact
 def header_component(request):
-    user=request.user
+    user = request.user
+    con=Contact.objects.filter(is_Displayed=False).count()
+    att=incorrect_attempts.objects.filter(user=user,is_checked=False).count()
     return  render(request, './component/header_component.html', {
         'site':PublicSettings.objects.first(),
-        'contact':Contact.objects.filter(is_Displayed=False).all()
+        'contact':con,
+        'attempt':att,
+        'res':att+con
     })
 def aside_component(request):
     user = request.user

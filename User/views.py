@@ -100,6 +100,8 @@ class User_sissions(ListView):
         return query
 
     def get_context_data(self, *, object_list=None, **kwargs):
+        if incorrect_attempts.objects.filter(is_checked=False).exists():
+           incorrect_attempts.objects.filter(is_checked=False).update(is_checked=True)
         data = super(User_sissions, self).get_context_data(**kwargs)
         data['none_delete'] = incorrect_attempts.objects.filter(user=self.request.user).order_by('-date').first().id
         return data

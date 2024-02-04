@@ -25,7 +25,7 @@ class incorrect_attempts(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     browser = models.CharField(max_length=30, blank=False, null=True)
     device = models.CharField(max_length=30, blank=False, null=True)
-
+    is_checked=models.BooleanField(default=False)
 
 class TokenAuth(models.Model):
     time = models.DateTimeField(auto_now_add=True)

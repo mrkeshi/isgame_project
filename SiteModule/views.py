@@ -105,6 +105,7 @@ def Add(request):
     form = GalleryForm(request.POST or None, request.FILES or None)
     if request.is_ajax():
         if form.is_valid():
+
             form.save()
             return JsonResponse(
                 {'status':True,
