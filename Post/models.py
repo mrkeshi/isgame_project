@@ -13,6 +13,9 @@ class ArticleTags(models.Model):
     def __str__(self):
         return self.title
 
+    def save(self, *args, **kwargs):
+        self.url = slugify(self.title, allow_unicode=True)
+        super(ArticleTags, self).save(args, kwargs)
 
 class ArticleCategories(models.Model):
     title = models.CharField(max_length=50, verbose_name="عنوان دسته")
@@ -21,7 +24,9 @@ class ArticleCategories(models.Model):
     def __str__(self):
         return self.title
 
-
+    def save(self, *args, **kwargs):
+        self.url = slugify(self.title, allow_unicode=True)
+        super(ArticleCategories, self).save(args, kwargs)
 
 class Articles(models.Model):
     title = models.CharField(max_length=50, verbose_name="عنوان پست")

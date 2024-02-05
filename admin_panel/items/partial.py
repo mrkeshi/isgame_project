@@ -6,6 +6,7 @@ def header_component(request):
     user = request.user
     con=Contact.objects.filter(is_Displayed=False).count()
     att=incorrect_attempts.objects.filter(user=user,is_checked=False).count()
+
     return  render(request, './component/header_component.html', {
         'site':PublicSettings.objects.first(),
         'contact':con,
@@ -17,3 +18,5 @@ def aside_component(request):
     return  render(request, 'component/sidebar_component.html',{
         'user': user
     })
+def siteName(request):
+    return

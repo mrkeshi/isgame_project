@@ -1,6 +1,6 @@
 {% load static %}
-<link rel="icon" type="image/x-icon" href="{% static 'admin_panel/assets/img/favicon.ico' %}">
-   <link href="{% static 'admin_panel/assets/css/loader.css' %}" rel="stylesheet" type="text/css" />
+<link rel="icon" type="image/x-icon" href="{% if logoIcon %} {{logoIcon}} {% else %}{% static 'admin_panel/assets/img/favicon.ico' %} {% endif %}">
+   <link href=" {% static 'admin_panel/assets/css/loader.css' %}" rel="stylesheet" type="text/css" />
     <script src="{% static 'admin_panel/assets/js/loader.js' %}"></script>
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->

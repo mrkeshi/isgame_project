@@ -17,7 +17,7 @@ class AddTagForm(forms.ModelForm):
     class Meta:
 
         model = ArticleTags
-        fields = "__all__"
+        fields = ['title']
 
         widgets = {
             'title': forms.TextInput(attrs={
@@ -26,11 +26,7 @@ class AddTagForm(forms.ModelForm):
                 'placeholder': "نام تگ",
 
             }, ),
-            'url': forms.TextInput(attrs={
-                'class': 'form-control text-left',
-                'id': 'inputurl',
-                'placeholder': " mr-keshi.ir /ca"
-            }),
+
 
         }
 
@@ -50,7 +46,7 @@ class AddCategoryForm(forms.ModelForm):
     class Meta:
 
         model = ArticleCategories
-        fields = "__all__"
+        fields = ['title']
 
         widgets = {
             'title': forms.TextInput(attrs={
@@ -59,11 +55,7 @@ class AddCategoryForm(forms.ModelForm):
                 'placeholder': "نام دسته",
 
             }, ),
-            'url': forms.TextInput(attrs={
-                'class': 'form-control text-left',
-                'id': 'inputurl',
-                'placeholder': " mr-keshi.ir /ca"
-            }),
+
 
         }
 
@@ -122,12 +114,7 @@ class AddArticleForm(forms.ModelForm):
             'categories':forms.CheckboxSelectMultiple(attrs={
                 'class': 'new-control-input'
             }),
-            # 'tags':forms.Textarea(attrs={
-            #         'class': 'form-control',
-            #         'rows': 3,
-            #         'placeholder': "لطف تگ ها را وارد کنید"
-            #
-            # })
+
 
         }
 

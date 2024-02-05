@@ -98,9 +98,9 @@ class CategoryAdd(FormView):
     success_url = reverse_lazy('category_admin')
 
     def form_valid(self, form):
-        super(CategoryAdd, self).form_valid(form)
-        form.save()
 
+        form.save()
+        return      super(CategoryAdd, self).form_valid(form)
 
 def PostDelete(request):
     if request.method == 'POST':

@@ -1,7 +1,7 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block title %}
-    مدیریت صفحه ها | ایزگیم
+    مدیریت صفحه ها
 {% endblock %}
 {% block header_reference %}
     <link href="{% static 'admin_panel/assets/css/tables/table-basic.css' %}" rel="stylesheet" type="text/css">
@@ -19,7 +19,7 @@
                     </div>
                     <div class="col-md-2 mb-4">
 
-                        <a href="{% url 'category_add_admin'  %}" class="btn btn-primary mb-2 mr-2 btn-rounded">افزودن صفحه جدید</a>
+                        <a href="{% url 'add_page'  %}" class="btn btn-primary mb-2 mr-2 btn-rounded">افزودن صفحه جدید</a>
 
                     </div>
                 </div>
@@ -30,16 +30,14 @@
                     <th>ردیف</th>
                     <th>نام</th>
                     <th>آدرس صفحه</th>
-
+                    <th>نمایش </th>
                     <th class="text-center">عملیات</th>
                 </tr>
                 </thead>
                 <tbody>
 
-
                 {% for item in data %}
                     <tr>
-
                         <td>
                             {{ forloop.counter }}
                         </td>
@@ -47,17 +45,18 @@
                             {{ item.title }}
                         </td>
                         <td>
-
                             {{ item.url }}
                         </td>
-
+                        <td>
+                            {% if item.is_active %} <span class="text-info"> فعال </span> {%else%} <span class="text-danger">پیش نویس </span>  {% endif %}
+                        </td>
 
                         <td class="text-center">
                             <ul class="table-controls">
                                 <li>
 
 
-                                    <a href="{% url 'category_edit_admin' id=item.id  %}"
+                                    <a href="{% url 'edit_page' pk=item.id  %}"
                                        style="margin-right: 1x;color: red"
                                        class="bs-tooltip mr-2 text-or" data-toggle="tooltip" data-placement="top"
                                        title="" data-original-title="ویرایش">
@@ -70,8 +69,8 @@
                                         </svg>
                                     </a>
 
-                                    {% if item.id != 1 %}
-                                            <a onclick="myfunc({{c.id}})" data-toggle="modal" data-target="#exampleModal"
+                                    {% if forloop.counter != 1 %}
+                                            <a onclick="myfunc({{item.id}})" data-toggle="modal" data-target="#exampleModal"
                                        style="margin-right: 3px;color: red"
                                        class="bs-tooltip  text-or" data-toggle="tooltip" data-placement="top"
                                        title="" data-original-title="حذف">
@@ -100,7 +99,8 @@
 
                     <th>ردیف</th>
                     <th>نام</th>
-                    <th>آدرس دسته</th>
+                    <th>آدرس صفحه</th>
+                    <th>نمایش </th>
                     <th class="text-center">عملیات</th>
 
 
@@ -172,7 +172,7 @@
 {% include 'layout/component/swalmeesage.html' with title="صفحه ها" %}
 <script>
 function myfunc(id){
-let ali="{% url 'delete_contact' pk=' ' %}"
+let ali="{% url 'page_delete' pk=' ' %}"
 document.getElementById('delete').href=ali+id
 }
 </script>
