@@ -11,5 +11,6 @@ urlpatterns=[
     path('contacts/',include('Contact.urls')),
     path('gallery/',SiteModule.GalleryPage),
     path('gallery/add',SiteModule.Add,name="gallery_add"),
+    path('Pages/',include('Pages.urls'))
 
 ]

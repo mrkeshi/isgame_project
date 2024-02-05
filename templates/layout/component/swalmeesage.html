@@ -1,0 +1,18 @@
+ {% load static %}
+  <script  src="{% static 'admin_panel/plugins/sweetalerts/sweetalert2.min.js' %}"></script>
+
+    <script>
+     {% for message in messages%}
+ swal({
+      title: "{{title}}",
+      text: "{{message}}",
+      type:"{{message.tags}}" ,
+      padding: '1em'
+    })
+{% endfor %}
+function myfunc(id){
+let ali="{% url 'delete_contact' pk=' ' %}"
+document.getElementById('delete').href=ali+id
+}
+
+    </script>

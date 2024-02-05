@@ -55,7 +55,7 @@ class TagManer(ListView):
     template_name = 'Post/listTag.html'
     model = ArticleTags
     context_object_name = 'data'
-
+    paginate_by = 10
 
 class CategoryManger(ListView):
     template_name = 'Post/listCategory.html'
