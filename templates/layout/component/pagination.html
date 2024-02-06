@@ -1,0 +1,53 @@
+              <div class="row">
+                <div class="col-sm-12 col-md-5">
+                    <div class="dataTables_info" id="zero-config_info" role="status" aria-live="polite">
+                        صفحه {{ page_obj.number }} از
+                        {{ paginator.num_pages }}
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-7">
+                    <div class="dataTables_paginate paging_simple_numbers" id="zero-config_paginate">
+                        <ul class="pagination">
+                            {% if page_obj.has_previous %}
+                                <li class="paginate_button page-item next" id="zero-config_next">
+                                    <a href="?page={{ page_obj.previous_page_number }}"
+                                       aria-controls="zero-config"
+                                       data-dt-idx="5"
+                                       tabindex="0"
+                                       class="page-link">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24"
+                                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                             stroke-linejoin="round" class="feather feather-arrow-right">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </a></li>
+                            {% endif %}
+                            {% for pageNumber in paginator.page_range %}
+                                <li></li>
+                                <li class="paginate_button page-item {% if page_obj.number == pageNumber %} active  {% endif %}">
+                                    <a href="?page={{ pageNumber }}" aria-controls="zero-config" data-dt-idx="1"
+                                       tabindex="0" class="page-link">{{ pageNumber }}</a>
+                                </li>
+                            {% endfor %}
+                            <li></li>
+                            {% if page_obj.has_next %}
+                                <li class="paginate_button page-item previous " id="zero-config_previous"><a
+                                        href="?page={{ page_obj.next_page_number }}" aria-controls="zero-config"
+                                        data-dt-idx="0" tabindex="0" class="page-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="feather feather-arrow-left">
+                                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                                        <polyline points="12 19 5 12 12 5"></polyline>
+                                    </svg>
+                                </a></li>
+
+                            {% endif %}
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
