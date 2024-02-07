@@ -9,7 +9,7 @@ urlpatterns=[
     path('setting/',include('SiteModule.urls')),
     path('',include('Post.urls')),
     path('contacts/',include('Contact.urls')),
-    path('gallery/',SiteModule.GalleryPage),
+    path('gallery/',SiteModule.GalleryPage,name="media_list"),
     path('gallery/add',SiteModule.Add,name="gallery_add"),
     path('Pages/',include('Pages.urls'))
 

@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.core.paginator import Paginator
 from django.http import JsonResponse
 
 from django.shortcuts import render, get_object_or_404, redirect
@@ -10,6 +11,7 @@ from django.urls import reverse
 from SiteModule.forms import AddSocialForm,SettingForm,GalleryForm
 from SiteModule.models import SocialMediaLink,PublicSettings
 from User.forms import SocialLinkForm
+from .models import MediaGallery
 class addSocialLink(FormView):
     template_name = 'Social/addSocialLink.html'
     success_url = reverse_lazy('social_link')
@@ -99,8 +101,6 @@ def Manage_Settings(request):
     return render(request, 'Settings/Setting.html', context)
 
 # Gallery
-def GalleryPage(request):
-    return render(request,"SiteModule/Gallery/index.html")
 def Add(request):
     form = GalleryForm(request.POST or None, request.FILES or None)
     if request.is_ajax():
@@ -124,6 +124,18 @@ def Add(request):
     print(form)
     return render(request, "Gallery/add.html",context)
 
+#gallery index
+def GalleryPage(request):
+    page: int = 1
+    if (request.GET.get('page')):
+        page: int = request.GET.get('page')
+    Gallery = MediaGallery.objects.order_by('-id')
+    paginator = Paginator(Gallery, 40)
+    Gallery = paginator.page(page)
 
+    return render(request,"Gallery/index.html",{
+        'paginator': paginator,
+        'items': Gallery,
+    })
 
 

@@ -44,8 +44,8 @@
                         <td>
                             {{ item.title }}
                         </td>
-                        <td>
-                            {{ item.url }}
+                        <td style="direction:ltr">
+                            {{url}}/category/{{item.url}}
                         </td>
                         <td>
                             {% if item.is_active %} <span class="text-info"> فعال </span> {%else%} <span class="text-danger">پیش نویس </span>  {% endif %}

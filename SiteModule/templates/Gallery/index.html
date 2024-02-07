@@ -1,0 +1,323 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% load render_partial %}
+{% load poll_extras %}
+{% block title %}
+    رسانه
+{% endblock %}
+
+{% block header_reference %}
+
+    <!-- BEGIN PAGE LEVEL CUSTOM STYLES -->
+    <link href="{% static 'admin_panel/assets/css/tables/table-basic.css' %}" rel="stylesheet" type="text/css">
+
+<link href="{% static 'admin_panel/plugins/lightbox/photoswipe.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'admin_panel/plugins/lightbox/default-skin/default-skin.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'admin_panel/plugins/lightbox/custom-photswipe.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'admin_panel/assets/css/forms/custom-clipboard.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- END PAGE LEVEL CUSTOM STYLES -->
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="row layout-spacing mx-auto">
+        <div class="col-lg-12">
+            <div class="statbox  box box-shadow">
+                <div class="widget-header">
+                    <div class="row">
+                        <div class="col-md-8 m-4 mr-0">
+                            <h3>مدیریت رسانه</h3>
+                        </div>
+                        <div class="col-md-3" style="text-align: left">
+                            <a target="_blank" href="{% url 'gallery_add' %}" class="btn btn-primary  m-4"> افزودن
+                                تصویر جدید
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="">
+                    <div class="table-responsive  style-1">
+                        <div id="style-1_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+                             <div class="col-sm-12 col-md-8 mt-4 ">
+                                    <div class="row">
+                                        <div class="dataTables_length col-md-6 row " id="style-1_length">
+                                            <label>
+                                                <input id="selectAll" type="submit" value="انتخاب دسته جمعی" name="txt"
+                                                       class=" btn btn-dark mx-2" style="height: 43px">
+                                            </label>
+                                <div class="row hidden" id="row-btn">
+                                    <div>
+                                        <input id="deleteAll"  type="submit" value="حذف برای همیشه" name="txt"
+                                               class="btn btn-danger mx-2 disabled"  style="height: 43px">
+                                    </div>
+                                    <div>
+                                        <input id="cancelAll" type="submit" value="لغو" name="txt"
+                                               class="btn btn-info mx-2" style="height: 43px">
+                                    </div>
+                                </div>
+                                         
+                                        </div>
+                                    </div>
+                                </div>
+                        <div class="results m-4 " id="result_list_post">
+
+<div class="statbox  box box-shadow">
+
+                            <div class=" p-2" >
+
+                                <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
+                    {% for item in items %}
+                                    <a class="img-1" href="{{ item.image.url }}" data-id="{{item.id}}" data-size="1600x1068" data-med="{{ item.image.url }}" data-med-size="1024x683" >
+                                        <img src="{{ item.image.url }}" >
+                                        <figure>
+<div class="clipboard">
+
+                                            <input type="text" class="form-control mb-3" id="input-copy{{item.id}}" value="{{url}}{{item.image.url}}">
+                                          <div class="div" style="display:flex;justify-content:center">
+                                            <label onclick="copyboard()" class="mb-2 btnme btn btn-primary mx-1"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> کپی از ورودی</label>
+                                            <label onclick="cutboard()" class="mb-2 btnme btn btn-dark mx-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg> برش از ورودی</label>
+
+                                          </div>
+
+                                    </div>
+                                        </figure>
+                                    </a>
+                    {% endfor %}
+
+                                </div>
+                                <!-- Root element of PhotoSwipe. Must have class pswp. -->
+                                <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+                                    <!-- Background of PhotoSwipe. It's a separate element, as animating opacity is faster than rgba(). -->
+                                    <div class="pswp__bg"></div>
+
+                                    <!-- Slides wrapper with overflow:hidden. -->
+                                    <div class="pswp__scroll-wrap">
+                                        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+                                        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+                                        <div class="pswp__container">
+                                            <div class="pswp__item"></div>
+                                            <div class="pswp__item"></div>
+                                            <div class="pswp__item"></div>
+                                        </div>
+
+                                        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                                        <div class="pswp__ui pswp__ui--hidden">
+
+                                            <div class="pswp__top-bar">
+
+                                                <!--  Controls are self-explanatory. Order can be changed. -->
+                                                <div class="pswp__counter"></div>
+                                                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                                                <button class="pswp__button pswp__button--share" title="Share"></button>
+                                                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                                                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                                                <!-- element will get class pswp__preloader--active when preloader is running -->
+                                                <div class="pswp__preloader">
+                                                    <div class="pswp__preloader__icn">
+                                                      <div class="pswp__preloader__cut">
+                                                        <div class="pswp__preloader__donut"></div>
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                                                <div class="pswp__share-tooltip"></div>
+                                            </div>
+                                            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                                            </button>
+                                            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                                            </button>
+                                            <div class="pswp__caption">
+                                                <div class="pswp__caption__center"></div>
+                                            </div>
+
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="row m-4" style="display:flex;justify-content:center;width:100%">
+                                <div class="col-sm-12 col-md-6 " >
+                                    <div class="dataTables_info mt-1" id="style-1_info" role="status" aria-live="polite">
+                                        صفحه {{ items.number }} از
+                                        {{paginator.num_pages}}
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="style-1_paginate">
+                                        <ul class="pagination" style="    justify-content: flex-end;">
+                                            {% if items.has_previous %}
+                                                <li class="paginate_button page-item next" id="zero-config_next">
+                                                    <a href="?page={{ items.previous_page_number }}"
+                                                       aria-controls="zero-config"
+                                                       data-dt-idx="5"
+                                                       tabindex="0"
+                                                       class="page-link">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                             viewBox="0 0 24 24"
+                                                             fill="none" stroke="currentColor" stroke-width="2"
+                                                             stroke-linecap="round"
+                                                             stroke-linejoin="round"
+                                                             class="feather feather-arrow-right">
+                                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                                        </svg>
+                                                    </a></li>
+                                            {% endif %}
+                                            {% for pageNumber in paginator.page_range %}
+                                                <li></li>
+                                                <li class="paginate_button page-item {% if items.number == pageNumber %} active  {% endif %}">
+                                                    <a href="?page={{ pageNumber }}" aria-controls="zero-config"
+                                                       data-dt-idx="1"
+                                                       tabindex="0" class="page-link">{{ pageNumber }}</a>
+                                                </li>
+                                            {% endfor %}
+                                            <li></li>
+                                            {% if items.has_next %}
+                                                <li class="paginate_button page-item previous "
+                                                    id="zero-config_previous"><a
+                                                        href="?page={{ items.next_page_number }}"
+                                                        aria-controls="zero-config"
+                                                        data-dt-idx="0" tabindex="0" class="page-link">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                         viewBox="0 0 24 24"
+                                                         fill="none" stroke="currentColor" stroke-width="2"
+                                                         stroke-linecap="round"
+                                                         stroke-linejoin="round" class="feather feather-arrow-left">
+                                                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                                                        <polyline points="12 19 5 12 12 5"></polyline>
+                                                    </svg>
+                                                </a></li>
+
+                                            {% endif %}
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+    </div>
+
+{% endblock %}
+{% block script %}
+
+<script src="{% static 'admin_panel/plugins/lightbox/photoswipe.min.js' %}"></script>
+<script src="{% static 'admin_panel/plugins/lightbox/photoswipe-ui-default.min.js' %}"></script>
+<script src="{% static 'admin_panel/plugins/lightbox/custom-photswipe.js' %}"></script>
+<script>
+    function cutboard(){
+        let val;
+        document.querySelectorAll('.pswp__caption__center .clipboard').forEach(element => {
+            let inp= element.querySelector("input")
+           inp.focus()
+           inp.select();
+           inp.setSelectionRange(0, 99999);
+           navigator.clipboard.writeText(inp.value);
+           inp.value=' '
+        });
+       
+    }
+    function copyboard(){
+        let val;
+        document.querySelectorAll('.pswp__caption__center .clipboard').forEach(element => {
+            let inp= element.querySelector("input")
+           inp.focus()
+           inp.select();
+           inp.setSelectionRange(0, 99999);
+           navigator.clipboard.writeText(inp.value);
+           inp.value
+        });
+       
+    }
+
+
+
+// dificult code
+
+
+let deleteAll=document.getElementById('deleteAll')
+let selectAll=document.getElementById('selectAll')
+let cancelAll=document.getElementById('cancelAll')
+let rowbtn=document.getElementById('row-btn')
+let ids=[]
+let gallery=document.querySelector('.demo-gallery')
+
+function removeItemOnce(arr, value) {
+  var index = arr.indexOf(value);
+  if (index > -1) {
+    arr.splice(index, 1);
+  }
+  return arr;
+}
+let status=1
+selectAll.addEventListener('click',()=>{
+    status=0;
+    selectAll.classList.toggle('hidden')
+    rowbtn.classList.toggle('hidden')
+    gallery.classList.toggle('del')
+  
+        gallery.querySelectorAll('a').forEach((el)=>{
+            el.addEventListener('click',(e)=>{
+                console.log(status)
+                if(status===0){    
+                e.preventDefault()
+                e.stopPropagation()
+                let id=el.getAttribute('data-id')
+                if (!ids.includes(Number(id))) {
+                    el.classList.add('active')
+                    ids.push(Number(id))
+                }else{
+                    removeItemOnce(ids,Number(id))
+                    el.classList.remove('active')
+                } 
+                if(ids.length!==0){
+                    deleteAll.classList.remove('disabled')
+                    deleteAll.value=`حذف برای همیشه (${ids.length})`}
+                    else{
+                    deleteAll.classList.add('disabled')
+                    deleteAll.value="حذف برای همیشه"
+                }
+                }
+        
+            })
+        })
+   
+    
+
+})
+
+let reset = () =>{
+    status=1
+    ids=[]
+    document.querySelector('.demo-gallery').querySelectorAll('.active').forEach((el)=>{
+        el.classList.remove('active')
+    })
+    deleteAll.value="حذف برای همیشه"
+    deleteAll.classList.add('disabled')
+
+}
+cancelAll.addEventListener('click',()=>{
+   
+    selectAll.classList.toggle('hidden')
+    rowbtn.classList.toggle('hidden')   
+    gallery.classList.toggle('del')
+    reset()
+})
+
+
+</script>
+
+{% endblock %}
