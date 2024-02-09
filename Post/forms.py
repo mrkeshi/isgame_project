@@ -1,4 +1,4 @@
-from .models import ArticleTags, ArticleCategories, Articles
+from .models import ArticleTags, ArticleCategories, Articles,DownloadBox
 from django import forms
 from django.forms import models
 from ckeditor.widgets import CKEditorWidget
@@ -119,3 +119,63 @@ class AddArticleForm(forms.ModelForm):
         }
 
 
+class DownloadBoxForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        x = super(DownloadBoxForm, self).__init__(*args, **kwargs)
+        if self.errors:
+            for f_name in self.fields:
+                if f_name in self.errors:
+                    classes = self.fields[f_name].widget.attrs.get('class')
+                    classes += " form-error"
+                    self.fields[f_name].widget.attrs['class'] = classes
+        return x
+
+    class Meta:
+        model = DownloadBox
+        exclude=['Post']
+        widgets = {
+            'title1': forms.TextInput(attrs={
+                'placeholder': "لطفا  عنوان دانلود را وارد کنید",
+                'class': "form-control ",
+                'style': "background: none;height: 50px"
+            }),
+            'title2': forms.TextInput(attrs={
+                'placeholder': "لطفا  عنوان دانلود را وارد کنید",
+                'class': "form-control ",
+                'style': "background: none;height: 50px"
+            }),
+            'title3': forms.TextInput(attrs={
+                'placeholder': "لطفا  عنوان دانلود را وارد کنید",
+                'class': "form-control ",
+                'style': "background: none;height: 50px"
+            }),
+            'title4': forms.TextInput(attrs={
+                'placeholder': "لطفا  عنوان دانلود را وارد کنید",
+                'class': "form-control ",
+                'style': "background: none;height: 50px"
+            }),
+            'link1': forms.URLInput(attrs={
+                'placeholder': "لطفا لینک  دانلود را وارد کنید",
+                'class': "form-control ",
+                'style': "background: none;height: 50px"
+            }),
+
+            'link2': forms.URLInput(attrs={
+                'placeholder': "لطفا لینک  دانلود را وارد کنید",
+                'class': "form-control ",
+                'style': "background: none;height: 50px"
+            }),
+            'link3': forms.URLInput(attrs={
+                'placeholder': "لطفا لینک  دانلود را وارد کنید",
+                'class': "form-control ",
+                'style': "background: none;height: 50px"
+            }),
+            'link4': forms.URLInput(attrs={
+                'placeholder': "لطفا لینک  دانلود را وارد کنید",
+                'class': "form-control ",
+                'style': "background: none;height: 50px"
+            }),
+        }
+class CombinedForm(forms.Form):
+    article_form = AddArticleForm()
+    download_form = DownloadBoxForm()

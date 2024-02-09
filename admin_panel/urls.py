@@ -9,7 +9,8 @@ urlpatterns=[
     path('setting/',include('SiteModule.urls')),
     path('',include('Post.urls')),
     path('contacts/',include('Contact.urls')),
-    path('gallery/',SiteModule.GalleryPage,name="media_list"),
+    path('gallery/',SiteModule.GalleryMange.as_view(),name="media_list"),
+    path('delete/delete',SiteModule.DeletedItems,name="delete_gallery"),
     path('gallery/add',SiteModule.Add,name="gallery_add"),
     path('Pages/',include('Pages.urls'))
 

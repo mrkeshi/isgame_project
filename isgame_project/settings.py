@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'Home',
     'Contact',
     'Pages',
+    'Shop',
 
     # external package
     'polls',

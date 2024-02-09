@@ -5,7 +5,7 @@ from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 
-from django.views.generic import FormView, UpdateView, ListView
+from django.views.generic import FormView, UpdateView, ListView, TemplateView
 from django.urls import reverse
 
 from SiteModule.forms import AddSocialForm,SettingForm,GalleryForm
@@ -125,6 +125,8 @@ def Add(request):
     return render(request, "Gallery/add.html",context)
 
 #gallery index
+class GalleryMange(TemplateView):
+    template_name = "Gallery/index.html"
 def GalleryPage(request):
     page: int = 1
     if (request.GET.get('page')):
@@ -133,9 +135,23 @@ def GalleryPage(request):
     paginator = Paginator(Gallery, 40)
     Gallery = paginator.page(page)
 
-    return render(request,"Gallery/index.html",{
+    return render(request,"Gallery/items.html",{
         'paginator': paginator,
         'items': Gallery,
     })
 
 
+def DeletedItems (request):
+    if request.method == 'POST':
+        ids=request.POST.getlist('keys[]')
+        try:
+            selects=MediaGallery.objects.filter(id__in=ids)
+            count=selects.count()
+            return JsonResponse({
+                'status':True,
+                'count':count,
+                'result':GalleryPage(request).content.decode('utf-8')
+            })
+        except:
+            return JsonResponse({
+                'status': False})

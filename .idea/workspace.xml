@@ -5,6 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="add component pagination.html">
+      <change afterPath="$PROJECT_DIR$/Post/migrations/0003_downloadbox.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post/migrations/0004_downloadbox_post.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shop/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shop/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shop/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shop/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shop/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shop/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shop/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SiteModule/templates/Gallery/items.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_a03TjMS.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_0qek2tz.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_1wvGuPE.jpg" afterDir="false" />
@@ -116,17 +128,13 @@
       <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_rgSIuoN.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_uha69eJ.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/templates/Pages/listPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/templates/Pages/listPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/templates/Post/ListPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/ListPost.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/templates/Post/listCategory.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/listCategory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/templates/Post/listTag.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/listTag.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiteModule/templates/Gallery/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/templates/Gallery/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/templates/Gallery/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/templates/Gallery/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SiteModule/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_panel/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/context_processors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_panel/templates/component/sidebar_component.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/templates/component/sidebar_component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin_panel/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin_panel/assets/js/forms/custom-clipboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin_panel/assets/js/forms/custom-clipboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/isgame_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/isgame_project/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/admin_panel/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin_panel/bootstrap/css/bootstrap.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/admin_panel/plugins/lightbox/custom-photswipe.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin_panel/plugins/lightbox/custom-photswipe.css" afterDir="false" />
     </list>

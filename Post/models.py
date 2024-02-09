@@ -49,3 +49,15 @@ class Articles(models.Model):
 
         self.url=slugify(self.title,allow_unicode=True)
         super(Articles, self).save(args,kwargs)
+
+
+class DownloadBox(models.Model):
+    title1=models.CharField(max_length=50,blank=True,null=True)
+    title2=models.CharField(max_length=50,blank=True,null=True)
+    title3=models.CharField(max_length=50,blank=True,null=True)
+    title4=models.CharField(max_length=50,blank=True,null=True)
+    link1=models.URLField(blank=True,null=True)
+    link2=models.URLField(blank=True,null=True)
+    link3=models.URLField(blank=True,null=True)
+    link4=models.URLField(blank=True,null=True)
+    Post=models.ForeignKey(Articles,on_delete=models.CASCADE)
