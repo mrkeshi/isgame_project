@@ -147,10 +147,10 @@ def DeletedItems (request):
         try:
             selects=MediaGallery.objects.filter(id__in=ids)
             count=selects.count()
+            selects.delete()
             return JsonResponse({
                 'status':True,
                 'count':count,
-                'result':GalleryPage(request).content.decode('utf-8')
             })
         except:
             return JsonResponse({

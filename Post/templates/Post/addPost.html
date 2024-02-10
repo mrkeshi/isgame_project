@@ -29,7 +29,7 @@
                                     <div class="row">
                                         <div class="col-xl-12 col-md-12 col-sm-12 col-12  " style="">
 
-                                            <div class="form-group mt-3 bg-white p-4">
+                                            <div class="form-group mt-3 bg-white p-4 mb-0">
                                                 <h5 class="mb-3">عنوان پست </h5>
                                                    {{ form.title }}
 
@@ -66,28 +66,73 @@
                                 </div>
                             </div>
                         </div>
-                      <div class="col-lg-12 mt-5">
-                            <div class="statbox widget box box-shadow">
-                                <div class="widget-header">
-                                    <div class="row">
-                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                            <h4> توضیحات کوتاه</h4>
+      <div class="col-lg-12 mx-auto p-3 px-2 ">
+
+                    <div class=" bg-white p-4 mt-3  " style="border:1px solid #bfc9d4">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div id="flFormsGrid" class="col-lg-12  ">
+                                    <div class="   box-shadow">
+                                        <div class="widget-header">
+                                            <div class="row">
+                                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                                    <h5 class="mb-2">جعبه دانلود </h5>
+                                                    <span class="mt-2">لطفا لینک های دانلود را در صورت نیاز وارد کنید </span>
+                                                <div class="form-group mb-2 mt-3">
+                                                     <h6 class="mb-3 text-secondary">عنوان لینک اول :</h6>
+                                                    {{box_download.title1}}
+
+                                                    <h6 class="mb-3 mt-3 text-secondary"> لینک دانلود اول :</h6>
+                                                    {{box_download.link1}}
+                                            {% if box_download.link1.errors %}
+                                                 <label for="" class="text-danger mt-3 mx-2 text-xl ">{{ box_download.link1.errors }}
+                                                 </label>
+                                             {% endif %}
+                                                  </div>
+
+                                                           <div class="form-group mb-2 mt-3">
+                                                     <h6 class="mb-3 text-secondary">عنوان لینک دوم :</h6>
+                                                    {{box_download.title2}}
+
+                                                    <h6 class="mb-3 mt-3 text-secondary"> لینک دانلود دوم :</h6>
+                                                    {{box_download.link2}}
+                                            {% if box_download.link2.errors %}
+                                                 <label for="" class="text-danger mt-3 mx-2 text-xl ">{{ box_download.link2.errors }}
+                                                 </label>
+                                             {% endif %}
+                                                  </div>
+                                                           <div class="form-group mb-2 mt-3">
+                                                     <h6 class="mb-3 text-secondary">عنوان لینک سوم :</h6>
+                                                    {{box_download.title3}}
+
+                                                    <h6 class="mb-3 mt-3 text-secondary"> لینک دانلود سوم :</h6>
+                                                    {{box_download.link3}}
+                                            {% if box_download.link3.errors %}
+                                                 <label for="" class="text-danger mt-3 mx-2 text-xl ">{{ box_download.link3.errors }}
+                                                 </label>
+                                             {% endif %}
+                                                  </div>
+       <div class="form-group mb-3 mt-3">
+                                                     <h6 class="mb-3 text-secondary">عنوان لینک چهارم :</h6>
+                                                    {{box_download.title4}}
+
+                                                    <h6 class="mb-3 mt-3 text-secondary"> لینک دانلود چهارم :</h6>
+                                                    {{box_download.link4}}
+                                            {% if box_download.link4.errors %}
+                                                 <label for="" class="text-danger mt-3 mx-2 text-xl ">{{ box_download.link4.errors }}
+                                                 </label>
+                                             {% endif %}
+                                                  </div>
+                                                </div>
+                                            </div>
                                         </div>
+
                                     </div>
-                                </div>
-                                <div class="widget-content widget-content-area">
-
- <div class="form-group ">
-                                                        {{ form.short_description }}
-
-                                    <label for="" class="text-danger mt-3 mx-2 text-xl ">{{ form.short_description.errors }}
-                                    </label>
-
-                                                    </div>
-
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
         </div>
 
@@ -125,8 +170,29 @@
                         </div>
                     </div>
                 </div>
+             <div  class="col-lg-12 mx-auto  p-3 px-2 ">
+                            <div class="statbox widget box box-shadow" style="border:1px solid #bfc9d4;border-radius:0">
+                                <div class="widget-header">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                            <h4> توضیحات کوتاه</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget-content widget-content-area">
 
-                                <div class="col-lg-12 mx-auto mt-3 p-3 px-2 ">
+ <div class="form-group ">
+                                                        {{ form.short_description }}
+
+                                    <label for="" class="text-danger mt-3 mx-2 text-xl ">{{ form.short_description.errors }}
+                                    </label>
+
+                                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                                <div class="col-lg-12 mx-auto p-3 px-2 ">
 
                     <div class=" bg-white p-4  " style="border:1px solid #bfc9d4">
                         <div class="widget-header">
@@ -163,7 +229,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-12 mx-auto mt-2 p-3 px-2 ">
+                <div class="col-lg-12 mx-auto mt-0 p-3 px-2 ">
 
                     <div class=" bg-white p-4  " style="border:1px solid #bfc9d4">
                         <div class="widget-header">
@@ -196,7 +262,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 mx-auto mt-2 p-3 px-2 ">
+                <div class="col-lg-12 mx-auto  p-3 px-2 ">
 
                     <div class=" bg-white p-4  " style="border:1px solid #bfc9d4">
                         <div class="widget-header">
@@ -233,7 +299,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 mx-auto mt-3 p-3 px-2 ">
+                <div class="col-lg-12 mx-auto p-3 px-2 ">
 
                     <div class=" bg-white p-4  " style="border:1px solid #bfc9d4">
                         <div class="widget-header">
@@ -269,6 +335,7 @@
  </form>
     {% endblock %}
 
+{% include 'layout/component/swalmeesage.html' with title="ایجاد پست" %}
 
 {% block script %}
  <script>window.CKEDITOR_BASEPATH = "{% static '/ckeditor/ckeditor/' %}";</script>

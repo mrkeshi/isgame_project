@@ -83,12 +83,12 @@
 {% block script %}
 <script src="{% static 'assets/webpack_bundles/axious_main_bundler.js' %}"></script>
 <script src="{% static 'admin_panel/plugins/sweetalerts/sweetalert2.min.js' %}"></script>
-
 <script src="{% static 'admin_panel/plugins/lightbox/photoswipe.min.js' %}"></script>
 <script src="{% static 'admin_panel/plugins/lightbox/photoswipe-ui-default.min.js' %}"></script>
 <script src="{% static 'admin_panel/plugins/lightbox/custom-photswipe.js' %}"></script>
 <script>
-    axios.defaults.xsrfCookieName = 'csrftoken'
+  
+axios.defaults.xsrfCookieName = 'csrftoken'
      axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
  function cutboard(){
      let val;
@@ -100,7 +100,6 @@
         navigator.clipboard.writeText(inp.value);
         inp.value=' '
      });
-
  }
  function copyboard(){
      let val;
@@ -112,10 +111,7 @@
         navigator.clipboard.writeText(inp.value);
         inp.value
      });
-
  }
-
-
 
 // dificult code
 let isDeleting=false
@@ -135,25 +131,16 @@ if (index > -1) {
 }
 return arr;
 }
-
 selectAll.addEventListener('click',()=>{
  statuss=0;
  selectAll.classList.toggle('hidden')
  rowbtn.classList.toggle('hidden')
  gallery.classList.toggle('del')
 
-
-
-
-
 })
 gallery.querySelectorAll('a').forEach((el)=>{
-
          el.addEventListener('click',(e)=>{
-
              if(statuss===0){
-
-   
              if(!isDeleting){
                 e.preventDefault()
              e.stopPropagation()
@@ -172,14 +159,11 @@ gallery.querySelectorAll('a').forEach((el)=>{
                  deleteAll.classList.add('disabled')
                  deleteAll.innerHTML="حذف برای همیشه"
              }
-
              }
-
          }
          })
      })
 let reset = () =>{
-
  if(restult.classList.contains('not-allow')){
      restult.classList.remove('not-allow')
  }
@@ -194,7 +178,6 @@ let reset = () =>{
  deleteAll.innerHTML="حذف برای همیشه"
  deleteAll.classList.add('disabled')
  isDeleting=0
-
 }
 cancelAll.addEventListener('click',()=>{
  if(!isDeleting){
@@ -227,19 +210,26 @@ deleteAll.addEventListener('click',()=>{
              type:"success" ,
              padding: '1em'
                          })
-                    restult.innerHTML=response.data.result
+            
                         }else{
                         throw new Error("CustomError: Gallery deletion failed");
                      }
 
                      isDeleting=false
                      selectAll.classList.toggle('hidden')
- rowbtn.classList.toggle('hidden')
+                    rowbtn.classList.toggle('hidden')
+                    gallery.classList.toggle('del')
+            
+                    const activeElements = gallery.querySelectorAll('a.active');
+
+                    activeElements.forEach(element => {
+                    element.remove();
+}                   );
+
                       reset()
                       console.log(gallery)
-
                  }).catch(function (error) {
-                
+
                     swal({
              title: "گالری",
              text: 'خطا در حذف تصویر، لطفا مجددا تلاش نمایید.',
@@ -249,12 +239,12 @@ deleteAll.addEventListener('click',()=>{
                          isDeleting=false
                          selectAll.classList.toggle('hidden')
  rowbtn.classList.toggle('hidden')
+ gallery.classList.toggle('del')
+
                          reset()
                  })
 
  }
 })
-
 </script>
-
 {% endblock %}

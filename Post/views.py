@@ -4,22 +4,26 @@ from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 # Create your views here.
 from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy,reverse
 from django.views.generic.base import TemplateView
 from django.views.generic import FormView, ListView, DeleteView, UpdateView
 
-from Post.forms import AddTagForm, AddCategoryForm, AddArticleForm
+from Post.forms import AddTagForm, AddCategoryForm, AddArticleForm,DownloadBoxForm
 from Post.models import ArticleTags, ArticleCategories, Articles
 from django.utils.text import slugify
 from django.core.paginator import Paginator
+from django.contrib import messages
 
 
 # اhelper function
 
 def FindOrCreateTag(tags):
+
     item = []
     for tag in tags:
-        obj = ArticleTags.objects.get_or_create(title=tag, defaults={'title': tag, 'url': slugify(tag,allow_unicode=True)})
+        obj= ArticleTags.objects.get_or_create(title=tag)
+
+        print('hhhhhhhhhhhhhhhhhhhhhh')
         item.append(obj[0].id)
     return item
 
@@ -63,23 +67,6 @@ class CategoryManger(ListView):
     context_object_name = 'data'
 
 
-class PostAdd(FormView):
-    template_name = 'Post/addPost.html'
-    form_class = AddArticleForm
-    success_url = reverse_lazy('post_admin')
-
-    def form_valid(self, form):
-
-        thought = form.save(commit=False)
-        thought.author = self.request.user
-        thought.save()
-        if (form.cleaned_data.get('mytag').strip() != ''):
-            tags: str = form.cleaned_data.get('mytag')
-            Rtags = FindOrCreateTag(tags.strip().split(';'))
-            thought.tags.set(Rtags)
-        if (form.cleaned_data.get('categories') != ''):
-            thought.categories.set(form.cleaned_data.get('categories'))
-        return super(PostAdd, self).form_valid(form)
 
 
 class TagAdd(FormView):
@@ -175,3 +162,49 @@ class EditCategory(UpdateView):
     def get_object(self, *args, **kwargs):
         cat = get_object_or_404(ArticleCategories, pk=self.kwargs['id'])
         return cat
+
+
+
+# class PostAdd(FormView):
+#     template_name = 'Post/addPost.html'
+#     form_class = AddArticleForm
+#     success_url = reverse_lazy('post_admin')
+#
+#     def form_valid(self, form):
+#
+#         thought = form.save(commit=False)
+#         thought.author = self.request.user
+#         thought.save()
+#         if (form.cleaned_data.get('mytag').strip() != ''):
+#             tags: str = form.cleaned_data.get('mytag')
+#             Rtags = FindOrCreateTag(tags.strip().split(';'))
+#             thought.tags.set(Rtags)
+#         if (form.cleaned_data.get('categories') != ''):
+#             thought.categories.set(form.cleaned_data.get('categories'))
+#         return super(PostAdd, self).form_valid(form)
+
+def PostAdd(request):
+    form1=AddArticleForm(request.POST or None,request.FILES or None)
+    form2=DownloadBoxForm(request.POST or None)
+    if request.POST:
+        if(form1.is_valid() and form2.is_valid()):
+            thought = form1.save(commit=False)
+            thought.author =request.user
+            thought.save()
+            if (form1.cleaned_data.get('mytag').strip() != ''):
+                tags: str = form1.cleaned_data.get('mytag')
+
+                Rtags = FindOrCreateTag(tags.strip().split(';'))
+                thought.tags.set(Rtags)
+            if (form1.cleaned_data.get('categories') != ''):
+                thought.categories.set(form1.cleaned_data.get('categories'))
+            box=form2.save(commit=False)
+            box.Post=thought
+            box.save()
+            messages.success(request, "پست با موفقیت ایجاد شد")
+            return HttpResponseRedirect(reverse('post_admin'))
+
+    return render(request,'Post/addPost.html',{
+        'form':form1,
+        'box_download':form2
+    })

@@ -135,45 +135,45 @@ class DownloadBoxForm(forms.ModelForm):
         exclude=['Post']
         widgets = {
             'title1': forms.TextInput(attrs={
-                'placeholder': "لطفا  عنوان دانلود را وارد کنید",
+                'placeholder': "لطفا عنوان دانلود را وارد کنید",
                 'class': "form-control ",
-                'style': "background: none;height: 50px"
+                'style': "background: none;height: 42px"
             }),
             'title2': forms.TextInput(attrs={
-                'placeholder': "لطفا  عنوان دانلود را وارد کنید",
+                'placeholder': "لطفا عنوان دانلود را وارد کنید",
                 'class': "form-control ",
-                'style': "background: none;height: 50px"
+                'style': "background: none;height: 42px"
             }),
             'title3': forms.TextInput(attrs={
-                'placeholder': "لطفا  عنوان دانلود را وارد کنید",
+                'placeholder': "لطفا عنوان دانلود را وارد کنید",
                 'class': "form-control ",
-                'style': "background: none;height: 50px"
+                'style': "background: none;height: 42px"
             }),
             'title4': forms.TextInput(attrs={
-                'placeholder': "لطفا  عنوان دانلود را وارد کنید",
+                'placeholder': "لطفا عنوان دانلود را وارد کنید",
                 'class': "form-control ",
-                'style': "background: none;height: 50px"
+                'style': "background: none;height: 42px"
             }),
             'link1': forms.URLInput(attrs={
-                'placeholder': "لطفا لینک  دانلود را وارد کنید",
+                'placeholder': "لطفا لینک دانلود را وارد کنید",
                 'class': "form-control ",
-                'style': "background: none;height: 50px"
+                'style': "background: none;height: 42px"
             }),
 
             'link2': forms.URLInput(attrs={
-                'placeholder': "لطفا لینک  دانلود را وارد کنید",
+                'placeholder': "لطفا لینک دانلود را وارد کنید",
                 'class': "form-control ",
-                'style': "background: none;height: 50px"
+                'style': "background: none;height: 42px"
             }),
             'link3': forms.URLInput(attrs={
-                'placeholder': "لطفا لینک  دانلود را وارد کنید",
+                'placeholder': "لطفا لینک دانلود را وارد کنید",
                 'class': "form-control ",
-                'style': "background: none;height: 50px"
+                'style': "background: none;height: 42px"
             }),
             'link4': forms.URLInput(attrs={
-                'placeholder': "لطفا لینک  دانلود را وارد کنید",
+                'placeholder': "لطفا لینک دانلود را وارد کنید",
                 'class': "form-control ",
-                'style': "background: none;height: 50px"
+                'style': "background: none;height: 42px"
             }),
         }
 class CombinedForm(forms.Form):

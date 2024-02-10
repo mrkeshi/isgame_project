@@ -15,7 +15,7 @@ class ArticleTags(models.Model):
 
     def save(self, *args, **kwargs):
         self.url = slugify(self.title, allow_unicode=True)
-        super(ArticleTags, self).save(args, kwargs)
+        super(ArticleTags, self).save(*args, **kwargs)
 
 class ArticleCategories(models.Model):
     title = models.CharField(max_length=50, verbose_name="عنوان دسته")
@@ -61,3 +61,4 @@ class DownloadBox(models.Model):
     link3=models.URLField(blank=True,null=True)
     link4=models.URLField(blank=True,null=True)
     Post=models.ForeignKey(Articles,on_delete=models.CASCADE)
+    password=models.CharField(max_length=50,blank=True,null=True,default="پسورد ندارد.")
