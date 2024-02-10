@@ -16,3 +16,5 @@ class Pages(models.Model):
     def save(self, *args, **kwargs):
         self.url = slugify(self.title, allow_unicode=True)
         super(Pages, self).save(args, kwargs)
+
+

@@ -9,7 +9,7 @@ from django.views.generic.base import TemplateView
 from django.views.generic import FormView, ListView, DeleteView, UpdateView
 
 from Post.forms import AddTagForm, AddCategoryForm, AddArticleForm,DownloadBoxForm
-from Post.models import ArticleTags, ArticleCategories, Articles
+from Post.models import ArticleTags, ArticleCategories, Articles,DownloadBox
 from django.utils.text import slugify
 from django.core.paginator import Paginator
 from django.contrib import messages
@@ -66,9 +66,6 @@ class CategoryManger(ListView):
     model = ArticleCategories
     context_object_name = 'data'
 
-
-
-
 class TagAdd(FormView):
     form_class = AddTagForm
     template_name = 'Post/addTag.html'
@@ -77,7 +74,6 @@ class TagAdd(FormView):
     def form_valid(self, form):
         form.save()
         return super(TagAdd, self).form_valid(form)
-
 
 class CategoryAdd(FormView):
     form_class = AddCategoryForm
@@ -140,10 +136,6 @@ class CategoryDelete(DeleteView):
         return HttpResponseRedirect(success_url)
 
 
-class EditPost(FormView):
-    pass
-
-
 class EditTag(UpdateView):
     template_name = 'Post/editTag.html'
     success_url = reverse_lazy('tag_admin')
@@ -164,25 +156,6 @@ class EditCategory(UpdateView):
         return cat
 
 
-
-# class PostAdd(FormView):
-#     template_name = 'Post/addPost.html'
-#     form_class = AddArticleForm
-#     success_url = reverse_lazy('post_admin')
-#
-#     def form_valid(self, form):
-#
-#         thought = form.save(commit=False)
-#         thought.author = self.request.user
-#         thought.save()
-#         if (form.cleaned_data.get('mytag').strip() != ''):
-#             tags: str = form.cleaned_data.get('mytag')
-#             Rtags = FindOrCreateTag(tags.strip().split(';'))
-#             thought.tags.set(Rtags)
-#         if (form.cleaned_data.get('categories') != ''):
-#             thought.categories.set(form.cleaned_data.get('categories'))
-#         return super(PostAdd, self).form_valid(form)
-
 def PostAdd(request):
     form1=AddArticleForm(request.POST or None,request.FILES or None)
     form2=DownloadBoxForm(request.POST or None)
@@ -193,7 +166,6 @@ def PostAdd(request):
             thought.save()
             if (form1.cleaned_data.get('mytag').strip() != ''):
                 tags: str = form1.cleaned_data.get('mytag')
-
                 Rtags = FindOrCreateTag(tags.strip().split(';'))
                 thought.tags.set(Rtags)
             if (form1.cleaned_data.get('categories') != ''):
@@ -208,3 +180,34 @@ def PostAdd(request):
         'form':form1,
         'box_download':form2
     })
+
+def EditPost(request,id):
+    form1_instance = Articles.objects.filter(id=id).first()
+    form2_instance = DownloadBox.objects.filter(Post=form1_instance).first()
+
+    form1 = AddArticleForm(instance=form1_instance)
+    form2 = DownloadBoxForm(instance=form2_instance)
+    form1.fields['mytag'].initial=";".join(list(form1_instance.tags.values_list('title', flat=True)))
+    if request.method == "POST":
+        form1 = AddArticleForm(request.POST, request.FILES, instance=form1_instance)
+        form2 = DownloadBoxForm(request.POST, instance=form2_instance)
+        if form1.is_valid() and form2.is_valid():
+            form2.save()
+            thought=form1.save()
+            if (form1.cleaned_data.get('mytag').strip() != ''):
+                tags: str = form1.cleaned_data.get('mytag')
+                Rtags = FindOrCreateTag(tags.strip().split(';'))
+                thought.tags.set(Rtags)
+            if (form1.cleaned_data.get('categories') != ''):
+                thought.categories.set(form1.cleaned_data.get('categories'))
+            messages.success(request, 'پست با موفقیت بروزرسانی شد')
+            return redirect(reverse('post_admin'))
+
+    context = {
+        'form': form1,
+        'box_download': form2,
+        'old':form1_instance,
+        'cat':list(form1_instance.categories.values_list('id', flat=True)),
+    }
+
+    return render(request, 'Post/editPost.html', context)

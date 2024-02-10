@@ -4,7 +4,7 @@ from . import views
 urlpatterns = [
     path('article', views.PostManger.as_view(), name="post_admin"),
     path('article/add', views.PostAdd, name="post_add_admin"),
-    path('article/<int:id>', views.EditPost.as_view(), name="post_edit_admin"),
+    path('article/<int:id>', views.EditPost, name="post_edit_admin"),
     path('article/delete/', views.PostDelete, name="post_delete_admin"),
     path('article/filter',views.ListPost,name="filter_article_admin"),
 

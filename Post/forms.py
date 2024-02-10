@@ -175,6 +175,11 @@ class DownloadBoxForm(forms.ModelForm):
                 'class': "form-control ",
                 'style': "background: none;height: 42px"
             }),
+            'password': forms.TextInput(attrs={
+                'placeholder': "لطفا پسورد فایل را وارد کنید",
+                'class': "form-control ",
+                'style': "background: none;height: 42px"
+            }),
         }
 class CombinedForm(forms.Form):
     article_form = AddArticleForm()
