@@ -7,6 +7,8 @@
 {% block header_reference %}
 <link rel="stylesheet" type="text/css" href="{% static 'admin_panel/assets/css/forms/theme-checkbox-radio.css' %}">
     <link href="{% static 'admin_panel/assets/css/tables/table-basic.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'admin_panel/plugins/flatpickr/flatpickr.css' %}" rel="stylesheet" type="text/css">
+
 {% endblock %}
 
 
@@ -200,6 +202,28 @@
                                 </div>
                             </div>
                         </div>
+                      <div  class="col-lg-12 mx-auto  p-3 px-2 ">
+                            <div class="statbox widget box box-shadow" style="border:1px solid #bfc9d4;border-radius:0">
+                                <div class="widget-header">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                            <h4>تاریخ و ساعت انتشار</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget-content widget-content-area">
+
+ <div class="form-group mb-0">
+                                                        {{ form.created_date }}
+
+                                    <label for="" class="text-danger mt-3 mx-2 text-xl ">{{ form.created_date.errors }}
+                                    </label>
+
+                                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                                 <div class="col-lg-12 mx-auto p-3 px-2 ">
 
                     <div class=" bg-white p-4  " style="border:1px solid #bfc9d4">
@@ -351,8 +375,13 @@
     <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"
             data-ckeditor-basepath="{% static 'ckeditor/ckeditor/' %}" id="ckeditor-init-script"></script>
     <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+    <script type="text/javascript" src="{% static 'admin_panel/plugins/flatpickr/flatpickr.js' %}"></script>
+    <script type="text/javascript" src="{% static 'admin_panel/plugins/flatpickr/custom-flatpickr.js' %}"></script>
 <script>
-
+var f2 = flatpickr(document.getElementById('dateTimeFlatpickr'), {
+    enableTime: true,
+    dateFormat: "Y-m-d - H:i",
+});
 let file=document.getElementById('exampleFormControlFile1');
 let img=document.getElementById('myimg');
 file.addEventListener('change',(e)=>{

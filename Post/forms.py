@@ -1,5 +1,7 @@
 from .models import ArticleTags, ArticleCategories, Articles,DownloadBox
 from django import forms
+from jalali_date import datetime2jalali,date2jalali
+
 from django.forms import models
 from ckeditor.widgets import CKEditorWidget
 class AddTagForm(forms.ModelForm):
@@ -71,16 +73,21 @@ class AddArticleForm(forms.ModelForm):
                     classes = self.fields[f_name].widget.attrs.get('class')
                     classes += " form-error"
                     self.fields[f_name].widget.attrs['class'] = classes
+        xx=date2jalali.togregorian()
+        print(self.fields['created_date'].initial)
         return x
+
 
     mytag=forms.CharField(widget=forms.Textarea(attrs={
         'class': 'form-control',
         'rows': 3,
-        'placeholder': "لطف تگ ها را وارد کنید"
+        'placeholder': "لطفا تگ ها را وارد کنید"
     }),required=False)
+
+
     class Meta:
         model = Articles
-        exclude=['updated_at','created_date','url','author','tags']
+        exclude=['updated_at','url','author','tags']
         widgets = {
             'title': forms.TextInput(attrs={
                 'placeholder': "لطفا عنوان مطلب را وارد کنید",
@@ -98,6 +105,11 @@ class AddArticleForm(forms.ModelForm):
                 'rows': 3,
                 'placeholder': "لطفا کلمات کلیدی را وارد کنید"
 
+            }),
+            'created_date':forms.TextInput(attrs={
+                'placeholder': "انتخاب تاریخ...",
+                'class':'form-control flatpickr flatpickr-input',
+                'id':'dateTimeFlatpickr'
             }),
 
             'image': forms.FileInput(attrs={

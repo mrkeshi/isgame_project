@@ -23,7 +23,6 @@ def FindOrCreateTag(tags):
     for tag in tags:
         obj= ArticleTags.objects.get_or_create(title=tag)
 
-        print('hhhhhhhhhhhhhhhhhhhhhh')
         item.append(obj[0].id)
     return item
 
