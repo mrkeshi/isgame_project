@@ -7,7 +7,7 @@ from User.models import User
 from django.utils.text import slugify
 
 class ArticleTags(models.Model):
-    title = models.CharField(max_length=50, verbose_name="عنوان تگ")
+    title = models.CharField(max_length=50, verbose_name="عنوان تگ" ,unique=True)
     url = models.TextField(verbose_name="آدرس تگ", unique=True)
 
     def __str__(self):
@@ -18,7 +18,7 @@ class ArticleTags(models.Model):
         super(ArticleTags, self).save(*args, **kwargs)
 
 class ArticleCategories(models.Model):
-    title = models.CharField(max_length=50, verbose_name="عنوان دسته")
+    title = models.CharField(max_length=50, verbose_name="عنوان دسته" ,unique=True)
     url = models.TextField(unique=True, verbose_name="آدرس دسته بندی")
 
     def __str__(self):
@@ -29,7 +29,7 @@ class ArticleCategories(models.Model):
         super(ArticleCategories, self).save(args, kwargs)
 
 class Articles(models.Model):
-    title = models.CharField(max_length=50, verbose_name="عنوان پست")
+    title = models.CharField(max_length=50, verbose_name= "عنوان پست" ,unique=True)
     short_description = models.TextField(verbose_name="توضیحات کوتاه")
     content = RichTextField( blank=True, null=True)
     url = models.SlugField(verbose_name="آدرس پست")

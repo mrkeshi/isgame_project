@@ -24,7 +24,6 @@
                 <th>ردیف</th>
                 <th>Index Name</th>
                 <th>جایگاه جدول</th>
-                <th>تعداد آیتم</th>
                 <th class="text-center">عملیات</th>
             </tr>
             </thead>
@@ -33,13 +32,12 @@
 
             <tr>
                 <td>{{ forloop.counter }} </td>
-                <td>{{ item.place_menu }}   </td>
-                <td> {{ item.place_menu | getPlace }}</td>
-                <td>{{ item.value_count }}  </td>
+                <td>{{ item.value }}   </td>
+                <td> {{ item.label }}</td>
                 <td class="text-center">
                     <ul class="table-controls">
                         <li>
-                            <a href="{% url 'Menu' menu=item.place_menu %}" class="btn btn-primary mb-2 mr-2 btn-rounded">ویرایش <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2" style="color: #ffffff"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a>
+                            <a href="{% url 'Menu' menu=item.value %}" class="btn btn-primary mb-2 mr-2 btn-rounded">ویرایش <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2" style="color: #ffffff"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a>
 {#                        <a href="" data-toggle="tooltip" data-placement="top" title="" data-original-title="ویرایش"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle text-primary"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></a>#}
                         </li>
                     </ul>
@@ -53,7 +51,6 @@
                 <th>ردیف</th>
                 <th>Index Name</th>
                 <th>جایگاه جدول</th>
-                <th>تعداد آیتم</th>
                 <th class="text-center">عملیات</th>
 
             </tr>

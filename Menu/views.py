@@ -1,10 +1,12 @@
 from django.db.models import Count, F
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect,reverse
 from django.urls import reverse_lazy
 from django.views.generic.base import TemplateView
 from django.views.generic import FormView, UpdateView
 from django.views import View
+from django.contrib import messages
+
 # Create your views here.
 from django.views.generic.detail import BaseDetailView
 
@@ -17,8 +19,9 @@ class MainMenu(TemplateView):
 
     def get_context_data(self, **kwargs):
         data = super(MainMenu, self).get_context_data(**kwargs)
-        data['get_places'] = Menu.objects.all().values('place_menu').annotate(value_count=Count('place_menu')).values(
-            'place_menu', 'value_count').order_by()
+
+        data['get_places'] = Menu.placeMenu
+
         print(data['get_places'])
         return data
 
@@ -30,8 +33,9 @@ class addMenu(FormView):
 
     def get_context_data(self, **kwargs):
         if (self.kwargs['menu'] not in Menu.placeMenu):
-            # Todo: send error message
-            pass
+            messages.error(self.request,"صفحه انتخابی شما نامعتبر است. لطفا دقت کنید!")
+
+
         data = super(addMenu, self).get_context_data(**kwargs)
         data['places'] = Menu.placeMenu
         data['place'] = self.kwargs['menu']
@@ -41,6 +45,7 @@ class addMenu(FormView):
         print("form valid")
         menu = self.kwargs.get('menu')
         if (menu in Menu.placeMenu):
+
             form.save()
         else:
             pass

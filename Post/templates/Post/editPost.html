@@ -14,7 +14,7 @@
 
     {% block content %}
 
-<form action="{% url 'post_add_admin' %}" method="post" enctype="multipart/form-data"  class="row layout-top-spacing mx-4 flex align-items-start ">
+<form action="{% url 'post_edit_admin' id=old.id %}" method="post" enctype="multipart/form-data"  class="row layout-top-spacing mx-4 flex align-items-start ">
 {% csrf_token    %}
 
         <div class="col-lg-8 mx-auto mt-3 ">
@@ -250,7 +250,7 @@
                                                     <h6 class="mb-2">تصویر شاخص</h6>
                                                     <span class="mt-3">لطفا یک تصویر برای پست انتخاب کنید</span>
                                                     <div class="row">
-                                                    <img {% if old.image.url %} src="{{old.image.url}}" {% endif %} class="mx-auto my-3" width="70%" height="70%" alt="" id="myimg">
+                                                    <img {% if old.image %} src="{{old.image.url}}" {% endif %} class="mx-auto my-3" width="70%" height="70%" alt="" id="myimg">
 
                                                     </div>
 

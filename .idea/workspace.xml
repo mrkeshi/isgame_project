@@ -4,139 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="add component pagination.html">
-      <change afterPath="$PROJECT_DIR$/Post/migrations/0003_downloadbox.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post/migrations/0004_downloadbox_post.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shop/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shop/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shop/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shop/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shop/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shop/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shop/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SiteModule/templates/Gallery/items.html" afterDir="false" />
+    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="Bad Bug!">
       <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_3MQDIMS.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_PrJgjwi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_XsSrPEx.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_a03TjMS.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_0qek2tz.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_1wvGuPE.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_2H1aP6q.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_2OJdXwF.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_330vmkm.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_73P2diq.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_7hEF7Xc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_81psjDz.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_DJ0vC3b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_E2A1TJI.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_EgdNHna.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_H9jrSKg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_Hg0zCvt.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_JCYiJRg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_KauoTXn.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_L9WD7CW.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_LecNE9F.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_NL7qQhx.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_NOylOqq.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_POmteNI.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_PwQWmUo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_S2WpJlf.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_Vnt4A1R.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_Vp18AJI.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_VxzWuvm.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_WGVol0N.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_WkfX8Oc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_XHPQWS5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_ZK9Er6D.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_Zoi8bXS.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_aQBBrFa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_aXfIvmP.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_eeodGRo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_ex1jB2Y.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_f8wC8F0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_fi4NZSH.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_gYoJu59.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_iH1dE11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_iHUo7WV.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_ic5xhgi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_inMlo2C.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_kN23Mqr.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_kYZ2qbD.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_l2CFyRr.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_lR1pppu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_mCUTexC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_mm7xuW3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_nalpptp.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_oTLZaTu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_oax5p0z.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_oscFNg3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_pASGhbS.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_qpGgXrR.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_rTZu85k.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_ra9SeJT.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_s06GrLe.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_s7WSP8T.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_t744uYd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_th4sD5B.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_tkPrebW.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/-2147483648_-210468_zyavfl8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/AlbumArt_B5020207-474E-4720-90D4-146EB94BA900_Large.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/AlbumArt_B5020207-474E-4720-90D4-146EB94BA900_Large_jlvNYu3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Screenshot_from_2024-02-05_20-24-23.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Screenshot_from_2024-02-05_20-24-23_dOyZXCy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min_1fqSX9D.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min_5c0x0Os.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min_65g2g72.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min_EXfbK8h.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min_LRVDNbO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min_VdG05rE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min_Z0iiurX.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min_g3u2G63.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min_geRMj0l.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min_hMODedg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min_nGwDyLm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min_nb5wmez.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min_pug68au.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min_rJySuuY.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min_ubvgwV1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min_w2mnsTb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min_xXNdi5J.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_1foBz5z.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_2pkmhnb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_37PpgAc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_8qBOBZI.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_94LKDQr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_9KqKE15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_A4E6rD5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_D803Ez3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_G22Mg2C.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_Ge0fpwU.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_GlhksDa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_Ii548gU.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_LOGvUHe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_PEXdiw4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_ZajjTW8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_bKhcIIJ.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_e848GwM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_hlOWAkR.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_jUSvyYz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_jmhTIEk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_mhbzLzJ.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_pQ6KflV.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_qDNAxHw.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_rgSIuoN.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min-300x300_uha69eJ.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_avQjshX.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_elcje5c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_fTkhczI.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_qYJPOPi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_zXj6lvO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/artworks-XAPhwenWy5fpdr6d-3QPB8Q-t500x500.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/artworks-XAPhwenWy5fpdr6d-3QPB8Q-t500x500_5MavEcD.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/artworks-XAPhwenWy5fpdr6d-3QPB8Q-t500x500_ELefJss.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/artworks-XAPhwenWy5fpdr6d-3QPB8Q-t500x500_PsLekBx.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/artworks-XAPhwenWy5fpdr6d-3QPB8Q-t500x500_gVZQ3g9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/artworks-XAPhwenWy5fpdr6d-3QPB8Q-t500x500_lNkyHqV.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/image_post_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/gallery/artworks-XAPhwenWy5fpdr6d-3QPB8Q-t500x500.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/gallery/artworks-XAPhwenWy5fpdr6d-3QPB8Q-t500x500_ESMm53h.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/gallery/banner-for-hamyarpng.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/gallery/image_post_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/gallery/image_post_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/gallery/image_post_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/gallery/isgame_poster.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/gallery/isgmae.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Menu/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Menu/templates/Menu/MenuItems.html" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/templates/Menu/MenuItems.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Menu/templates/Menu/Menus.html" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/templates/Menu/Menus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Menu/templates/Menu/addMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/templates/Menu/addMenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Menu/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiteModule/templates/Gallery/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/templates/Gallery/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiteModule/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_panel/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/templates/Post/editPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/editPost.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/signals.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isgame_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/isgame_project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin_panel/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin_panel/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin_panel/plugins/lightbox/custom-photswipe.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin_panel/plugins/lightbox/custom-photswipe.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +93,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/alireza/isgame_project/Pages/templates/Pages&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/alireza/isgame_project/Post/templates/Post&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
@@ -200,11 +104,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Post/templates/Post" />
       <recent name="$PROJECT_DIR$/Pages/templates/Pages" />
       <recent name="$PROJECT_DIR$/Pages/templates" />
       <recent name="$PROJECT_DIR$/SiteModule/templates/Gallery" />
       <recent name="$PROJECT_DIR$/Contact/templates/Contact" />
-      <recent name="$PROJECT_DIR$/templates/layout/HomeLayout" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Pages/templates/Pages" />
@@ -396,7 +300,31 @@
       <option name="project" value="LOCAL" />
       <updated>1707213212740</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="update library gallery">
+      <option name="closed" value="true" />
+      <created>1707506598476</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1707506598476</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Complete the gallery module">
+      <option name="closed" value="true" />
+      <created>1707565039597</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1707565039597</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Bad Bug!">
+      <option name="closed" value="true" />
+      <created>1707591345251</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1707591345251</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -522,6 +450,9 @@
     <MESSAGE value="add swal and modal component" />
     <MESSAGE value="Completion of pages" />
     <MESSAGE value="add component pagination.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="add component pagination.html" />
+    <MESSAGE value="update library gallery" />
+    <MESSAGE value="Complete the gallery module" />
+    <MESSAGE value="Bad Bug!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bad Bug!" />
   </component>
 </project>
