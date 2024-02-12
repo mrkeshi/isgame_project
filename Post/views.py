@@ -162,6 +162,7 @@ def PostAdd(request):
         if(form1.is_valid() and form2.is_valid()):
             thought = form1.save(commit=False)
             thought.author =request.user
+            thought.created_date=form1.cleaned_data.get('created_date')
             thought.save()
             if (form1.cleaned_data.get('mytag').strip() != ''):
                 tags: str = form1.cleaned_data.get('mytag')

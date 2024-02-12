@@ -1,6 +1,9 @@
 from .models import ArticleTags, ArticleCategories, Articles,DownloadBox
 from django import forms
+import datetime
 from jalali_date import datetime2jalali,date2jalali
+from jalali_date.fields import GregorianToJalali, SplitJalaliDateTimeField
+from jdatetime import datetime as jalali_datetime
 
 from django.forms import models
 from ckeditor.widgets import CKEditorWidget
@@ -15,24 +18,16 @@ class AddTagForm(forms.ModelForm):
                     classes += " form-error"
                     self.fields[f_name].widget.attrs['class'] = classes
         return x
-
     class Meta:
-
         model = ArticleTags
         fields = ['title']
-
         widgets = {
             'title': forms.TextInput(attrs={
                 'class': 'form-control',
                 'id': 'inputname',
                 'placeholder': "نام تگ",
-
             }, ),
-
-
         }
-
-
 class AddCategoryForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
@@ -43,6 +38,7 @@ class AddCategoryForm(forms.ModelForm):
                     classes = self.fields[f_name].widget.attrs.get('class')
                     classes += " form-error"
                     self.fields[f_name].widget.attrs['class'] = classes
+
         return x
 
     class Meta:
@@ -61,11 +57,11 @@ class AddCategoryForm(forms.ModelForm):
 
         }
 
-
 class AddArticleForm(forms.ModelForm):
 
 
     def __init__(self, *args, **kwargs):
+
         x = super(AddArticleForm, self).__init__(*args, **kwargs)
         if self.errors:
             for f_name in self.fields:
@@ -73,8 +69,6 @@ class AddArticleForm(forms.ModelForm):
                     classes = self.fields[f_name].widget.attrs.get('class')
                     classes += " form-error"
                     self.fields[f_name].widget.attrs['class'] = classes
-        xx=date2jalali.togregorian()
-        print(self.fields['created_date'].initial)
         return x
 
 
@@ -83,6 +77,22 @@ class AddArticleForm(forms.ModelForm):
         'rows': 3,
         'placeholder': "لطفا تگ ها را وارد کنید"
     }),required=False)
+    created_date = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control pointer','autocomplete':"off", 'data-jdp': '','placeholder': "انتخاب تاریخ..."}))
+
+    def clean_created_date(self):
+        print('ddddddddddddddddddd')
+        print(self.instance)
+        try:
+            jalali_date_str = self.cleaned_data.get('created_date')
+            if not jalali_date_str:
+                # اگر مقدار ورودی تاریخ خالی باشد، از مقدار قبلی استفاده کن
+                return jalali_datetime.strptime(self.initial.get('created_date'), "%Y/%m/%d %H:%M:%S").togregorian()
+
+            jalali_date = jalali_datetime.strptime(jalali_date_str, "%Y/%m/%d %H:%M:%S").togregorian()
+            print(jalali_date)
+            return jalali_date
+        except:
+            raise forms.ValidationError('خطا در ورودی، لطفا دقت کنید')
 
 
     class Meta:
@@ -106,11 +116,6 @@ class AddArticleForm(forms.ModelForm):
                 'placeholder': "لطفا کلمات کلیدی را وارد کنید"
 
             }),
-            'created_date':forms.TextInput(attrs={
-                'placeholder': "انتخاب تاریخ...",
-                'class':'form-control flatpickr flatpickr-input',
-                'id':'dateTimeFlatpickr'
-            }),
 
             'image': forms.FileInput(attrs={
                 'id':'exampleFormControlFile1',
@@ -129,7 +134,6 @@ class AddArticleForm(forms.ModelForm):
 
 
         }
-
 
 class DownloadBoxForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -193,6 +197,3 @@ class DownloadBoxForm(forms.ModelForm):
                 'style': "background: none;height: 42px"
             }),
         }
-class CombinedForm(forms.Form):
-    article_form = AddArticleForm()
-    download_form = DownloadBoxForm()

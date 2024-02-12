@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="Bad Bug!">
+    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="fix some bug">
       <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_3MQDIMS.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_PrJgjwi.png" afterDir="false" />
@@ -15,32 +15,26 @@
       <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_fTkhczI.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_qYJPOPi.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_zXj6lvO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/Articles/artworks-XAPhwenWy5fpdr6d-3QPB8Q-t500x500.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/Articles/artworks-XAPhwenWy5fpdr6d-3QPB8Q-t500x500_5MavEcD.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/Articles/artworks-XAPhwenWy5fpdr6d-3QPB8Q-t500x500_ELefJss.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/Articles/artworks-XAPhwenWy5fpdr6d-3QPB8Q-t500x500_PsLekBx.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/Articles/artworks-XAPhwenWy5fpdr6d-3QPB8Q-t500x500_gVZQ3g9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/Articles/artworks-XAPhwenWy5fpdr6d-3QPB8Q-t500x500_lNkyHqV.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/Articles/image_post_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/artworks-XAPhwenWy5fpdr6d-3QPB8Q-t500x500.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/artworks-XAPhwenWy5fpdr6d-3QPB8Q-t500x500_ESMm53h.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/banner-for-hamyarpng.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/image_post_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/image_post_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/image_post_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/isgame_poster.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/isgmae.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/logo2-min.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/majidh1/jalalidatepicker/ChangeLog.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/majidh1/jalalidatepicker/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/majidh1/jalalidatepicker/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/majidh1/jalalidatepicker/dist/jalalidatepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/majidh1/jalalidatepicker/dist/jalalidatepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/majidh1/jalalidatepicker/dist/jalalidatepicker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/majidh1/jalalidatepicker/dist/jalalidatepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/majidh1/jalalidatepicker/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/templates/Menu/MenuItems.html" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/templates/Menu/MenuItems.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/templates/Menu/Menus.html" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/templates/Menu/Menus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/templates/Menu/addMenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/templates/Menu/addMenu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/templates/Post/addPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/addPost.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Post/templates/Post/editPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/editPost.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiteModule/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/signals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/isgame_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/isgame_project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin_panel/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin_panel/bootstrap/css/bootstrap.min.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,7 +318,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707591345251</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="fix some bug">
+      <option name="closed" value="true" />
+      <created>1707658292376</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1707658292376</updated>
+    </task>
+    <task id="LOCAL-00027" summary="fix some bug">
+      <option name="closed" value="true" />
+      <created>1707670438819</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1707670438819</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -453,6 +463,7 @@
     <MESSAGE value="update library gallery" />
     <MESSAGE value="Complete the gallery module" />
     <MESSAGE value="Bad Bug!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bad Bug!" />
+    <MESSAGE value="fix some bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix some bug" />
   </component>
 </project>

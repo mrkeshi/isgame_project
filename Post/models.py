@@ -41,7 +41,7 @@ class Articles(models.Model):
     url = models.SlugField(verbose_name="آدرس پست")
     is_active = models.BooleanField(choices=((False,'پیش نویس'),(True,"نمایش عمومی")),default=False)
     is_pin = models.BooleanField(verbose_name="یین شده")
-    created_date = models.DateTimeField(default=datetime2jalali(datetime.datetime.now()).strftime('%Y/%m/%d - %H:%M'),verbose_name="تاریخ ابجاد پست ")
+    created_date = models.DateTimeField()
     updated_at = models.DateTimeField(auto_now=True, verbose_name="تاریخ آپدیت پست")
     author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="نویسنده")
     tags = models.ManyToManyField(ArticleTags, verbose_name="تگ ها", blank=True,null=True)
