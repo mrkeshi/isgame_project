@@ -77,19 +77,18 @@ class AddArticleForm(forms.ModelForm):
         'rows': 3,
         'placeholder': "لطفا تگ ها را وارد کنید"
     }),required=False)
-    created_date = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control pointer','autocomplete':"off", 'data-jdp': '','placeholder': "انتخاب تاریخ..."}))
+    created_date = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control pointer','autocomplete':"off", 'data-jdp': '','placeholder': "انتخاب تاریخ..."}),required=False)
 
     def clean_created_date(self):
-        print('ddddddddddddddddddd')
-        print(self.instance)
+
+      
         try:
             jalali_date_str = self.cleaned_data.get('created_date')
             if not jalali_date_str:
-                # اگر مقدار ورودی تاریخ خالی باشد، از مقدار قبلی استفاده کن
-                return jalali_datetime.strptime(self.initial.get('created_date'), "%Y/%m/%d %H:%M:%S").togregorian()
+                # print(jalali_datetime.strptime(self.instance.get('created_date'), "%Y/%m/%d %H:%M:%S").togregorian())
+                return jalali_datetime.strptime(self.instance.get('created_date'), "%Y/%m/%d %H:%M:%S").togregorian()
 
             jalali_date = jalali_datetime.strptime(jalali_date_str, "%Y/%m/%d %H:%M:%S").togregorian()
-            print(jalali_date)
             return jalali_date
         except:
             raise forms.ValidationError('خطا در ورودی، لطفا دقت کنید')
@@ -116,7 +115,12 @@ class AddArticleForm(forms.ModelForm):
                 'placeholder': "لطفا کلمات کلیدی را وارد کنید"
 
             }),
-
+        'created_date':forms.TextInput(attrs={
+            'class':'form-control',
+            'autocomplete': "off",
+            'placeholder': "انتخاب تاریخ...",
+            'data-jdp': ''
+        }),
             'image': forms.FileInput(attrs={
                 'id':'exampleFormControlFile1',
                 'class':'form-control-file'
