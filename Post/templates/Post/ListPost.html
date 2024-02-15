@@ -74,25 +74,25 @@
                     <div class="table-responsive mb-4 style-1">
                         <div id="style-1_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
                             <div class="row">
-                                <div class="col-sm-12 col-md-8 ">
+                                <div class="col-sm-12  col-xl-8  ">
                                     <div class="row">
-                                        <div class="dataTables_length col-md-4 " id="style-1_length">
+                                        <div class="dataTables_length col-lg-12 col-2xl-4 " id="style-1_length">
                                             <label>
-                                                <select style="width: 260px;cursor: pointer"
+                                                <select id="selectRun" style="width: 260px;cursor: pointer"
                                                         name="style-1_length" aria-controls="style-1"
                                                         class="form-control">
                                                     <option value="5">همه کارهای دسته جمعی</option>
-                                                    <option value="10">حذف گروهی</option>
-                                                    <option value="20">تبدیل به پیش نویس</option>
-                                                    <option value="50">تبدیل به منتشر شده</option>
+                                                    <option value="delete">حذف گروهی</option>
+                                                    <option value="draft">تبدیل به پیش نویس</option>
+                                                    <option value="post">تبدیل به منتشر شده</option>
                                                 </select>
-                                                <input type="submit" value="اجرا" name="txt"
+                                                <input id="runBtn" type="submit" value="اجرا" name="txt"
                                                        class=" btn btn-danger mx-2" style="height: 43px">
                                             </label>
                                         </div>
 
 
-                                        <div class="dataTables_length col-md-8 " id="style-2_length">
+                                        <div class="dataTables_length col-lg-12 col-2xl-4" id="style-2_length">
                                             <label>
                                                 <select style="width: 210px;cursor: pointer"
                                                         name="style-1_length" aria-controls="style-1"
@@ -124,7 +124,7 @@
                                 </div>
 
 
-                                <div class="col-sm-12 col-md-4">
+                                <div class="col-sm-12 col-md-3 col-xl-4 col-2xl-3 ">
                                     <div id="style-1_filter" class="dataTables_filter"><label>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -156,26 +156,33 @@
     <script src="{% static 'admin_panel/plugins/table/datatable/datatables.js' %}"></script>
     <script src="{% static 'assets/webpack_bundles/axious_main_bundler.js' %}"></script>
     <script>
+        function removeItemOnce(arr, value) {
+var index = arr.indexOf(value);
+if (index > -1) {
+ arr.splice(index, 1);
+}
+return arr;
+}
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
-
         class DeleteItem {
             //  properties
             CheckAllBtn = document.getElementById('All_Checked')
             items = []
+            single=0
             status = false
             ConfirmBtn = document.getElementById('btn_confirm_delete')
             AllElement = document.querySelectorAll("[data-field-number]")
-
             constructor() {
                 this.AllElement.forEach((el) => {
-
                     el.querySelector('.deleteBtn').addEventListener('click', () => {
-                        console.log('click')
+                        this.reset()
                         this.getId(el.getAttribute('data-field-number'))
                     })
                 })
                 this.ConfirmBtn.addEventListener('click', (e) => {
+
+
                     if (!this.status) {
                         this.ConfirmDeleted()
                     }
@@ -187,7 +194,10 @@
             // methods
             getId(id) {
                 this.status = false
-                this.items = [Number(id)]
+                this.single = Number(id)
+            }
+            pushId(id){
+                this.items.push(Number(id))
             }
             ConfirmDeleted() {
                 if (this.status == false) {
@@ -199,7 +209,7 @@
                         method: 'post',
                         url: "{% url 'post_delete_admin' %}",
                         data: {
-                            id: this.items,
+                            id: [this.single],
                         },
                         headers: {
                             "Content-Type": "application/x-www-form-urlencoded",
@@ -211,8 +221,18 @@
                             self.Finnish(response.data['ids'])
                         }
                     }).catch(function (error) {
-                        console.log(error)
+                        this.ConfirmBtn.querySelector('span').innerHTML = "خطا در حذف، لطفا مجددا امتحان کنید."
+                    }).finally(()=>{
+                    
                     })
+                }
+            }
+            reset(){
+                if(this.ConfirmBtn.classList.contains('btn-success')){
+                    this.ConfirmBtn.classList.remove('btn-success')
+                    this.ConfirmBtn.classList.add('btn-danger')
+                    this.ConfirmBtn.querySelector('span').innerHTML = "حذف"
+                    items=[]
                 }
             }
             Finnish(items) {
@@ -229,19 +249,52 @@
             checkedAll() {
             if (this.CheckAllBtn.checked===true){
                 this.AllElement.forEach((el)=>{
+                    this.items.push(el.getAttribute('data-check-id'))
                     el.querySelector('.inputchecked').checked=true
                 })
             }else{
+    
+                    removeItemOnce(this.items,Number(el.getAttribute('data-check-id')))
                      this.AllElement.forEach((el)=>{
                     el.querySelector('.inputchecked').checked=false
                 })
             }
             }
         }
+
         const deleteItems = new DeleteItem();
 
+        class Select{
+            selectRun=document.getElementById('selectRun')
+            runbtn=document.getElementById('run')
+            checks=document.querySelectorAll('.customer-all-info')
+            constructor(){
 
+                this.checks.forEach((el)=>{
+                    el.addEventListener('click',()=>{
+                       if(!el.checked){
+                        removeItemOnce(deleteItems.items,Number(el.getAttribute('data-check-id')))
+                       }else{
+                        deleteItems.items.push(el.getAttribute('data-check-id'))
+                       }
+                      
+                        console.log(deleteItems.items)
+                    })
+                })
+            }
 
+            selecttion(){
+                switch (selectRun.value) {
+                    case 'delete':
+                        alert("delete")
+                        break;
+                
+                    default:
+                        break;
+                }
+            }
+        }
+        new Select()
 
         class FilterQuery{
             search=document.getElementById('search_query');

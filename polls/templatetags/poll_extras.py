@@ -28,7 +28,7 @@ def ActiveClass(value,url):
 
 @register.filter
 def jalali_date(value):
-    return datetime2jalali(value).strftime(' تاریخ   %y/%m/%d  ساعت  %H:%M:%S')
+    return datetime2jalali(value).strftime(' تاریخ   %Y/%m/%d  ساعت  %H:%M:%S')
 
 @register.filter
 def getPlace(val):

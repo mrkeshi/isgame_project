@@ -1,8 +1,16 @@
 {% extends 'layout/HomeLayout/HomeShared/base.html' %}
 {% load static %}
+{% load render_partial %}
 {% block title %} صفحه اصلی {% endblock %}
 
+
+
+
+
+{% block header %} {% render_partial 'Home.views.HeaderOne' %} {% endblock %}
+
 {% block main %}
+
 
   <div class="container mx-auto">
     <!-- Start Nabar Menu -->

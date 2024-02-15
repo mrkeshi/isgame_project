@@ -18,76 +18,23 @@
                 <input type="search" class=" mt-2  p-3 w-full h-11 transition ease-linear text-sm bg-gray-300  text-black-700 border border-gray-300 rounded-2xl bg-gray-50 focus-visible:outline-none focus:border-gray-500 relative max-md:-mr-[6px]" placeholder="جست و جو کنید" required="">
               </div>
               <hr class="text-black-500 w-full mr-2 my-3 lg:hidden">
-
+{% for item in menus %}
               <li>
                 <a href="index.html">
                   <div class="flex items-center mx-6">
                     <div
-                      class="w-8 h-8 max-sm:w-[26px] max-sm:h-[26px] rounded-full bg-gold-100   text-white flex justify-center items-center shadow-narm">
+                      class="w-8 h-8 max-sm:w-[26px] max-sm:h-[26px] rounded-full    text-white flex justify-center items-center shadow-narm" style="background:{{item.icon_color}}">
                       <span class="material-symbols-outlined text-[22px] max-sm:text-[19px] mb-1">
-                        home
+                        {{item.icon_name}}
                       </span>
                     </div>
-                    <span class="mx-2 text-gold-100 text-mxl">خانه</span>
+                    <span class="mx-2 text-gold-100 text-mxl">{{item.title}}</span>
                   </div>
 
                 </a>
               </li>
-              <li>
-                <a href="shop.html">
-                  <div class="flex items-center mx-6 hover:text-red-100 ease-in transition">
-                    <div
-                      class="w-8 h-8 max-sm:w-[26px] max-sm:h-[26px] rounded-full bg-red-100  text-white flex justify-center items-center shadow-narm">
-                      <span class="material-symbols-outlined text-[22px] max-sm:text-[19px]">
-                        shopping_bag
-                      </span>
-                    </div>
-                    <span class="mx-2 text-mxl ">فروشگاه</span>
-                  </div>
 
-                </a>
-              </li>
-              <li>
-                <a href="category_blog.html">
-                  <div class="flex items-center mx-6 hover:text-blue-300 ease-in transition">
-                    <div
-                      class="w-8 h-8 max-sm:w-[26px] max-sm:h-[26px] rounded-full bg-blue-300  text-white flex justify-center items-center shadow-narm">
-                      <span class="material-symbols-outlined text-[22px] max-sm:text-[19px] ">
-                        public
-                      </span>
-                    </div>
-                    <span class="mx-2 text-mxl">آموزش</span>
-                  </div>
-
-                </a>
-              </li>
-              <li>
-                <a href="category_blog.html">
-                  <div class="flex items-center mx-6 hover:text-purple ease-in transition">
-                    <div
-                      class="w-8 h-8 max-sm:w-[26px] max-sm:h-[26px] rounded-full bg-purple  text-white flex justify-center items-center shadow-narm">
-                      <span class="material-symbols-outlined text-[22px] max-sm:text-[19px] ">
-                        settings
-                      </span>
-                    </div>
-                    <span class="mx-2 text-mxl">چیت</span>
-                  </div>
-
-                </a>
-              </li>
-              <li>
-                <a href="category_blog.html">
-                  <div class="flex items-center mx-6 hover:text-green ease-in transition">
-                    <div class="w-8 h-8 max-sm:w-[26px] max-sm:h-[26px] rounded-full bg-green  text-white flex justify-center items-center shadow-narm">
-                      <span class="material-symbols-outlined text-[22px]  ">
-                        gamepad
-                      </span>
-                    </div>
-                    <span class="mx-2  text-mxl">ترینر</span>
-                  </div>
-
-                </a>
-              </li>
+      {% endfor %}
 
             </div>
             <!-- hamburger icon -->
