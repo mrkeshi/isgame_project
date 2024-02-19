@@ -47,4 +47,4 @@ class Orders(models.Model):
 
 class LinkDownload(models.Model):
     file=models.FileField(upload_to='product/file')
-    Product=models.ForeignKey(Product,on_delete=models.CASCADE)
+    Product=models.ForeignKey(Product,on_delete=models.CASCADE,blank=True)

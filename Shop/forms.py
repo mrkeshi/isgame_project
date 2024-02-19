@@ -5,7 +5,6 @@ from .models import Product, LinkDownload
 class addProductForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
-
         x = super(addProductForm, self).__init__(*args, **kwargs)
         if self.errors:
             for f_name in self.fields:
@@ -31,9 +30,11 @@ class addProductForm(forms.ModelForm):
             }),
             'price': forms.NumberInput(attrs={
                 'class': 'form-control',
-
                 'placeholder': "لطفا قیمت محصول را به ریال وارد کنید"
-
+            }),
+            'fprice': forms.NumberInput(attrs={
+                'class': 'form-control',
+                'placeholder': "لطفا قیمت محصول را به ریال وارد کنید"
             }),
             'keyword': forms.Textarea(attrs={
                 'class': 'form-control',

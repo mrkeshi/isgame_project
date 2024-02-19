@@ -16,13 +16,13 @@ def addProductView(request):
             box=form2.save(commit=False)
             box.Product=thought
             box.save()
-            messages.success(request, "پست با موفقیت ایجاد شد")
-            return HttpResponseRedirect(reverse('post_admin'))
+            messages.success(request, "محصول با موفقیت ساخته شد")
+            return HttpResponseRedirect(reverse('product_manage'))
     return render(request,'Shop/addProduct.html',{
         'form':form1,
         'box_download':form2
     })
-class PageList(ListView):
+class ProductManage(ListView):
     model = Product
     paginate_by = 10
     template_name = 'Shop/listProduct.html'
