@@ -79,24 +79,11 @@ class AddArticleForm(forms.ModelForm):
     }),required=False)
     created_date = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control pointer','autocomplete':"off", 'data-jdp': '','placeholder': "انتخاب تاریخ..."}),required=False)
 
-    def clean_created_date(self):
-
-      
-        try:
-            jalali_date_str = self.cleaned_data.get('created_date')
-            if not jalali_date_str:
-                # print(jalali_datetime.strptime(self.instance.get('created_date'), "%Y/%m/%d %H:%M:%S").togregorian())
-                return jalali_datetime.strptime(self.instance.get('created_date'), "%Y/%m/%d %H:%M:%S").togregorian()
-
-            jalali_date = jalali_datetime.strptime(jalali_date_str, "%Y/%m/%d %H:%M:%S").togregorian()
-            return jalali_date
-        except:
-            raise forms.ValidationError('خطا در ورودی، لطفا دقت کنید')
 
 
     class Meta:
         model = Articles
-        exclude=['updated_at','url','author','tags']
+        exclude=['updated_at','created_date','url','author','tags']
         widgets = {
             'title': forms.TextInput(attrs={
                 'placeholder': "لطفا عنوان مطلب را وارد کنید",
@@ -115,12 +102,7 @@ class AddArticleForm(forms.ModelForm):
                 'placeholder': "لطفا کلمات کلیدی را وارد کنید"
 
             }),
-        'created_date':forms.TextInput(attrs={
-            'class':'form-control',
-            'autocomplete': "off",
-            'placeholder': "انتخاب تاریخ...",
-            'data-jdp': ''
-        }),
+
             'image': forms.FileInput(attrs={
                 'id':'exampleFormControlFile1',
                 'class':'form-control-file'

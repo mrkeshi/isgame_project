@@ -31,6 +31,9 @@ def jalali_date(value):
     return datetime2jalali(value).strftime(' تاریخ   %Y/%m/%d  ساعت  %H:%M:%S')
 
 @register.filter
+def jalali_date_cu(value):
+    return datetime2jalali(value).strftime(' %d %B %Y')
+@register.filter
 def getPlace(val):
     for elm in Menu.placeMenu:
         if (val==elm.value):

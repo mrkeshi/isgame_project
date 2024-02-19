@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="bug in timeField and sidebar menu!">
+    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="daynamic home page">
+      <change afterPath="$PROJECT_DIR$/Comment/migrations/0002_comment_post.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/Component.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/templates/HomeComponent/CategoryComponent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post/migrations/0003_alter_articles_created_date.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shop/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shop/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shop/migrations/0002_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shop/migrations/0003_auto_20240219_1346.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shop/templates/Shop/addProduct.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shop/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/1-54.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/1-54_55Ep6Wl.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_3MQDIMS.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_PrJgjwi.png" afterDir="false" />
@@ -15,16 +27,53 @@
       <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_fTkhczI.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_qYJPOPi.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medias/Articles/Screenshot_from_2024-02-05_20-24-23_zXj6lvO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/YFHOp3ns7Aj76r85J7hVZdiL.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/YFHOp3ns7Aj76r85J7hVZdiL_0RSyksF.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/artworks-XAPhwenWy5fpdr6d-3QPB8Q-t500x500_0EoFqpp.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/banner-for-hamyarpng.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/default-image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Articles/image_post_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Profile/me.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/SiteSetting/Logo/image_post_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/SiteSetting/Logo/image_post_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Home/images/default-image.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comment/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Comment/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contact/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Contact/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Home/templates/Home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/templates/Home/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/templates/HomeShared/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/templates/HomeShared/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Menu/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/migrations/0002_pages_is_active.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/migrations/0002_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/migrations/0002_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/migrations/0003_downloadbox.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/migrations/0004_downloadbox_post.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/migrations/0005_downloadbox_password.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Post/templates/Post/ListPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/ListPost.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/templates/Post/includes/ListPostsComponents.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/includes/ListPostsComponents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/templates/Post/addPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/addPost.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/templates/Post/editPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/editPost.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shop/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shop/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shop/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/migrations/0002_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/migrations/0002_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/migrations/0003_mediagallery.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/migrations/0002_incorrect_attempts_is_checked.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/context_processors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel/templates/component/header_component.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/templates/component/header_component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel/templates/component/sidebar_component.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/templates/component/sidebar_component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/isgame_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/isgame_project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/isgame_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/isgame_project/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/polls/templatetags/poll_extras.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templatetags/poll_extras.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout/HomeLayout/HomeComponent/header1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/HomeLayout/HomeComponent/header1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout/HomeLayout/HomeShared/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/HomeLayout/HomeShared/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Home/dist/custom_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Home/dist/custom_style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +83,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -348,7 +397,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707822590852</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="daynamic home page">
+      <option name="closed" value="true" />
+      <created>1707981251850</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1707981251850</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -480,6 +537,17 @@
     <MESSAGE value="fix some bug" />
     <MESSAGE value="bug in timeField" />
     <MESSAGE value="bug in timeField and sidebar menu!" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug in timeField and sidebar menu!" />
+    <MESSAGE value="daynamic home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="daynamic home page" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Post/models.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

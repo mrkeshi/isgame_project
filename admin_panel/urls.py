@@ -12,6 +12,7 @@ urlpatterns=[
     path('gallery/',SiteModule.GalleryMange.as_view(),name="media_list"),
     path('delete/delete',SiteModule.DeletedItems,name="delete_gallery"),
     path('gallery/add',SiteModule.Add,name="gallery_add"),
-    path('Pages/',include('Pages.urls'))
+    path('Pages/',include('Pages.urls')),
+    path('shop/',include('Shop.urls'))
 
 ]

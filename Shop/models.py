@@ -44,3 +44,7 @@ class Orders(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     price=models.IntegerField(default=0,verbose_name="هزینه")
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+class LinkDownload(models.Model):
+    file=models.FileField(upload_to='product/file')
+    Product=models.ForeignKey(Product,on_delete=models.CASCADE)

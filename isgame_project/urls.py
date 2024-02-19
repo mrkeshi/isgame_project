@@ -28,8 +28,9 @@ urlpatterns = [
     path('dashbaord/',include('admin_panel.urls')),
     path('user/resetpassword',UserView.ResetPassword.as_view(),name="resetpassword"),
     path('user/resetpassword/<token>', UserView.ResetPasswordConfirm.as_view(), name="resetpassword_confirm"),
-    path('',HomeView.HomePage),
-    path('contact', ContactView.as_view(), name="contact")
+    path('',include("Home.urls")),
+
+    path('contact', ContactView.as_view(), name="contact"),
 
 ]
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

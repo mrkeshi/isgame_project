@@ -5,6 +5,6 @@ def SiteInformations(request):
 	return {
 	'title': site.title,
 	'url': site.url,
-    'logoIcon':site.logoIcon.url,
-    'logoSite':site.logoSite.url
+    'logoIcon':site.logoIcon,
+    'logoSite':site.logoSite
 	}

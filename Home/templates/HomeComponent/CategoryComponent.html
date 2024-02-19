@@ -1,0 +1,28 @@
+    <section>
+              <div class="lates_post bg-white shadow-md rounded-[10px] px-8 py-6  flex flex-col mb-10 max-sm:mb-6 max-sm:p-4">
+                <div class="header-title mb-2  items-center relative -right-2 ">
+                  <div class="flex items-center">
+                    <div class="bg-gray-300 w-[38px] h-[38px] text-center p-2 ml-2 rounded-md ">
+                      <span class="material-symbols-outlined text-gold-500 text-[22px]">
+                        category
+                      </span>
+                    </div>
+                    <h4 class="text-[17px] font-bold text-black-300 mx-[6px] max-sm:text-xl">دسته بندی</h4>
+                  </div>
+                  <div class="py-3 px-3 mt-6 category-home relative h-auto max-sm:mt-4">
+                    <ul class="flex flex-col relative z-2">
+
+                   {% for item in items %}
+                      <li class="flex items-center py-4 max-sm:py-3">
+                        <span class="w-4 h-4 border-[3px] bg-white rounded-full  border-gray-500 shadow-narm "></span>
+                        <a href="{{item.get_absolute_url}}" class="text-mxl font-IRsansBold mx-4 text-black-700 max-sm:text-base ">{{item.title}}</a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+
+                </div>
+
+
+              </div>
+            </section>

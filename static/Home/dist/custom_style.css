@@ -978,3 +978,7 @@ li.mx-4 a.text-white:hover span, btn-mo:hover span {
   border-top: 20px solid #FCD445;
   clear: both;
 }/*# sourceMappingURL=custom_style.css.map */
+body > div:nth-child(3) > main > div > div.article a  img{
+height:220px;
+border-radius:20px;
+}

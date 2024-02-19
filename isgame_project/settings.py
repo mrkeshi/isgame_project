@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from pathlib import Path
 
+LANGUAGE_CODE = 'fa'
+
+
+import locale
+locale.setlocale(locale.LC_ALL, "fa_IR.UTF-8")
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 

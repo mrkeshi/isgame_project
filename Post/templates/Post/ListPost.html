@@ -151,7 +151,7 @@
 {% endblock %}
 {% block script %}
 
-    {% include 'layout/component/swalmeesage.html' with title="ویرایش پست" %}
+    {% include 'layout/component/swalmeesage.html' with title="مدیریت پست" %}
 
     <script src="{% static 'admin_panel/plugins/table/datatable/datatables.js' %}"></script>
     <script src="{% static 'assets/webpack_bundles/axious_main_bundler.js' %}"></script>
@@ -254,7 +254,7 @@ return arr;
                 })
             }else{
     
-                    removeItemOnce(this.items,Number(el.getAttribute('data-check-id')))
+                        this.items=[]
                      this.AllElement.forEach((el)=>{
                     el.querySelector('.inputchecked').checked=false
                 })
@@ -273,6 +273,7 @@ return arr;
                 this.checks.forEach((el)=>{
                     el.addEventListener('click',()=>{
                        if(!el.checked){
+                       print("remove")
                         removeItemOnce(deleteItems.items,Number(el.getAttribute('data-check-id')))
                        }else{
                         deleteItems.items.push(el.getAttribute('data-check-id'))

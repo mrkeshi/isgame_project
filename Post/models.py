@@ -1,5 +1,5 @@
 import datetime
-
+from django.urls import reverse
 from jalali_date import datetime2jalali
 from jalali_date.fields import SplitJalaliDateTimeField
 
@@ -29,19 +29,19 @@ class ArticleCategories(models.Model):
 
     def __str__(self):
         return self.title
-
     def save(self, *args, **kwargs):
         self.url = slugify(self.title, allow_unicode=True)
         super(ArticleCategories, self).save(args, kwargs)
-
+    def get_absolute_url(self):
+        return reverse('category_page',args=[self.title])
 class Articles(models.Model):
     title = models.CharField(max_length=50, verbose_name= "عنوان پست" ,unique=True)
     short_description = models.TextField(verbose_name="توضیحات کوتاه")
     content = RichTextField( blank=True, null=True)
-    url = models.SlugField(verbose_name="آدرس پست")
+    url = models.SlugField(verbose_name="آدرس پست",unique=True)
     is_active = models.BooleanField(choices=((False,'پیش نویس'),(True,"نمایش عمومی")),default=False)
     is_pin = models.BooleanField(verbose_name="یین شده")
-    created_date = models.DateTimeField()
+    created_date = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True, verbose_name="تاریخ آپدیت پست")
     author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="نویسنده")
     tags = models.ManyToManyField(ArticleTags, verbose_name="تگ ها", blank=True,null=True)
