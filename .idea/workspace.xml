@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="show product list">
-      <change afterPath="$PROJECT_DIR$/static/assets/js/PostList.js" afterDir="false" />
+    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="refactor js code">
+      <change afterPath="$PROJECT_DIR$/medias/gallery/Screenshot_from_2024-03-15_19-57-18.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Post/templates/Post/ListPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/ListPost.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/templates/Post/includes/ListPostsComponents.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/includes/ListPostsComponents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/js/PostList.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/PostList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -356,7 +359,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708345668357</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="refactor js code">
+      <option name="closed" value="true" />
+      <created>1710515475400</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1710515475400</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -491,7 +502,8 @@
     <MESSAGE value="daynamic home page" />
     <MESSAGE value="add product module" />
     <MESSAGE value="show product list" />
-    <option name="LAST_COMMIT_MESSAGE" value="show product list" />
+    <MESSAGE value="refactor js code" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor js code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

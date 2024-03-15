@@ -87,7 +87,7 @@ class CategoryAdd(FormView):
 def PostDelete(request):
     if request.method == 'POST':
         id = (request.POST.getlist('id[]'))
-
+        print(id)
         deleteditem = Articles.objects.filter(id__in=id)
 
         try:

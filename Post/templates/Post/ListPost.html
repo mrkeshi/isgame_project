@@ -24,13 +24,13 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">حذف ایتم</h5>
+                <h5 class="modal-title" id="exampleModalLabel">حذف آیتم های انتخابی</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
                 </button>
             </div>
             <div class="modal-body">
-                <p class="modal-text">آیا شما برای حذف این پست مطمئن هستید؟ در صورت تایید این پست در پایگاه داده پاک
+                <p class="modal-text">آیا شما برای حذف این پست()\پست ها مطمئن هستید؟ در صورت تایید این پست/پست ها در پایگاه داده پاک
                     می گردد. </p>
             </div>
             <div class="modal-footer">
@@ -155,6 +155,9 @@
 
 <script src="{% static 'admin_panel/plugins/table/datatable/datatables.js' %}"></script>
 <script src="{% static 'assets/webpack_bundles/axious_main_bundler.js' %}"></script>
+<script>
+    var myurl="{% url 'post_delete_admin' %}"
+</script>
 <script src="{% static 'assets/js/PostList.js' %}"></script>
 
 <script>
@@ -165,105 +168,105 @@
 // }
 // return arr;
 // }
-//     axios.defaults.xsrfCookieName = 'csrftoken'
-//     axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
-//     class DeleteItem {
-//         //  properties
-//         CheckAllBtn = 
-//         items = []
-//         single=0
-//         status = false
-//         ConfirmBtn = document.getElementById('btn_confirm_delete')
-//         AllElement = document.querySelectorAll("[data-field-number]")
-//         constructor() {
-//             this.AllElement.forEach((el) => {
-//                 el.querySelector('.deleteBtn').addEventListener('click', () => {
-//                     this.reset()
-//                     this.getId(el.getAttribute('data-field-number'))
-//                 })
-//             })
-//             this.ConfirmBtn.addEventListener('click', (e) => {
+    axios.defaults.xsrfCookieName = 'csrftoken'
+    axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
+    // class DeleteItem {
+    //     //  properties
+    //     CheckAllBtn = 
+    //     items = []
+    //     single=0
+    //     status = false
+    //     ConfirmBtn = document.getElementById('btn_confirm_delete')
+    //     AllElement = document.querySelectorAll("[data-field-number]")
+    //     constructor() {
+    //         this.AllElement.forEach((el) => {
+    //             el.querySelector('.deleteBtn').addEventListener('click', () => {
+    //                 this.reset()
+    //                 this.getId(el.getAttribute('data-field-number'))
+    //             })
+    //         })
+    //         this.ConfirmBtn.addEventListener('click', (e) => {
 
 
-//                 if (!this.status) {
-//                     this.ConfirmDeleted()
-//                 }
-//             })
-//             this.CheckAllBtn.addEventListener('change', () => {
-//                 this.checkedAll()
-//             })
-//         }
-//         // methods
-//         getId(id) {
-//             this.status = false
-//             this.single = Number(id)
-//         }
-//         pushId(id){
-//             this.items.push(Number(id))
-//         }
-//         ConfirmDeleted() {
-//             if (this.status == false) {
-//                 this.status = true
-//                 this.ConfirmBtn.querySelector('span').style.display = 'none'
-//                 this.ConfirmBtn.querySelector('svg').style.display = "block";
-//                 var self = this;
-//                 axios({
-//                     method: 'post',
-//                     url: "{% url 'post_delete_admin' %}",
-//                     data: {
-//                         id: [this.single],
-//                     },
-//                     headers: {
-//                         "Content-Type": "application/x-www-form-urlencoded",
-//                         Accept: "application/json",
-//                     }
-//                 }).then(function (response) {
+    //             if (!this.status) {
+    //                 this.ConfirmDeleted()
+    //             }
+    //         })
+    //         this.CheckAllBtn.addEventListener('change', () => {
+    //             this.checkedAll()
+    //         })
+    //     }
+    //     // methods
+    //     getId(id) {
+    //         this.status = false
+    //         this.single = Number(id)
+    //     }
+    //     pushId(id){
+    //         this.items.push(Number(id))
+    //     }
+    //     ConfirmDeleted() {
+    //         if (this.status == false) {
+    //             this.status = true
+    //             this.ConfirmBtn.querySelector('span').style.display = 'none'
+    //             this.ConfirmBtn.querySelector('svg').style.display = "block";
+    //             var self = this;
+    //             axios({
+    //                 method: 'post',
+    //                 url: "{% url 'post_delete_admin' %}",
+    //                 data: {
+    //                     id: [this.single],
+    //                 },
+    //                 headers: {
+    //                     "Content-Type": "application/x-www-form-urlencoded",
+    //                     Accept: "application/json",
+    //                 }
+    //             }).then(function (response) {
 
-//                     if (response.data['status']) {
-//                         self.Finnish(response.data['ids'])
-//                     }
-//                 }).catch(function (error) {
-//                     this.ConfirmBtn.querySelector('span').innerHTML = "خطا در حذف، لطفا مجددا امتحان کنید."
-//                 }).finally(()=>{
+    //                 if (response.data['status']) {
+    //                     self.Finnish(response.data['ids'])
+    //                 }
+    //             }).catch(function (error) {
+    //                 this.ConfirmBtn.querySelector('span').innerHTML = "خطا در حذف، لطفا مجددا امتحان کنید."
+    //             }).finally(()=>{
 
-//                 })
-//             }
-//         }
-//         reset(){
-//             if(this.ConfirmBtn.classList.contains('btn-success')){
-//                 this.ConfirmBtn.classList.remove('btn-success')
-//                 this.ConfirmBtn.classList.add('btn-danger')
-//                 this.ConfirmBtn.querySelector('span').innerHTML = "حذف"
-//                 items=[]
-//             }
-//         }
-//         Finnish(items) {
-//             this.ConfirmBtn.querySelector('svg').style.display = "none";
-//             this.ConfirmBtn.classList.add('btn-success');
-//             this.ConfirmBtn.querySelector('span').style.display = 'block'
-//             this.ConfirmBtn.querySelector('span').innerHTML = "حذف شد!"
+    //             })
+    //         }
+    //     }
+    //     reset(){
+    //         if(this.ConfirmBtn.classList.contains('btn-success')){
+    //             this.ConfirmBtn.classList.remove('btn-success')
+    //             this.ConfirmBtn.classList.add('btn-danger')
+    //             this.ConfirmBtn.querySelector('span').innerHTML = "حذف"
+    //             items=[]
+    //         }
+    //     }
+    //     Finnish(items) {
+    //         this.ConfirmBtn.querySelector('svg').style.display = "none";
+    //         this.ConfirmBtn.classList.add('btn-success');
+    //         this.ConfirmBtn.querySelector('span').style.display = 'block'
+    //         this.ConfirmBtn.querySelector('span').innerHTML = "حذف شد!"
 
-//             document.querySelectorAll(`[data-field-number='${items}']`).forEach((el) => {
-//                 el.remove()
-//             })
-//         }
+    //         document.querySelectorAll(`[data-field-number='${items}']`).forEach((el) => {
+    //             el.remove()
+    //         })
+    //     }
 
-//         checkedAll() {
-//         if (this.CheckAllBtn.checked===true){
-//             this.AllElement.forEach((el)=>{
-//                 this.items.push(el.getAttribute('data-check-id'))
-//                 el.querySelector('.inputchecked').checked=true
-//             })
-//         }else{
-//                   this.items=[]
-//                  this.AllElement.forEach((el)=>{
-//                 el.querySelector('.inputchecked').checked=false
-//             })
-//         }
-//         }
-//     }
+    //     checkedAll() {
+    //     if (this.CheckAllBtn.checked===true){
+    //         this.AllElement.forEach((el)=>{
+    //             this.items.push(el.getAttribute('data-check-id'))
+    //             el.querySelector('.inputchecked').checked=true
+    //         })
+    //     }else{
+    //               this.items=[]
+    //              this.AllElement.forEach((el)=>{
+    //             el.querySelector('.inputchecked').checked=false
+    //         })
+    //     }
+    //     }
+    // }
 
-//     const deleteItems = new DeleteItem();
+    // const deleteItems = new DeleteItem();
 
 //     class Select{
 //         selectRun=document.getElementById('selectRun')
@@ -298,59 +301,59 @@
 //     }
 //     new Select()
 
-//     class FilterQuery{
-//         search=document.getElementById('search_query');
-//         filterBtn=document.getElementById('filter');
-//         category;
-//         date;
-//         constructor() {
+    class FilterQuery{
+        search=document.getElementById('search_query');
+        filterBtn=document.getElementById('filter');
+        category;
+        date;
+        constructor() {
 
-//         this.filterBtn.addEventListener('click',()=>{
-//         this.Filter()
-//         })
-//         this.search.addEventListener('keyup',()=>{
-//             this.Search()
+        this.filterBtn.addEventListener('click',()=>{
+        this.Filter()
+        })
+        this.search.addEventListener('keyup',()=>{
+            this.Search()
 
-//         })
-//         }
+        })
+        }
 
-//         Filter(){
-//              this.int+=1;
-//         this.category=document.getElementById('category').value;
-//         this.date=document.getElementById('date').value;
-//         }
+        Filter(){
+             this.int+=1;
+        this.category=document.getElementById('category').value;
+        this.date=document.getElementById('date').value;
+        }
 
-//         Search(){
-//         this.SendAxois(null,null,this.search.value.trim())
-//         }
+        Search(){
+        this.SendAxois(null,null,this.search.value.trim())
+        }
 
-//         SendAxois(date,category,search){
-//                       var self = this;
-//                 axios({
-//                     method: 'post',
-//                     url: "{% url 'filter_article_admin' %}",
-//                     data: {
-//                         title:search,
-//                         date:date,
-//                         category:category
-//                     },
-//                     headers: {
-//                         "Content-Type": "application/x-www-form-urlencoded",
-//                         Accept: "application/json",
-//                     }
-//                 }).then(function (response) {
-//                         self.SetData(response.data)
+        SendAxois(date,category,search){
+                      var self = this;
+                axios({
+                    method: 'post',
+                    url: "{% url 'filter_article_admin' %}",
+                    data: {
+                        title:search,
+                        date:date,
+                        category:category
+                    },
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        Accept: "application/json",
+                    }
+                }).then(function (response) {
+                        self.SetData(response.data)
 
-//                 }).catch(function (error) {
-//                     console.log(error)
-//                 })
-//         }
+                }).catch(function (error) {
+                    console.log(error)
+                })
+        }
 
-//         SetData(response){
-//             console.log(response)
-//             document.getElementById('result_list_post').innerHTML=response
-//         }
-//     }
-//     new FilterQuery()
+        SetData(response){
+            console.log(response)
+            document.getElementById('result_list_post').innerHTML=response
+        }
+    }
+    new FilterQuery()
 </script>
 {% endblock %}
