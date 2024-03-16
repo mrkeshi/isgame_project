@@ -1,6 +1,12 @@
 {% load static %}
 {% load poll_extras %}
 <div class="row">
+    <div class="my-loader" style="display:none">
+        <div class="loader mx-auto"></div>
+    </div>
+    <a href="javascript:void(0);"
+    class="dropdown-item " id="allbtn" style="cursor: pointer;display:none;"
+    data-toggle="modal" data-target="#exampleModal">حذف</a>
                                 <div class="col-sm-12">
                                     <table id="style-1" class="table style-1 table-hover non-hover dataTable no-footer"
                                            role="grid" aria-describedby="style-1_info" style="width: 1539px;">
@@ -131,6 +137,10 @@
                                                             <a href="javascript:void(0);"
                                                                class="dropdown-item deleteBtn" style="cursor: pointer"
                                                                data-toggle="modal" data-target="#exampleModal">حذف</a>
+
+
+
+                                                              
                                                         </div>
                                                     </div>
                                                 </td>

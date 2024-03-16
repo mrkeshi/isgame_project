@@ -87,13 +87,12 @@ class CategoryAdd(FormView):
 def PostDelete(request):
     if request.method == 'POST':
         id = (request.POST.getlist('id[]'))
-        print(id)
+
         deleteditem = Articles.objects.filter(id__in=id)
 
         try:
             if (deleteditem.count() > 0):
-                print(deleteditem.values_list('id', flat=True).all())
-                print('true')
+
                 # row = deleteditem.delete()
                 return JsonResponse({
                     'status': True,
@@ -105,7 +104,26 @@ def PostDelete(request):
         except:
             return JsonResponse({
                 'status': False})
+def PostOrDraft(request):
+    if request.method == 'POST':
+        id = (request.POST.getlist('id[]'))
+        print(request.POST['key'])
+        deleteditem = Articles.objects.filter(id__in=id)
 
+        try:
+            if (deleteditem.count() > 0):
+
+                # row = deleteditem.delete()
+                return JsonResponse({
+                    'status': True,
+                    'ids': list(deleteditem.values_list('id', flat=True).all())
+                })
+
+            else:
+                raise ValueError('nothing item dont edited')
+        except:
+            return JsonResponse({
+                'status': False})
 
 class TagDelete(DeleteView):
     template_name = 'Post/listTag.html'

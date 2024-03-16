@@ -7,6 +7,7 @@ urlpatterns = [
     path('article/<int:id>', views.EditPost, name="post_edit_admin"),
     path('article/delete/', views.PostDelete, name="post_delete_admin"),
     path('article/filter',views.ListPost,name="filter_article_admin"),
+    path('article/draft', views.PostOrDraft, name="post_draft_request"),
 
     path('tag',views.TagManer.as_view(),name="tag_admin"),
     path('tag/add',views.TagAdd.as_view(),name="tag_add_admin"),

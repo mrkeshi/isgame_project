@@ -19,7 +19,7 @@ const filterbtn = document.getElementById('filter')
 const selectorinput = document.getElementById('selectRun')
 const posts=document.getElementById('result_list_post')
 const checkboxs=document.querySelectorAll('.new-control-input')
-
+const myloader=document.querySelector('.my-loader')
 // Set eventlistener
 checkboxs.forEach(el=>el.addEventListener('click',()=>{togglecheck(event)}))
 // Manage and switch between commands
@@ -35,7 +35,6 @@ class Selector {
                 posts.querySelectorAll('tbody tr').forEach(el=>{
                         ids.push(el.getAttribute('data-field-number'))
                 })
-                console.log(ids)
                 oncheck(ids)    
             }else{
                 offcheck(ids)
@@ -44,10 +43,10 @@ class Selector {
         })
     }
     swManage() {
-        alert(posts.querySelectorAll('tbody tr').length)
+       
         switch (selectorinput.value) {
             case 'delete':
-                deleteItem()
+                deleteItems.mulitidelete(ids)
                 break;
 
             case 'draft':
@@ -65,12 +64,49 @@ class Selector {
 new Selector()
 
 // function for send request and doing commands
-const deleteItem = () => {
-    return 0;
-}
+let mystatus=false
 const draftOrpost = (key) => {
-    return 0;
+    if (mystatus == false && ids.length>0) {
+        mystatus = true
+        myloader.style.display = 'flex'
+        var self = this;
+        axios({
+            method: 'post',
+            url: url_draft,
+            data: {
+                id: ids,
+                key:key
+            },
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+                Accept: "application/json",
+            }
+        }).then(function (response) {
+            if (response.data['status']) {
+               if(key=='draft'){
+                response.data['ids'].forEach(id=>{
+                    posts.querySelector(`tbody tr[data-field-number='${id}'] td .badge`).parentElement.innerHTML='<span class="badge badge-info">پیش نویس</span>'
+                })
+               }else{
+                  response.data['ids'].forEach(id=>{
+                    posts.querySelector(`tbody tr[data-field-number='${id}'] td .badge`).parentElement.innerHTML='<span class="badge badge-success">منتشر شده</span>'
+                })
+               }
+            }else{
+                throw new Error("Custom Error Message");
+            }
+        }).catch(function (error) {
+            myloader.style.display = 'none'
+        }).finally(()=>{
+            mystatus=false;
+            offcheck(ids)
+            myloader.style.display = 'none'
+            checkallbtn.click()
+            ids=[]
+        })
+    }
 }
+
 
 // check
 function oncheck(ids){
@@ -82,7 +118,8 @@ function oncheck(ids){
 // off check
 function offcheck(ids){
     ids.forEach(id => {
-        posts.querySelector(`tbody tr[data-field-number='${id}'] .new-control-input`).checked=false
+        if(id!=null){
+        posts.querySelector(`tbody tr[data-field-number='${id}'] .new-control-input`).checked=false}
     });
   
 }
@@ -105,6 +142,7 @@ class DeleteItem {
     backup=null
     ConfirmBtn = document.getElementById('btn_confirm_delete')
     AllElement = document.querySelectorAll("tr[data-field-number]")
+    alldel=document.getElementById('allbtn')
     constructor() {
         this.AllElement.forEach((el) => {
             el.querySelector('.deleteBtn').addEventListener('click', () => {
@@ -125,8 +163,12 @@ class DeleteItem {
     }
 
     mulitidelete(ids){
+        if(ids.length>0){
+        this.reset()
+        this.alldel.click();
         this.backup=ids
-    }
+        
+    }}
     ConfirmDeleted() {
         if (this.status == false) {
             this.status = true
@@ -144,19 +186,19 @@ class DeleteItem {
                     Accept: "application/json",
                 }
             }).then(function (response) {
-                    console.log(response)
                 if (response.data['status']) {
                     self.Finnish(response.data['ids'])  
                 }else{
                     throw new Error("Custom Error Message");
                 }
             }).catch(function (error) {
-                console.log(self.ConfirmBtn);
                 self.ConfirmBtn.querySelector('span').innerHTML = "خطا در حذف، لطفا مجددا امتحان کنید."
                 self.ConfirmBtn.querySelector('svg').style.display = 'none'
                 self.ConfirmBtn.querySelector('span').style.display = 'block'
 
             }).finally(()=>{
+                checkallbtn.checked=false
+                this.status=false;
             })
         }
     }
@@ -165,7 +207,7 @@ class DeleteItem {
             this.ConfirmBtn.classList.remove('btn-success')
             this.ConfirmBtn.classList.add('btn-danger')
             this.ConfirmBtn.querySelector('span').innerHTML = "حذف"
-            ids=[]
+          
         
     }
     Finnish(items) {
@@ -173,9 +215,10 @@ class DeleteItem {
         this.ConfirmBtn.classList.add('btn-success');
         this.ConfirmBtn.querySelector('span').style.display = 'block'
         this.ConfirmBtn.querySelector('span').innerHTML = "حذف شد!"
-        document.querySelectorAll(`[data-field-number='${items}']`).forEach((el) => {
-            el.remove()
+        items.forEach((it)=>{
+            document.querySelector(`[data-field-number='${it}']`).remove()
         })
+      ids=[]
     }
 }
 const deleteItems = new DeleteItem();
