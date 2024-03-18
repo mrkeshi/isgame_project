@@ -29,6 +29,11 @@ def HeaderOne(request):
     return render(request, 'layout/HomeLayout/HomeComponent/header1.html', {
         'menus': Objects
     })
+def HeaderTwo(request):
+    Objects = Menu.objects.filter(place_menu="MN1",is_active=True).all()
+    return render(request, 'layout/HomeLayout/HomeComponent/header2.html', {
+        'menus': Objects
+    })
 
 # component
 class CategoryPage(DetailView):
@@ -39,3 +44,4 @@ class SinglePost(DetailView):
     model = Articles
     slug_field = 'title'
     template_name = 'Home/singlePost.html'
+    context_object_name = 'post'
