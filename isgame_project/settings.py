@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'Pages',
     'Shop',
     'Comment',
+    'UserProfile',
 
     # external package
     'polls',

@@ -1,9 +1,10 @@
 from django.core.paginator import Paginator
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import DetailView
 
 from Menu.models import Menu
 from Post.models import Articles,ArticleCategories
+from SiteModule.models import Widget
 
 
 # Create your views here.
@@ -16,7 +17,8 @@ def HomePage(request):
     myArticles = paginator.page(page)
     return render(request, 'Home/index.html', {
         "articles":myArticles,
-        'paginator': paginator
+        'paginator': paginator,
+        'widget':Widget.objects.first()
 
     })
 
@@ -28,6 +30,12 @@ def HeaderOne(request):
         'menus': Objects
     })
 
+# component
 class CategoryPage(DetailView):
     model = ArticleCategories
     template_name = 'HomeComponent/footer1.html'
+
+class SinglePost(DetailView):
+    model = Articles
+    slug_field = 'title'
+    template_name = 'Home/singlePost.html'

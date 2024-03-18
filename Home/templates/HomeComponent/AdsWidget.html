@@ -1,0 +1,19 @@
+{% if widget.statusadbaner  %}
+<section>
+              <div class="ads bg-white shadow-md rounded-[10px] px-6 py-6 max-md:p-4 flex flex-col">
+                <div class="header-title mb-6 flex items-center relative -right-2">
+                  <div class="bg-gray-300 w-[40px] h-[40px] text-center p-2 ml-2 rounded-md">
+                    <span class="material-symbols-outlined text-gold-500 text-[22px]">
+                      ads_click
+                    </span>
+                  </div>
+                  <h4 class="text-[17px] font-bold text-black-300 mx-[6px] max-sm:text-mxl">تبلیغات</h4>
+
+                </div>
+                <a href="{{widget.urladbaner}}">
+                  <img src="{{widget.imageurladbaner}}" height="100%" width="100%" alt="تبلیغات" title="باکس تبلیغات">
+                </a>
+
+              </div>
+            </section>
+{% endif %}

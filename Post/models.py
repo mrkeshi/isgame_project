@@ -50,7 +50,10 @@ class Articles(models.Model):
     keyword =models.CharField(blank=True,null=True,max_length=150)
     def __str__(self):
         return self.title + " | "
-    
+
+    def get_absolute_url(self):
+        return reverse("single_post", args=[self.title])
+
     def save(self,*args, **kwargs):
         # self.created_date=
         self.url=slugify(self.title,allow_unicode=True)

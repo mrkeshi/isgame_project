@@ -8,10 +8,11 @@ from django.urls import reverse_lazy
 from django.views.generic import FormView, UpdateView, ListView, TemplateView
 from django.urls import reverse
 
-from SiteModule.forms import AddSocialForm,SettingForm,GalleryForm
+from SiteModule.forms import AddSocialForm,SettingForm,GalleryForm,BannerForm
 from SiteModule.models import SocialMediaLink,PublicSettings
 from User.forms import SocialLinkForm
-from .models import MediaGallery
+from .models import MediaGallery,Widget
+# social links
 class addSocialLink(FormView):
     template_name = 'Social/addSocialLink.html'
     success_url = reverse_lazy('social_link')
@@ -42,13 +43,10 @@ class addSocialLink(FormView):
     def form_invalid(self, form):
 
         return super(addSocialLink, self).form_invalid(form)
-
-
 class SocialLinks(ListView):
     model = SocialMediaLink
     template_name = 'Social/ListSocialLink.html'
     context_object_name = 'data'
-
 class EditSocialItem(UpdateView):
     template_name = 'Social/editSocialLink.html'
     success_url = reverse_lazy('social_link')
@@ -63,8 +61,6 @@ class EditSocialItem(UpdateView):
         data = super(EditSocialItem, self).get_context_data(**kwargs)
 
         return data
-
-
 def delete_item(request, id):
     item = SocialMediaLink.objects.filter(id=id).first()
     if (item is not None):
@@ -74,7 +70,7 @@ def delete_item(request, id):
         # Todo: send message
     return redirect(request.META.get('HTTP_REFERER'))
 
-
+# public settings
 def Manage_Settings(request):
     public_settings_instance = PublicSettings.objects.first()
     social_link_instance = SocialMediaLink.objects.filter(user=None).first()
@@ -155,3 +151,21 @@ def DeletedItems (request):
         except:
             return JsonResponse({
                 'status': False})
+
+# widget
+class WidgetIndex(TemplateView):
+    template_name = "Widget/index.html"
+
+def adsBanner(request):
+    item = Widget.objects.first()
+    if(request.method=="POST"):
+        form=BannerForm(request.POST,instance=item)
+        if(form.is_valid()):
+            form.save()
+            messages.success(request, "ابزارک بنر تبلیغاتی با موفقیت بروزرسانی شد")
+            return redirect(reverse("setting_widget"))
+        else:
+            messages.error(request, "خطا در بروزرسانی لطفا ورودی ها را کنترل کنید.")
+            return redirect(request.META.get('HTTP_REFERER'))
+    else:
+        return render(request,"Widget/adsBaner.html",{'form':BannerForm(instance=item)})

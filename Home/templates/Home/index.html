@@ -784,24 +784,7 @@
             <!-- End Social -->
 
             <!-- Start Ads -->
-            <section>
-              <div class="ads bg-white shadow-md rounded-[10px] px-6 py-6 max-md:p-4 flex flex-col">
-                <div class="header-title mb-6 flex items-center relative -right-2">
-                  <div class="bg-gray-300 w-[40px] h-[40px] text-center p-2 ml-2 rounded-md">
-                    <span class="material-symbols-outlined text-gold-500 text-[22px]">
-                      ads_click
-                    </span>
-                  </div>
-                  <h4 class="text-[17px] font-bold text-black-300 mx-[6px] max-sm:text-mxl">تبلیغات</h4>
-
-                </div>
-                <a href="http://mr-keshi.ir">
-                  <img src="{% static 'Home/'%}images/banner-for-hamyarpng.png" height="100%" width="100%" alt="تبلیغات"
-                  title="باکس تبلیغات">
-                </a>
-
-              </div>
-            </section>
+        {% include 'HomeComponent/AdsWidget.html' %}
             <!-- End Ads -->
 
 
@@ -817,13 +800,13 @@
               {% for item in articles %}
               <article class="mb-8 max-sm:mb-6 shadow-md ">
                 <div class="box bg-white h-[250px] rounded-[10px] p-2 flex max-2xl:h-[290px]  relative ">
-                 <a href="" class="w-[270px] max-lg:w-[270px] h-full mx-auto">
+                 <a href="{{ item.get_absolute_url }}" class="w-[270px] max-lg:w-[270px] h-full mx-auto">
                   <img  src="{% if item.image %} {{item.image.url}} {% else %}{% static 'Home/'%}images/default-image.jpg {% endif %}" class="w-[270px] rounded-xl	 max-lg:w-[270px]  p-4 max-sm:p-2 brightness-75 transition ease hover:brightness-100 " alt="">
 
                  </a>
                   <div class="post w-full">
                     <header>
-                      <a href="single_post.html">
+                      <a href="{{ item.get_absolute_url }}">
                         <h2 class="text-black-300 text-[17px] font-IRsansBold m-4 hover:opacity-80  max-sm:mt-3">{{item.title}}</h2>
                       </a>
 
@@ -862,11 +845,11 @@
                       چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
                       نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در بیشتری را برای
                       طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد
-                    </p> <a href="single_post.html" class="text-gold-500 text-[14px] md:hidden  max-sm:md-6">ادامه مطلب  </a>
+                    </p> <a href="{{ item.get_absolute_url }}" class="text-gold-500 text-[14px] md:hidden  max-sm:md-6">ادامه مطلب  </a>
 
 
                     <div class="btn-continue absolute left-6 bottom-7">
-                      <a href="single_post.html"
+                      <a href="{{ item.get_absolute_url }}"
                         class="bg-transparent max-md:hidden font-light transition ease-in  hover:bg-gold-500 text-gold-500  hover:text-white py-1.5 px-4  border border-gold-500 hover:border-transparent rounded text-base">
                         ادامه مطلب</a>
                     </div>

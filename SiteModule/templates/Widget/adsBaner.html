@@ -1,0 +1,79 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% load poll_extras %}
+{% block title %}
+ ویرایش ابزارک بنر تبلیغاتی
+{% endblock %}
+{% block header_reference %}
+<link href="{% static 'admin_panel/assets/css/tables/table-basic.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}
+
+<div class="col-lg-10 mx-auto mt-5 ">
+ <div class="table-responsive d  bg-white p-5">
+     <div class="widget-header">
+         <div class="row">
+                        <div id="flFormsGrid" class="col-lg-12 layout-spacing">
+                            <div class="statbox widget box box-shadow">
+                                <div class="widget-header">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                            <h4>ویرایش بنر تبلیغاتی</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget-content widget-content-area">
+                                    <form method="post" action="{% url 'ads_banner' %}">
+                                        {% csrf_token %}
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-12">
+                                                <label for="inputname">آدرس تصویر بنر</label>
+                                                {{ form.imageurladbaner }}
+
+
+                                            </div>
+
+                                        </div>
+                                           <div class="form-row mb-4">
+                                            <div class="form-group col-md-12">
+                                                <label for="inputname">لینک  بنر</label>
+                                                {{ form.urladbaner }}
+
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="form-check pl-0">
+                                                <div class="custom-control custom-checkbox checkbox-info">
+                                                            {{ form.statusadbaner }}
+                                                    <label class="custom-control-label" for="gridCheck">نمایش ایتم فعال باشد.</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                      <button type="submit" class="btn btn-primary mt-3">ویرایش بنر </button>
+                                    </form>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+     </div>
+ </div>
+    {% include 'layout/component/swalmeesage.html' with title="ابزارک" %}
+
+</div>
+{% include 'layout/component/swalmeesage.html' with title="ابزارک ها " %}
+
+{% endblock %}
+{% block script %}
+    <script>
+
+
+
+
+    </script>
+{% endblock %}

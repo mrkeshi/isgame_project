@@ -2,7 +2,7 @@
 from django import forms
 from django.forms import models, TextInput, NumberInput
 
-from SiteModule.models import SocialMediaLink, PublicSettings,MediaGallery
+from SiteModule.models import SocialMediaLink, PublicSettings,MediaGallery,Widget
 
 
 class AddSocialForm(forms.ModelForm):
@@ -146,3 +146,39 @@ class GalleryForm(forms.ModelForm):
                 'class':'custom-file-container__custom-file__custom-file-input',
             }),
         }
+
+# ads banner
+
+class BannerForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        x = super(BannerForm, self).__init__(*args, **kwargs)
+        if self.errors:
+            for f_name in self.fields:
+                if f_name in self.errors:
+                    classes = self.fields[f_name].widget.attrs.get('class')
+                    classes += " form-error"
+                    self.fields[f_name].widget.attrs['class'] = classes
+        return x
+
+    class Meta:
+
+        model = Widget
+        fields = "__all__"
+
+        widgets = {
+            'urladbaner': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': " mr-keshi.ir/urladbanner"
+            }),
+            'imageurladbaner': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': " mr-keshi.ir/imag"
+            }),
+            'statusadbaner': forms.CheckboxInput(attrs={
+                'class': 'custom-control-input',
+                'id': 'gridCheck',
+                'type': 'checkbox'
+            })
+        }
+

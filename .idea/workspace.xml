@@ -4,15 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="refactor js code">
+    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="delete all and draft">
+      <change afterPath="$PROJECT_DIR$/Home/templates/Home/singlePost.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/templates/HomeComponent/AdsWidget.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shop/migrations/0004_alter_linkdownload_product.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SiteModule/migrations/0003_widget.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SiteModule/templates/Widget/adsBaner.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SiteModule/templates/Widget/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfile/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfile/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfile/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfile/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfile/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfile/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserProfile/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/gallery/Screenshot_from_2024-03-16_10-49-43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/gallery/Screenshot_from_2024-03-16_11-08-23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/gallery/Untitled-1-min.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/gallery/banner-for-hamyarpng_3Pgu4Qn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/gallery/banner-for-hamyarpng_i8siy6K.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/templates/Post/ListPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/ListPost.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/templates/Post/includes/ListPostsComponents.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/includes/ListPostsComponents.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/Component.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home/Component.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/templates/Home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/templates/Home/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel/templates/component/sidebar_component.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/templates/component/sidebar_component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin_panel/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin_panel/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/PostList.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/PostList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/isgame_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/isgame_project/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +45,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -65,7 +88,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/alireza/isgame_project/Shop/templates/Shop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/alireza/isgame_project/SiteModule/templates/Widget&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
@@ -76,11 +99,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SiteModule/templates/Widget" />
       <recent name="$PROJECT_DIR$/Shop/templates/Shop" />
       <recent name="$PROJECT_DIR$/Post/templates/Post" />
       <recent name="$PROJECT_DIR$/Pages/templates/Pages" />
       <recent name="$PROJECT_DIR$/Pages/templates" />
-      <recent name="$PROJECT_DIR$/SiteModule/templates/Gallery" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Pages/templates/Pages" />
@@ -376,7 +399,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710535154496</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="delete all and draft">
+      <option name="closed" value="true" />
+      <created>1710575373612</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1710575373612</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -487,7 +518,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="change template color" />
     <MESSAGE value="We returned" />
     <MESSAGE value="update profile" />
     <MESSAGE value="create contact form" />
@@ -512,7 +542,8 @@
     <MESSAGE value="add product module" />
     <MESSAGE value="show product list" />
     <MESSAGE value="refactor js code" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor js code" />
+    <MESSAGE value="delete all and draft" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete all and draft" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -522,9 +553,8 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Post/views.py</url>
-          <line>106</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/Home/urls.py</url>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
