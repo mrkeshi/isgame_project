@@ -96,6 +96,11 @@ class AddArticleForm(forms.ModelForm):
                 'placeholder': "لطفا توضیحات کوتاه را وارد کنید"
 
             }),
+            'previewtext':forms.Textarea(attrs={
+                'class':'form-control',
+                'rows':6,
+                'placeholder': "لطفا متن پیش نمایش را بنویسید"
+            }),
             'keyword': forms.Textarea(attrs={
                 'class': 'form-control',
                 'rows': 3,

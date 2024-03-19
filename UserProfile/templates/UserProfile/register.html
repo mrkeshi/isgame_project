@@ -1,0 +1,220 @@
+{% extends 'layout/HomeLayout/HomeShared/base.html' %}
+{% load static %}
+{% load render_partial %}
+{% load poll_extras %}
+{% block title %} ثبت نام کاربر  {% endblock %}
+
+
+
+
+
+{% block header %} {% render_partial 'Home.views.HeaderOne' %} {% endblock %}
+
+{% block main %}
+
+  <div class="container  mx-auto">
+    <!-- Start Nabar Menu -->
+ <!-- Start Nabar Menu -->
+
+
+    <!-- search box -->
+
+    <div class="fixed w-full h-screen bg-black-700  search-modal  	 top-0 z-[9999] right-0" style="background-color: rgba(0,0,0,0);">
+      <div class="bg-white shadow-lg rounded w-[450px] p-5 h-auto box box-show transition ease-in" id="formsea">
+        <div class="w-full md:w-full flex flex-col mt-2  ">
+
+          <input class="appearance-none block w-full  bg-gray-200 text-black-700 bg-gray-300    rounded py-3 transition ease-in px-4 leading-tight focus:outline-gold-100 h-14 focus:bg-white  text-base" id="grid-first-name" type="text" placeholder="لطفا چیزی را برای جستجو وارد نمایید.">
+          <a href="#" class="bg-gold-500 hover:bg-blue-700 text-center  text-white mt-5  py-[10px] px-4 rounded  w-full text-base">
+            جستجو
+          </a>
+          <span onclick="closeSearch()" class="material-symbols-outlined transition-all ease-in   cursor-pointer shadow-sm text-gold-500 absolute text-[18px] bg-gray-300 p-[4px] -top-[10px] -right-[8px] rounded-full hover:bg-black-700 hover:text-white">
+            close
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- end search box -->
+
+
+
+    <main class=" mx-auto max-xl:p-2 max-lg:p-0 p-6 pt-0 mb-6 max-md:mx-4">
+           {% if messages %}
+
+    {% for message in messages %}
+    <h1 class="text-green text-2xl mx-auto text-center text-bold">{{ message }}<h1/>
+        {% endfor %}
+
+        {% endif %}
+
+     <div class="w-full mt-24 bg-white h-[670px] max-lg:h-auto relative max-md:mx-auto">
+      <div class="absolute center-x z-10 w-[100px] h-[100px] max-xl:h-[80px] max-xl:w-[80px] max-md:h-[65px] max-md:w-[65px]  max-xl:border-[4px] transition ease-in hover:border-gold-500 bg-gold-500 rounded-full -top-12 max-md:-top-8 border-[6px] border-white">
+        <span class="material-symbols-outlined text-[40px] max-xl:text-[36px] max-md:text-[34px] text-white center">
+          group
+          </span>
+      </div>
+      <div class="flex p-14  max-2xl:p-12 max-xl:p-9 max-md:p-4 justify-center max-lg:flex-wrap max-lg:flex-col-reverse  h-full relative ">
+        <!-- register form -->
+        <div class="w-1/2 max-lg:w-full ml-14 max-lg:ml-0 sign_up">
+          <h1 class="text-black-700 font-IRsansBold text-[20px] mb-5">عضویت در سایت</h1>
+                        <form method="post" class="flex flex-col w-full max-lg:mx-0 " action="{% url 'user_profile_register' %}">
+                        {% csrf_token %}
+       <div class="flex flex-col w-full mt-5 max-lg:mx-0 -mx-2">
+        <div class="input-group w-full p-3 relative  max-sm:px-0">
+          <span class="material-symbols-outlined text-gray-500 transition-all ease text-[23px] max-sm:text-[21px] absolute left-7 max-md:left-3 top-[25px]">
+            person
+            </span>
+             {{form.first_name}}
+                                 {% if form.first_name.errors %}
+                        <span class="block text-red-500 text-mxl mt-4">
+     {{form.first_name.errors}}
+    </span>
+                        {% endif %}
+        </div>
+       </div>
+       <div class="flex flex-col w-full max-lg:mx-0 -mx-2">
+        <div class="input-group w-full p-3 relative  max-sm:px-0">
+          <span class="material-symbols-outlined text-gray-500 transition-all ease text-[23px] max-sm:text-[21px] absolute left-7 top-[25px] max-md:left-3">
+            email
+            </span>
+                         {{form.email}}
+                               {% if form.email.errors %}
+                        <span class="block text-red-500 text-mxl mt-4">
+     {{form.email.errors}}
+    </span>
+                        {% endif %}
+        </div>
+       </div>
+
+       <div class="flex flex-col w-full max-lg:mx-0 -mx-2">
+        <div class="input-group w-full p-3 relative  max-sm:px-0">
+          <span class="material-symbols-outlined text-gray-500 transition-all ease text-[23px] max-sm:text-[21px] absolute left-7 top-[25px] max-md:left-3">
+            lock_open
+            </span>
+            {{form.password}}
+               {% if form.password.errors %}
+                        <span class="block text-red-500 text-mxl mt-4">
+     {{form.password.errors}}
+    </span>
+                        {% endif %}
+        </div>
+       </div>
+
+       <div class="flex flex-col w-full max-lg:mx-0 -mx-2">
+        <div class="input-group w-full p-3 relative  max-sm:px-0">
+          <span class="material-symbols-outlined text-gray-500 transition-all ease text-[23px] max-sm:text-[21px] absolute left-7 top-[25px] max-md:left-3">
+            lock_open
+            </span>
+              {{form.password_confirm}}
+                    {% if form.password_confirm.errors %}
+                        <span class="block text-red-500 text-mxl mt-4">
+     {{form.password_confirm.errors}}
+    </span>
+                        {% endif %}
+        </div>
+       </div>
+
+       <div class="flex flex-col w-full max-lg:mx-0 -mx-2">
+        <div class="input-group w-full p-2 relative  max-md:px-0">
+          <button type="submit" class=" max-sm:w-24 max-sm:h-11 max-sm:ml-[-3px] max-sm:float-left flex bg-gold-500 text-xl border-gold-500 hover:text-gold-500 border-[2px] text-white text-center h-[54px] w-full justify-center transition ease-in hover:bg-white items-center">
+            ثبت نام
+          </button>
+        </div>
+       </div>
+ </form>
+       <div class="mt-3 mx-auto text-center max-md:mb-4">
+        <span class="text-black-500 text-mxl">قبلا ثبت نام کرده اید؟</span>
+        <a href="{% url 'user_profile_login'%}" class="text-gold-500 text-mxl hover:opacity-70">وارد شوید.</a>
+       </div>
+
+
+        </div>
+        <!-- end register form -->
+        <div class="mb-8 max-lg:hidden">
+          <div class="w-1 h-full border-solid max-xl:mt-4 border-r-[2px] mt-2 border-gray-300 ">
+
+          </div>
+        </div>
+        <!-- detail  -->
+        <div class="w-1/2 mr-14 max-lg:mr-0 max-lg:w-full max-lg:mb-1 max-md:p-3">
+          <h3 class="text-xl text-black-700 max-md:mt-4 ">سلام کاربر عزیز!</h3>
+          <div class="des mt-8 max-lg:mt-4">
+            <li class="text-[21px] text-black-300 mb-4 max-lg:mb-2">
+              <span class="text-black-500 text-mxl ">
+                لطفا از مرورگرهای مطمئن و بروز مانند گوگل کروم و فایرفاکس استفاده کنید.
+
+              </span>
+            </li>
+            <li class="text-[21px] text-black-300 mb-4 max-lg:mb-2">
+              <span class="text-black-500 text-mxl ">
+                لطفا کلمه عبور خود را در فواصل زمانی کوتاه تغییر دهید.
+              </span>
+
+            </li>
+            <li class="text-[21px] text-black-300 mb-4 max-lg:mb-2">
+              <span class="text-black-500 text-mxl ">
+                .ما هرگز اطلاعات محرمانه شما را از طریق ایمیل درخواست نمی کنیم. در صورت رخداد این مورد، سریعا اطلاع دهید.
+              </span>
+
+
+            </li>
+              <li class="text-[21px] text-black-300 mb-4 max-lg:mb-2">
+              <span class="text-black-500 text-mxl ">
+                لطفا به آدرس صفحه توجه داشته باشید که بر روی دامنه اصلی سایت ما باشد. در غیر این صورت اکیدا توصیه می&zwnj;شود از وارد کردن اطلاعات ورود خودداری فرمایید.
+              </span>
+
+
+              </li>
+          </div>
+
+
+
+        </div>
+        <!-- end detail -->
+      </div>
+
+
+     </div>
+    </main>
+  </div>
+  <br><br>
+{% endblock %}
+{% render_partial 'Home.views.FooterTwo' %}
+
+
+
+  <script src="../dist/main.js"></script>
+  <script>
+
+    let mobilemenu=new MobileMenu()
+    let seatcrmodal = document.querySelector('.search-modal');
+    let formsearch = seatcrmodal.querySelector('#formsea');
+    let btnsearch = document.getElementById('btnsearch');
+    let checkopenedsearc=false
+    function closeSearch() {
+      seatcrmodal.classList.remove('search-modal_show')
+      filterBody.classList.add('hidden')
+       checkopenedsearc=false
+
+    }
+    btnsearch.addEventListener('click', () => {
+      seatcrmodal.classList.add('search-modal_show')
+      filterBody.classList.remove('hidden')
+      checkopenedsearc=true
+
+    })
+    const Boxes=new MangeBoxDropDown()
+    window.addEventListener('click', (event) => {
+      if(!Boxes.personBox.contains(event.target) && event.target.contains(filterBody)){
+        Boxes.closePersonBox()
+      }
+      if(!formsearch.contains(event.target) && !event.target.classList.contains('material-symbols-outlined') && checkopenedsearc==true){
+        closeSearch()
+      }
+      if(!mobilemenu.SiteMenu.contains(event.target) && mobilemenu.StatusMobile && event.target.contains(filterBody)){
+        mobilemenu.close()
+      }
+    })
+  </script>
+
+
+</body></html>

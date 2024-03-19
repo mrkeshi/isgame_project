@@ -1,11 +1,15 @@
 {% extends 'layout/HomeLayout/HomeShared/base.html' %}
 {% load static %}
+{% load render_partial %}
 {% block title %}  ارتباط با ما {% endblock %}
 {% block custom_header_references %}
 <link rel="stylesheet" href="{% static 'Home/dist/404.html' %}">
 {% endblock %}
-{% block main %}
 
+{% block header %} {% render_partial 'Home.views.HeaderOne' %} {% endblock %}
+
+{% block main %}
+<div class="max-lg:mt-4  h-2">  </div>
 <section>
     <!-- Social Icom Box Start -->
     <div class="flex justify-center mt-20 text-center flex-col mb-12 max-lg:mb-8 max-lg:mt-20 max-md:mt-10 max-md:mx-2">
@@ -106,7 +110,7 @@
     {% if messages %}
 
     {% for message in messages %}
-    <h1 class="text-green text-2xl mx-auto text-center text-bold">{{ message }}<h1/>
+    <h1 class="text-green text-2xl max-lg:text-xl mx-auto text-center text-bold">{{ message }}<h1/>
         {% endfor %}
 
         {% endif %}
@@ -139,7 +143,7 @@
                             نام
                         </label>
                         {{form.name}}
-                            {% if form.email.name %}
+                            {% if form.email.errors %}
                         <span class="block text-red-500 text-mxl -mt-2">
      {{form.name.errors}}
     </span>

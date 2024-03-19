@@ -5191,3 +5191,5 @@ border: 2px solid #DE4A4A;
 .border-red-500{
 border-color:#BE0F0F
 }
+.error-br{
+    outline-color: red;}

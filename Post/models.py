@@ -48,6 +48,7 @@ class Articles(models.Model):
     categories = models.ManyToManyField(ArticleCategories, verbose_name="دسته ها", blank=True)
     image = models.ImageField(upload_to='Articles', null=True, blank=True)
     keyword =models.CharField(blank=True,null=True,max_length=150)
+    previewtext=models.TextField(max_length=500)
     def __str__(self):
         return self.title + " | "
 

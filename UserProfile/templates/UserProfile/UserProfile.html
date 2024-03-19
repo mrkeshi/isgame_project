@@ -1,0 +1,325 @@
+{% extends 'layout/HomeLayout/HomeShared/base.html' %}
+{% load static %}
+{% load render_partial %}
+{% load poll_extras %}
+{% block title %} پروفایل کاربری  {% endblock %}
+
+
+
+
+
+{% block header %} {% render_partial 'Home.views.HeaderOne' %} {% endblock %}
+
+{% block main %}
+
+
+  <div class="container mx-auto">
+    <!-- Start Nabar Menu -->
+
+
+    <!-- search box -->
+    <div class="fixed w-full h-screen bg-black-700  search-modal  lg:h	 top-0 z-[9999] right-0"
+      style="background-color: rgba(0,0,0,0);">
+      <div class="bg-white shadow-lg rounded w-[450px] p-5 h-auto box box-show transition ease-in" id="formsea">
+        <div class="w-full md:w-full flex flex-col mt-2  ">
+
+          <input
+            class="appearance-none block w-full  bg-gray-200 text-black-700 bg-gray-300    rounded py-3 transition ease-in px-4 leading-tight focus:outline-gold-100 h-14 focus:bg-white  text-base"
+            id="grid-first-name" type="text" placeholder="لطفا چیزی را برای جستجو وارد نمایید.">
+          <a href="#"
+            class="bg-gold-500 hover:bg-blue-700 text-center  text-white mt-5  py-[10px] px-4 rounded  w-full text-base">
+            جستجو
+          </a>
+          <span onclick="closeSearch()"
+            class="material-symbols-outlined transition-all ease-in   cursor-pointer shadow-sm text-gold-500 absolute text-[18px] bg-gray-300 p-[4px] -top-[10px] -right-[8px] rounded-full hover:bg-black-700 hover:text-white">
+            close
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- end search box -->
+    <!-- End Navbar Menu -->
+
+<main>
+      <div class="flex mt-16 h-[700px] max-lg:h-auto max-lg:flex-col">
+
+        <div class="sidebar w-1/4 max-xl:w-1/3 bg-white  ml-5 userDashboard transition-all ease-in ">
+          <aside class="overflow-y-auto scrollbar scrollbar-thumb-gold-100 scrollbar-track-gray-500 scrollbar-w-[3px] overflow-x-hidden scrollbar-track-rounded-md scrollbar-thumb-rounded-lg max-lg:h-[100vh]">
+            <div class="h-52 bg-gold-500 -py-5 rounded-b-full w-full relative">
+              <svg class="top-3 left-3 hover:opacity-50 absolute cursor-pointer lg:hidden" id="closeMenuDashboard" width="13" height="13" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 2L9 9M9 9L2 16M9 9L16 16M9 9L2 2" stroke="white" stroke-width="2.88235" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+
+              <div class="w-[81px] h-[120px]  center   rounded-full">
+                      <img src="../images/me.png" class=" rounded-full w-[81px] h-[81px] border-[3px] border-white" alt="">
+                      <h4 class="text-white w-[95px] mt-2">
+                        علیرضا کشاورز
+                      </h4>
+                      <div class="flex justify-center mt-2">
+                        <a href="user_profile.html" class="hover:opacity-75">
+                          <span class="material-symbols-outlined m  mx-[7px] text-[18px] text-white">
+                            settings
+                            </span>
+                        </a>
+                       <a href="#" class="hover:opacity-75">
+                        <span class="material-symbols-outlined  mx-[7px] text-[18px] text-white">
+                          logout
+                          </span>
+                       </a>
+
+                      </div>
+              </div>
+            </div>
+            <div class="menu -mt-4  p-6  ">
+              <ul class="">
+                <li class="my-9 text-gold-500">
+                  <a class="flex items-center text-black-500 text-mxl ease-in transition hover:text-gold-500 text-gold-500 " href="user-das.html">
+                    <span class="material-symbols-outlined mx-[7px] text-[24px] text-gold-500">
+                      home
+                      </span>
+
+                    <span>
+                      پیشخوان
+                    </span>
+
+                </a>
+              </li>
+              <li class="my-9">
+                <a class="flex items-center text-black-500 text-mxl ease-in transition hover:text-gold-500 " href="orders_user.html">
+                  <span class="material-symbols-outlined  mx-[7px] text-[24px] text-gold-500">
+                    shopping_cart
+                    </span>
+
+                    سفارش ها
+
+              </a>
+            </li>
+
+
+          <li class="my-9">
+            <a class="flex items-center text-black-500 text-mxl ease-in transition hover:text-gold-500 " href="dashboard_user_download.html">
+              <span class="material-symbols-outlined  mx-[7px] text-[24px] text-gold-500">
+                downloading
+                </span>
+
+                دانلود ها
+
+          </a>
+        </li>
+        <li class="my-9">
+          <a class="flex items-center text-black-500 text-mxl ease-in transition hover:text-gold-500 " href="user-wallet.html">
+            <span class="material-symbols-outlined  mx-[7px] text-[24px] text-gold-500">
+              monetization_on
+              </span>
+              <span class="">
+                کیف پول من
+              </span>
+        </a>
+      </li>
+      <li class="my-9">
+        <a class="flex items-center text-black-500 text-mxl ease-in transition hover:text-gold-500 " href="user_ticket.html">
+          <span class="material-symbols-outlined  mx-[7px] text-[24px] text-gold-500">
+            mail
+            </span>
+            تیکت ها
+
+      </a>
+    </li>
+    <li class="my-9">
+      <a class="flex items-center text-black-500 text-mxl ease-in transition hover:text-gold-500 " href="user_profile.html">
+        <span class="material-symbols-outlined  mx-[7px] text-[24px] text-gold-500">
+          settings
+          </span>
+
+       تنظیمات
+
+    </a>
+  </li>
+  <li class="my-9">
+    <a class="flex items-center text-black-500 text-mxl ease-in transition hover:text-gold-500 " href="#">
+      <span class="material-symbols-outlined mx-1 text-[24px] text-gold-500">
+        logout
+        </span>
+
+     خروج
+
+  </a>
+</li>
+              </ul>
+            </div>
+        </aside>
+        </div>
+        <div class="flex justify-start mb-6  flex-col">
+          <div class="lg:hidden text-xl   text-right mr-4 ">
+            <h3 class="text-black-500 flex items-center max-sm:text-base">
+
+              <a href="index.html" class="hover:text-black-700">ایزگیم</a>
+              <span class="material-symbols-outlined text-gold-500 cursor-default	">
+                chevron_left
+                </span>
+                <a href="user-das.html" class="hover:text-black-700">داشبورد</a>
+
+
+            </h3>
+
+          </div>
+
+
+          <div class="hamber-logso lg:hidden hover:opacity-70  ml-4  flex items-center justify-end rounded-full mt-4 ">
+            <div class="cursor-pointer flex items-center" id="openDashboardMenu">
+              <span class="text-gray-900 text-base text-black-500">منوی حساب کاربری</span>
+              <svg width="24" class="text-gold-500 mr-2 dark:text-white" height="15" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 2.5H21.5M2 9H21.5M2 15.5H21.5" stroke="currentColor" stroke-width="3.65625" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="w-3/4 mr-5 bg-white max-lg:w-auto max-lg:h-full max-lg:mx-4 max-lg:p-4 max-md:px-2 max-lg:mb-6 ">
+            <div class="box flex justify-center  mt-10  max-md:mt-6 max-sm:flex-wrap">
+              <a href="orders_user.html" class="h-[85px] w-56 max-md:w-1/2 user-shop-box-1 mx-8 flex  items-center justify-center max-sm:w-full max-lg:mx-2">
+
+                <span class="material-symbols-outlined text-white text-[22px] mx-1">
+                  shopping_cart
+                  </span>
+                  <span class="text-white">
+                    <span class="text-mxl"> تعداد کل محصولات : 1</span>
+                  </span>
+                </a>
+              <a href="dashboard_user_download.html" class="h-[85px] w-56 user-shop-box-2 mx-8 flex  items-center justify-center max-sm:w-full max-lg:mx-2 max-sm:my-4">
+
+                <span class="material-symbols-outlined text-white text-[22px] mx-1">
+                  shopping_bag
+                  </span>
+                  <span class="text-white">
+                    <span class="text-mxl">محصولات خریداری شده : 4</span>
+                  </span>
+                </a>
+              <a href="user-wallet.html" class="h-[85px] w-56 user-shop-box-3 mx-8 flex  items-center justify-center max-sm:w-full max-lg:mx-2">
+
+                <span class="material-symbols-outlined text-white text-[22px] mx-1">
+                  monetization_on
+                  </span>
+                  <span class="text-white">
+                    <span class="text-mxl">کیف پول: 60 هزارتومان</span>
+                  </span>
+                </a>
+
+            </div>
+
+            <div class="flex justify-around max-sm:flex-wrap max-sm:flex-col-reverse">
+              <div class="lates p-10  max-xl:p-6 max-lg:p-4 max-md:p-2 max-sm:mt-2  ">
+                <div class="lates_post max-sm:text-center">
+                  <h2 class="text-black-700 text-[17px] font-IRsansBold flex items-center max-md:text-xl max-sm:mx-auto max-sm:justify-center">
+                    <span class="material-symbols-outlined text-[24px] text-black-700 mx-2 mb-1">
+                      description
+                      </span>
+                    آخرین مقالات
+                  </h2>
+
+                      <li class="mt-8 mx-4 text-gold-500 max-sm:mx-0 max-sm:mt-4"><a href="single_post.html" class="text-mxl  text-black-500 transition ease hover:text-gold-500 "> assassins creed unity دانلود ترینر بازی </a></li>
+                      <li class="mt-8 mx-4 text-gold-500 max-sm:mx-0 max-sm:mt-4"><a href="single_post.html" class="text-mxl text-black-500 transition ease hover:text-gold-500 "> assassins creed unity دانلود ترینر بازی </a></li>
+                      <li class="mt-8 mx-4 text-gold-500 max-sm:mx-0 max-sm:mt-4"><a href="single_post.html" class="text-mxl text-black-500 transition ease hover:text-gold-500 "> assassins creed unity دانلود ترینر بازی </a></li>
+                      <li class="mt-8 mx-4 text-gold-500 max-sm:mx-0 max-sm:mt-4"><a href="single_post.html" class="text-mxl text-black-500 transition ease hover:text-gold-500 "> assassins creed unity دانلود ترینر بازی </a></li>
+                      <li class="mt-8 mx-4 text-gold-500 max-sm:mx-0 max-sm:mt-4"><a href="single_post.html" class="text-mxl text-black-500 transition ease hover:text-gold-500 "> assassins creed unity دانلود ترینر بازی </a></li>
+                      <li class="mt-8 mx-4 text-gold-500 max-sm:mx-0 max-sm:mt-4"><a href="single_post.html" class="text-mxl text-black-500 transition ease hover:text-gold-500 "> assassins creed unity دانلود ترینر بازی </a></li>
+                      <li class="mt-8 mx-4 text-gold-500 max-sm:mx-0 max-sm:mt-4"><a href="single_post.html" class="text-mxl text-black-500 transition ease hover:text-gold-500 "> assassins creed unity دانلود ترینر بازی </a></li>
+
+
+                </div>
+
+              </div>
+              <div class="w-1 h-auto border-dashed border-r-2  border-gray-500 mt-12 max-md:hidden">
+
+              </div>
+
+              <div class="lates p-10  max-xl:p-6 max-lg:p-4 max-md:p-2 max-sm:mt-4 max-sm:text-center">
+                <div class="">
+                  <h2 class="text-black-700 text-[17px] font-IRsansBold flex items-center max-md:text-xl max-sm:mx-auto max-sm:justify-center">
+                    <span class="material-symbols-outlined text-[24px] text-black-700 mx-2 mb-1">
+                      <span class="material-symbols-outlined">
+                        shopping_bag
+                        </span>
+                      </span>
+                    آخرین محصولات
+                  </h2>
+
+                      <li class="mt-8 mx-4 text-gold-500 max-sm:mx-0 max-sm:mt-4"><a href="single_product .html" class="text-mxl text-black-500 transition ease hover:text-gold-500 "> assassins creed unity دانلود ترینر بازی </a></li>
+                      <li class="mt-8 mx-4 text-gold-500 max-sm:mx-0 max-sm:mt-4"><a href="single_product .html" class="text-mxl text-black-500 transition ease hover:text-gold-500 "> assassins creed unity دانلود ترینر بازی </a></li>
+                      <li class="mt-8 mx-4 text-gold-500 max-sm:mx-0 max-sm:mt-4"><a href="single_product .html" class="text-mxl text-black-500 transition ease hover:text-gold-500 "> assassins creed unity دانلود ترینر بازی </a></li>
+                      <li class="mt-8 mx-4 text-gold-500 max-sm:mx-0 max-sm:mt-4"><a href="single_product .html" class="text-mxl text-black-500 transition ease hover:text-gold-500 "> assassins creed unity دانلود ترینر بازی </a></li>
+                      <li class="mt-8 mx-4 text-gold-500 max-sm:mx-0 max-sm:mt-4"><a href="single_product .html" class="text-mxl text-black-500 transition ease hover:text-gold-500 "> assassins creed unity دانلود ترینر بازی </a></li>
+                      <li class="mt-8 mx-4 text-gold-500 max-sm:mx-0 max-sm:mt-4"><a href="single_product .html" class="text-mxl text-black-500 transition ease hover:text-gold-500 "> assassins creed unity دانلود ترینر بازی </a></li>
+                      <li class="mt-8 mx-4 text-gold-500 max-sm:mx-0 max-sm:mt-4"><a href="single_product .html" class="text-mxl text-black-500 transition ease hover:text-gold-500 "> assassins creed unity دانلود ترینر بازی </a></li>
+
+
+                </div>
+
+              </div>
+            </div>
+
+
+        </div>
+      </div>
+
+
+
+    </main>
+  </div><br><br>
+
+
+{% endblock %}
+{% block footer %}
+{% render_partial 'Home.views.FooterOne' %}
+{% endblock %}
+
+{% block custom_footer_references %}
+  <script src=" {% static 'Home/dist/slider_bundle.js' %}"></script>
+
+<script>
+
+
+let seatcrmodal = document.querySelector('.search-modal');
+    let formsearch = seatcrmodal.querySelector('#formsea');
+    let btnsearch = document.getElementById('btnsearch');
+    let checkopenedsearc=false
+    function closeSearch() {
+      seatcrmodal.classList.remove('search-modal_show')
+      filterBody.classList.add('hidden')
+       checkopenedsearc=false
+
+    }
+    btnsearch.addEventListener('click', () => {
+      seatcrmodal.classList.add('search-modal_show')
+      filterBody.classList.remove('hidden')
+      checkopenedsearc=true
+
+    })
+
+    const Boxes=new MangeBoxDropDown()
+    const mobilemenu=new MobileMenu()
+
+    window.addEventListener('click', (event) => {
+      if(!Boxes.personBox.contains(event.target) && event.target.contains(filterBody)){
+        Boxes.closePersonBox()
+      }
+      if(!formsearch.contains(event.target) && !event.target.classList.contains('material-symbols-outlined') && checkopenedsearc==true){
+        closeSearch()
+      }
+      if(!mobilemenu.SiteMenu.contains(event.target) && mobilemenu.StatusMobile && event.target.contains(filterBody)){
+        mobilemenu.close()
+      }
+
+    })
+
+
+
+
+    new TabHome()
+
+ </script>
+
+{% endblock %}
+
+

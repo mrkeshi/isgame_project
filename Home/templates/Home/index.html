@@ -816,7 +816,7 @@
                             calendar_month
                           </span>
                           <span class="text-black-500 text-sm mx-2">
-                            {{item.created_date | jalali_date_cu}}
+                            {{item.updated_at | jalali_date_cu}}
                           </span>
                         </div>
                         <div class="tag flex items-center">
@@ -840,11 +840,8 @@
                     <div class="flex w-full">
 
                     </div>
-                    <p class="text-[15px] p-3 pb-0 pt-1 text-black-500 leading-7 max-xl:leading-6  max-xl:text-base  ">
-                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                      چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
-                      نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در بیشتری را برای
-                      طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد
+                    <p class="text-[14px] p-3 pb-0 pt-1 text-black-500 leading-7 max-xl:leading-6  max-xl:text-base  ">
+                     {{ item.previewtext|slice:"350"}}...
                     </p> <a href="{{ item.get_absolute_url }}" class="text-gold-500 text-[14px] md:hidden  max-sm:md-6">ادامه مطلب  </a>
 
 
@@ -870,8 +867,12 @@
 
     </main>
   </div><br><br>
-{% endblock %}
 
+
+{% endblock %}
+{% block footer %}
+{% render_partial 'Home.views.FooterOne' %}
+{% endblock %}
 
 {% block custom_footer_references %}
   <script src=" {% static 'Home/dist/slider_bundle.js' %}"></script>

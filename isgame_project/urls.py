@@ -22,15 +22,17 @@ from Home import views as HomeView
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
+    path('contact', ContactView.as_view(), name="contact"),
+
     path('admin/', admin.site.urls),
                   re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),  # The CKEditor path
                   path('myadmin/',include('User.urls')),
     path('dashbaord/',include('admin_panel.urls')),
     path('user/resetpassword',UserView.ResetPassword.as_view(),name="resetpassword"),
     path('user/resetpassword/<token>', UserView.ResetPasswordConfirm.as_view(), name="resetpassword_confirm"),
+    path('',include('UserProfile.urls')),
     path('',include("Home.urls")),
 
-    path('contact', ContactView.as_view(), name="contact"),
 
 ]
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

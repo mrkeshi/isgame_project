@@ -34,7 +34,17 @@ def HeaderTwo(request):
     return render(request, 'layout/HomeLayout/HomeComponent/header2.html', {
         'menus': Objects
     })
+def FooterOne(request):
 
+    return render(request, 'layout/HomeLayout/HomeComponent/footer1.html', {
+
+    })
+def FooterOne(request):
+
+    return render(request, 'layout/HomeLayout/HomeComponent/footer1.html', {
+    })
+def FooterTwo(request):
+    return render(request, 'layout/HomeLayout/HomeComponent/footer2.html', {})
 # component
 class CategoryPage(DetailView):
     model = ArticleCategories
@@ -45,3 +55,5 @@ class SinglePost(DetailView):
     slug_field = 'title'
     template_name = 'Home/singlePost.html'
     context_object_name = 'post'
+
+        
