@@ -1,4 +1,5 @@
 from django.core.paginator import Paginator
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import DetailView
 
@@ -62,4 +63,7 @@ class SinglePost(DetailView):
     #     print("-------------------------------------------------------")
     #     return con
 
-
+def Category(request,title):
+    return HttpResponse(title)
+class TagPage(DetailView):
+    pass

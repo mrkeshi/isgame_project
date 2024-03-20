@@ -45,3 +45,5 @@ def jalali_date_month(value):
 @register.filter
 def showCat(value):
     return (' و '.join(list(value.values_list('title', flat=True))))
+def showTag(value):
+    return (' | '.join(list(value.values_list('title', flat=True))))

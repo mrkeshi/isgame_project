@@ -190,6 +190,8 @@ def PostAdd(request):
             box=form2.save(commit=False)
             box.Post=thought
             box.save()
+            thought.downloadbox=box
+            thought.save()
             messages.success(request, "پست با موفقیت ایجاد شد")
             return HttpResponseRedirect(reverse('post_admin'))
 
@@ -200,8 +202,9 @@ def PostAdd(request):
 
 def EditPost(request,id):
     form1_instance = Articles.objects.filter(id=id).first()
-    form2_instance = DownloadBox.objects.filter(Post=form1_instance).first()
-
+    print(form1_instance)
+    form2_instance = DownloadBox.objects.filter(pk=form1_instance.downloadbox.id).first()
+    print(form2_instance)
     form1 = AddArticleForm(instance=form1_instance)
     form2 = DownloadBoxForm(instance=form2_instance)
     form1.fields['mytag'].initial=";".join(list(form1_instance.tags.values_list('title', flat=True)))

@@ -792,17 +792,25 @@
                           </span>
                         </div>
                         <div class="tag flex items-center">
+                            {% if item.categories.count > 0 %}
                           <span class="material-symbols-outlined text-green text-2xl">
                             bookmark
                           </span>
                           <span class="text-black-500 text-sm mx-2">
-                            {{item.categories.all | showCat}}
+
+                            {% for cat in item.categories.all  %}
+                            <a href="{{cat.get_absolute_url}}">{{cat.title}}</a>
+                            {% if forloop.counter < item.categories.count  %} ، {% endif %}
+
+                            {% endfor %}
+
 <!--                       {% for cat in item.categories.all %}-->
 
 <!--                    {{cat.title}}-->
 <!--                            {% if item.categories.all.count > 1 %},{% endif %}-->
 <!--                    {% endfor %}-->
                           </span>
+                          {% endif %}
                         </div>
                         <div class="tag flex items-center">
                           <span class="material-symbols-outlined text-purple text-2xl">

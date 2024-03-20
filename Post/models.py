@@ -11,7 +11,17 @@ from ckeditor.fields import RichTextField
 from User.models import User
 
 from django.utils.text import slugify
+class DownloadBox(models.Model):
+    title1=models.CharField(max_length=50,blank=True,null=True)
+    title2=models.CharField(max_length=50,blank=True,null=True)
+    title3=models.CharField(max_length=50,blank=True,null=True)
+    title4=models.CharField(max_length=50,blank=True,null=True)
+    link1=models.URLField(blank=True,null=True)
+    link2=models.URLField(blank=True,null=True)
+    link3=models.URLField(blank=True,null=True)
+    link4=models.URLField(blank=True,null=True)
 
+    password=models.CharField(max_length=50,blank=True,null=True,default="پسورد ندارد.")
 class ArticleTags(models.Model):
     title = models.CharField(max_length=50, verbose_name="عنوان تگ" ,unique=True)
     url = models.TextField(verbose_name="آدرس تگ", unique=True)
@@ -22,11 +32,13 @@ class ArticleTags(models.Model):
     def save(self, *args, **kwargs):
         self.url = slugify(self.title, allow_unicode=True)
         super(ArticleTags, self).save(*args, **kwargs)
-
+    def get_absolute_url(self):
+        return reverse("tag_page", args=[self.title])
 class ArticleCategories(models.Model):
     title = models.CharField(max_length=50, verbose_name="عنوان دسته" ,unique=True)
     url = models.TextField(unique=True, verbose_name="آدرس دسته بندی")
-
+    def get_absolute_url(self):
+        return reverse("category_page", args=[self.title])
     def __str__(self):
         return self.title
     def save(self, *args, **kwargs):
@@ -49,6 +61,7 @@ class Articles(models.Model):
     image = models.ImageField(upload_to='Articles', null=True, blank=True)
     keyword =models.CharField(blank=True,null=True,max_length=150)
     previewtext=models.TextField(max_length=500)
+    downloadbox=models.ForeignKey(DownloadBox,on_delete=models.CASCADE,null=True,blank=True)
     def __str__(self):
         return self.title + " | "
 
@@ -61,14 +74,3 @@ class Articles(models.Model):
         super(Articles, self).save(args,kwargs)
 
 
-class DownloadBox(models.Model):
-    title1=models.CharField(max_length=50,blank=True,null=True)
-    title2=models.CharField(max_length=50,blank=True,null=True)
-    title3=models.CharField(max_length=50,blank=True,null=True)
-    title4=models.CharField(max_length=50,blank=True,null=True)
-    link1=models.URLField(blank=True,null=True)
-    link2=models.URLField(blank=True,null=True)
-    link3=models.URLField(blank=True,null=True)
-    link4=models.URLField(blank=True,null=True)
-    Post=models.ForeignKey(Articles,on_delete=models.CASCADE)
-    password=models.CharField(max_length=50,blank=True,null=True,default="پسورد ندارد.")

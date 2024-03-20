@@ -139,7 +139,7 @@ class DownloadBoxForm(forms.ModelForm):
 
     class Meta:
         model = DownloadBox
-        exclude=['Post']
+        fields="__all__"
         widgets = {
             'title1': forms.TextInput(attrs={
                 'placeholder': "لطفا عنوان دانلود را وارد کنید",
