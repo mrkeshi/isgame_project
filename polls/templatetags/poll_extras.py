@@ -42,3 +42,6 @@ def getPlace(val):
 @register.filter
 def jalali_date_month(value):
     return datetime2jalali(value).strftime(' %B %Y')
+@register.filter
+def showCat(value):
+    return (' و '.join(list(value.values_list('title', flat=True))))

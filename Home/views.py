@@ -55,5 +55,11 @@ class SinglePost(DetailView):
     slug_field = 'title'
     template_name = 'Home/singlePost.html'
     context_object_name = 'post'
+    # def get_context_data(self, **kwargs):
+    #     con=super().get_context_data(**kwargs)
+    #     print("--------------------------------------------------------")
+    #     print(con.categories.all())
+    #     print("-------------------------------------------------------")
+    #     return con
 
-        
+

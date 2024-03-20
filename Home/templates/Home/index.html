@@ -154,7 +154,8 @@
                   <span class="material-symbols-outlined text-[41px] text-white max-xl:text-[37px] ">
                     stadia_controller
                   </span>
-                  <a href="category_blog.html" class="text-white text-[18px] mr-4  flex justify-center items-center mt-2 max-xl:text-[17px] ">چیت و ترینر
+                  <a href="category_blog.html" class="text-white text-[18px] mr-4  flex justify-center items-center mt-2 max-xl:text-[17px] ">
+                    چیت و ترینر
                     <span class="material-symbols-outlined text-gold-500 text-3xl ">
                       navigate_before
                     </span>
@@ -751,36 +752,7 @@
 
 
             <!-- Start Social link Network -->
-            <section>
-              <div
-                class="social-box shadow-md justify-between flex mt-8 bg-gradient-to-r p-4 from-[#4f0fbe] to-[#B113BC] rounded-[8px] h-[86px] ">
-                <div class="flex flex-col">
-                  <span class="text-white text-base">اینیستاگرام ما</span>
-                  <span
-                    class="text-white text-base mt-2 font-light font-IRsansLight tracking-widest	">keshavarz_28@</span>
-                </div>
-                <div
-                class="bg-white rounded text-center p-[6px] px-3 h-[36px] transition-all ease-linear hover:opacity-70">
-                  <a href="http://instagram.com/keshavarz_28" class="text-sm    text-black-500">دنبال کردن</a>
-                </div>
-              </div>
-            </section>
-
-            <section class="mb-10 max-sm:mb-6">
-
-              <div
-                class="social-box shadow-md justify-between flex mt-6 bg-gradient-to-r p-4 from-[#4056E6] to-[#1AA6EE] rounded-[8px] h-[86px] ">
-                <div class="flex flex-col">
-                  <span class="text-white text-base">تلگرام ما</span>
-                  <span
-                    class="text-white text-base mt-2 font-light font-IRsansLight tracking-widest	">keshavarz_28@</span>
-                </div>
-                <div
-                  class="bg-white rounded text-center p-[6px] px-3 h-[36px] transition-all ease-linear hover:opacity-70">
-                  <a href="http://t.me/pares28" class="text-sm    text-black-500">دنبال کردن</a>
-                </div>
-              </div>
-            </section>
+            {% include 'HomeComponent/SocialBox.html' %}
             <!-- End Social -->
 
             <!-- Start Ads -->
@@ -824,7 +796,12 @@
                             bookmark
                           </span>
                           <span class="text-black-500 text-sm mx-2">
-                            چیت و ترینر
+                            {{item.categories.all | showCat}}
+<!--                       {% for cat in item.categories.all %}-->
+
+<!--                    {{cat.title}}-->
+<!--                            {% if item.categories.all.count > 1 %},{% endif %}-->
+<!--                    {% endfor %}-->
                           </span>
                         </div>
                         <div class="tag flex items-center">

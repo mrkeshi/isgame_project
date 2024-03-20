@@ -166,7 +166,7 @@ class ProfileForm(forms.Form):
 class SocialLinkForm(ModelForm):
     class Meta:
         model = models.SocialMediaLink
-        fields = ["telegram","aparat","github","twitter","youtube","instagram","facebook","linkedin"]
+        fields = ["telegram","aparat","github",'email',"twitter","youtube","instagram","facebook","linkedin"]
         widgets = {
             'telegram': TextInput(attrs={
                 'class': 'form-control',
@@ -199,6 +199,10 @@ class SocialLinkForm(ModelForm):
             'linkedin': TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'linkedin username'
+            }),
+            'email': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'paressep28@gmail.com'
             }),
         }
 
