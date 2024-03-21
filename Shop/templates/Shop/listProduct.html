@@ -67,7 +67,7 @@
                                 <li>
 
 
-                                    <a href="{% url 'edit_page' pk=item.id  %}"
+                                    <a href="{% url 'edit_product' pk=item.id  %}"
                                        style="margin-right: 1x;color: red"
                                        class="bs-tooltip mr-2 text-or" data-toggle="tooltip" data-placement="top"
                                        title="" data-original-title="ویرایش">
@@ -127,10 +127,10 @@
 
 {% block script %}
 
-{% include 'layout/component/swalmeesage.html' with title="صفحه ها" %}
+{% include 'layout/component/swalmeesage.html' with title="محصولات" %}
 <script>
 function myfunc(id){
-let ali="{% url 'page_delete' pk=' ' %}"
+let ali="{% url 'delete_product' pk=' ' %}"
 document.getElementById('delete').href=ali+id
 }
 </script>

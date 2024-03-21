@@ -4,22 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="dynamic social link">
-      <change afterPath="$PROJECT_DIR$/Home/templates/Home/CategoryPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post/migrations/0005_auto_20240320_2046.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/Articles/۲۰۲۳۱۱۱۱_۱۷۵۹۳۴.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/Articles/۲۰۲۳۱۱۱۱_۱۷۵۹۳۴_Y5wvLG2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/Articles/۲۰۲۳۱۱۱۱_۱۷۵۹۳۴_flik4OG.jpg" afterDir="false" />
+    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="dynamic downloadbox and tags">
+      <change afterPath="$PROJECT_DIR$/Shop/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shop/templates/Shop/editProduct.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/Products/۲۰۲۳۱۱۱۱_۱۷۵۹۳۴.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/product/file/Screenshot_from_2024-03-15_19-57-18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medias/product/file/banner-for-hamyarpng_CORCpOl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/layout/HomeLayout/HomeComponent/pagination.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Home/templates/Home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/templates/Home/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/templates/Home/singlePost.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/templates/Home/singlePost.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post/templates/Post/includes/ListPostsComponents.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/includes/ListPostsComponents.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Post/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shop/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shop/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shop/templates/Shop/listProduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/Shop/templates/Shop/listProduct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shop/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shop/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/polls/templatetags/poll_extras.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templatetags/poll_extras.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Home/dist/custom_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/Home/dist/custom_style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -65,28 +67,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/alireza/isgame_project/UserProfile/templates/UserProfile&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/alireza/isgame_project/Shop/templates/Shop",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Shop/templates/Shop" />
       <recent name="$PROJECT_DIR$/UserProfile/templates/UserProfile" />
       <recent name="$PROJECT_DIR$/UserProfile" />
       <recent name="$PROJECT_DIR$/SiteModule/templates/Widget" />
-      <recent name="$PROJECT_DIR$/Shop/templates/Shop" />
       <recent name="$PROJECT_DIR$/Post/templates/Post" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -424,7 +426,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710952467906</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="dynamic downloadbox and tags">
+      <option name="closed" value="true" />
+      <created>1710959234684</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1710959234684</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -535,7 +545,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="create contact form" />
     <MESSAGE value="swal message" />
     <MESSAGE value="complete Setting.html" />
     <MESSAGE value="Complete the contact module" />
@@ -560,7 +569,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="short description" />
     <MESSAGE value="dynamic social link" />
-    <option name="LAST_COMMIT_MESSAGE" value="dynamic social link" />
+    <MESSAGE value="dynamic downloadbox and tags" />
+    <option name="LAST_COMMIT_MESSAGE" value="dynamic downloadbox and tags" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,6 +1,7 @@
 import enum
 
 from django import template
+from django.core.paginator import Paginator
 from django.urls import reverse
 from pprint import pprint
 from Menu.models import Menu
@@ -42,8 +43,9 @@ def getPlace(val):
 @register.filter
 def jalali_date_month(value):
     return datetime2jalali(value).strftime(' %B %Y')
-@register.filter
-def showCat(value):
-    return (' و '.join(list(value.values_list('title', flat=True))))
-def showTag(value):
-    return (' | '.join(list(value.values_list('title', flat=True))))
+
+@register.simple_tag
+def get_proper_elided_page_range(p,number):
+    paginator = Paginator(p.object_list, p.per_page)
+    return paginator.get_elided_page_range(number=number,on_each_side=1,on_ends=1,
+                                           )

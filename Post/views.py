@@ -42,7 +42,7 @@ def ListPost(request):
     if (request.POST.get('title')):
         myArticles = myArticles.filter(title__icontains=request.POST.get('title')).all()
 
-    paginator = Paginator(myArticles, 5)
+    paginator = Paginator(myArticles, 1)
     myArticles = paginator.page(page)
 
     return render(request, 'Post/includes/ListPostsComponents.html', {

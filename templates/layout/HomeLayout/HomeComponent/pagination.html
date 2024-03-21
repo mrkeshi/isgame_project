@@ -1,0 +1,40 @@
+{% load poll_extras %}
+<div class="pagination my-8 mt-5 flex justify-center items-center">
+    {% if articles.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="material-symbols-outlined rotate-[180deg] text-2xl">
+                arrow_back
+              </a>
+    {% endif %}
+    {% get_proper_elided_page_range paginator articles.number as page_range %}
+
+
+    {% for i in page_range %}
+    {% if articles.number == i %}
+
+            <a href="?page={{ i }}" class="active">{{i}}</a>
+
+    {% else %}
+    {% if i == paginator.ELLIPSIS %}
+    <a>...</a>
+    {% else %}
+
+     <a href="?page={{ i }}">{{ i }}</a>
+
+
+
+
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    {% if articles.has_next %}
+          <a href="?page={{ Articles.next_page_number }}" class="material-symbols-outlined text-2xl">
+                arrow_back
+              </a>
+    {% endif %}
+</div>
+
+
+
+
+
+
