@@ -59,7 +59,8 @@ INSTALLED_APPS = [
     'django_render_partial',
     'django_user_agents',
     'webpack_loader',
-    'ckeditor'
+    'ckeditor',
+    "django_unicorn",
 
 ]
 

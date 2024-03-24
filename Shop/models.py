@@ -19,8 +19,8 @@ class Product(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="نویسنده")
     image = models.ImageField(upload_to='Products', null=True, blank=True)
     keyword = models.CharField(blank=True, null=True, max_length=150)
-    price=models.IntegerField(default=0,verbose_name="قیمت محصول")
-    fprice=models.IntegerField(default=0,verbose_name="قیمت اولیه محصول")
+    price=models.PositiveBigIntegerField(default=0,verbose_name="قیمت محصول")
+    fprice=models.PositiveBigIntegerField(default=0,verbose_name="قیمت اولیه محصول")
     def __str__(self):
         return self.title + " | "
     def save(self, *args, **kwargs):
