@@ -4,15 +4,7 @@
         <div class="about_us w-[440px] max-xl:w-[340px] max-sm:w-full max-md:mb-6 max-sm:mb-4 max-md:w-full">
           <h1 class="text-3xl font-bold font-IRsansBold text-black-500 ">
             Is<strong class="text-gold-500">Game</strong>.ir</h1>
-            <p class="text-right text-black-500 text-mxl font-light leading-8 max-sm:text-[14.5px]">
-              تیم برنامه نویسی آقای کاف با هدف افزایش سطح کیفی آموزش
-              برنامه نویسی برای ورود به بازار کار شما عزیزان و ایجاد یک
-              مرجع کامل در زمینه آموزش دوره محور زبان های برنامه نویسی
-              شروع به فعالیتی متفاوت در این راستا کرده و تصمیم گرفتیم با
-              در نظر گرفتن نیاز شما فضایی را برای یادگیری هر چه بهتر فراهم
-              آوریم , در واقع سعی ما بر این است با آموزش های پروژه محور و
-             .کاربردی نیاز های آموزشی شما برنامه نویسان را پاسخ دهیم
-            </p>
+            <p class="text-right text-black-500 text-mxl font-light leading-8 max-sm:text-[14.5px]">{{ information }}</p>
 
         </div>
         <div class="cat_main_menu w-[180PX] text-black-500 max-lg:mr-6 max-md:mb-6 max-sm:mb-4 ">
@@ -20,11 +12,10 @@
             بخش های  <span class="text-gold-500"> اصلی</span>
           </h3>
           <ul class="mt-2">
-            <li class="my-5 list-disc text-gray-100"><a href="index.html" class="text-black-500  text-mxl font-light">خانه</a></li>
-            <li class="my-5 list-disc text-gray-100"><a href="blog.html" class="text-black-500  text-mxl font-light">وبلاگ</a></li>
-            <li class="my-5 list-disc text-gray-100"><a href="shop.html" class="text-black-500  text-mxl font-light">فروشگاه</a></li>
-            <li class="my-5 list-disc text-gray-100"><a href="aboue.html" class="text-black-500  text-mxl font-light">درباره ما</a></li>
-            <li class="my-5 list-disc text-gray-100"><a href="contact.html" class="text-black-500  text-mxl font-light">تماس با ما</a></li>
+            {% for menu in menus %}
+                  <li class="my-5 list-disc text-gray-100"><a href="{{menu.url}}" class="text-black-500  text-mxl font-light">{{menu.title}}</a></li>
+            {% endfor %}
+
           </ul>
         </div>
         <div class="cat_main_menu w-[180PX] text-black-500 max-lg:mr-6 max-md:mb-6 max-sm:mb-4">
@@ -32,11 +23,11 @@
              دسته بندی  های   <span class="text-gold-500"> ایزگیم</span>
           </h3>
           <ul class="mt-2">
-            <li class="my-5 list-disc text-gray-100"><a href="category_blog.html" class="text-black-500  text-mxl font-light">چیت</a></li>
-            <li class="my-5 list-disc text-gray-100"><a href="category_blog.html" class="text-black-500  text-mxl font-light">ترینر</a></li>
-            <li class="my-5 list-disc text-gray-100"><a href="category_blog.html" class="text-black-500  text-mxl font-light">هک بازی</a></li>
-            <li class="my-5 list-disc text-gray-100"><a href="category_blog.html" class="text-black-500  text-mxl font-light">آموزش</a></li>
-            <li class="my-5 list-disc text-gray-100"><a href="category_blog.html" class="text-black-500  text-mxl font-light">مود بازی</a></li>
+                       {% for cat in categories %}
+                        <li class="my-5 list-disc text-gray-100"><a href="{{cat.get_absolute.url}}.html" class="text-black-500  text-mxl font-light">{{cat.title}}</a></li>
+
+            {% endfor %}
+
 
           </ul>
         </div>
@@ -45,11 +36,11 @@
             آخرین  <span class="text-gold-500"> پست ها</span>
           </h3>
           <ul class="mt-2">
-            <li class="my-5 list-disc text-gray-100"><a href="single_post.html" class="text-black-500  text-mxl font-light">ترینر جنگ های صل..</a></li>
-            <li class="my-5 list-disc text-gray-100"><a href="single_post.html" class="text-black-500  text-mxl font-light">چیت بازی کانتر...</a></li>
-            <li class="my-5 list-disc text-gray-100"><a href="single_post.html" class="text-black-500  text-mxl font-light">دانلود ترینر بازی قل..</a></li>
-            <li class="my-5 list-disc text-gray-100"><a href="single_post.html" class="text-black-500  text-mxl font-light">کرک بازی سمپسون.. </a></li>
-            <li class="my-5 list-disc text-gray-100"><a href="single_post.html" class="text-black-500  text-mxl font-light">آموزش هک بازی  </a></li>
+            {% for article in articles %}
+            <li class="my-5 list-disc text-gray-100"><a href="single_post.html" class="text-black-500  text-mxl font-light">
+              {{ article.title | slice:"24" }}{% if article.title|length > 24  %}..{% endif %}
+            </a></li>
+        {% endfor %}
 
           </ul>
         </div>

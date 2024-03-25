@@ -31,6 +31,9 @@ class addMenu(FormView):
     success_url = reverse_lazy('MangeMenu')
     form_class = AddMenuForm
 
+    def get_success_url(self):
+        return reverse_lazy('Menu', args=[self.kwargs['menu']])
+
     def get_context_data(self, **kwargs):
         if (self.kwargs['menu'] not in Menu.placeMenu):
             messages.error(self.request,"صفحه انتخابی شما نامعتبر است. لطفا دقت کنید!")
@@ -72,6 +75,9 @@ class EditMenuItem(UpdateView):
     template_name = 'Menu/editMenu.html'
     success_url = reverse_lazy('MangeMenu')
     form_class = AddMenuForm
+    def get_success_url(self):
+
+        return reverse_lazy('Menu', args=[self.kwargs['menu']])
 
     def get_object(self, *args, **kwargs):
         menu = get_object_or_404(Menu, pk=self.kwargs['id'])

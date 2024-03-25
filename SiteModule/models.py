@@ -17,7 +17,7 @@ class SocialMediaLink(models.Model):
     linkedin = models.CharField(max_length=100, blank=True, null=True)
     github = models.CharField(blank=True, null=True,max_length=100)
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE,unique=True,null=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE,unique=True,null=True,related_name="social")
 
 
 
@@ -25,6 +25,7 @@ class SocialMediaLink(models.Model):
 class PublicSettings(models.Model):
     title=models.CharField(max_length=100)
     description=models.TextField()
+    information=models.TextField(default="بدون توضیحات")
     socialLinks=models.OneToOneField(SocialMediaLink,on_delete=models.CASCADE,unique=True,blank=True,null=True)
     url=models.URLField(default="isgame.ir")
     email=models.EmailField(default="admin@gmail.com")

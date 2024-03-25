@@ -4,20 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="pagination homePage and edit &amp; delete post">
-      <change afterPath="$PROJECT_DIR$/Comment/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Comment/migrations/0003_comment_ip.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Comment/migrations/0004_commentlike.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Comment/templates/Comment/Component/addComment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Comment/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/۲۰۲۰۱۲۰۳_۱۳۱۱۲۰.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/۲۰۲۳۱۱۱۱_۱۷۵۹۳۴.jpg" afterDir="false" />
+    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="start django unicorn">
+      <change afterPath="$PROJECT_DIR$/Comment/components/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comment/components/addcomment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comment/templates/unicorn/addcomment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/templates/HomeComponent/AuthorBox.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shop/migrations/0005_auto_20240325_1523.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SiteModule/migrations/0004_auto_20240325_1523.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/Home/images/user.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Comment/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Comment/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Home/templates/Home/singlePost.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/templates/Home/singlePost.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shop/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shop/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/templates/HomeComponent/footer1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/templates/HomeComponent/header1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Menu/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Menu/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/templates/Settings/Setting.html" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/templates/Settings/Setting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/context_processors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/isgame_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/isgame_project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/isgame_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/isgame_project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout/HomeLayout/HomeComponent/footer1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/HomeLayout/HomeComponent/footer1.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -438,7 +445,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711036577890</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="start django unicorn">
+      <option name="closed" value="true" />
+      <created>1711285917747</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1711285917747</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -549,7 +564,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="complete Setting.html" />
     <MESSAGE value="Complete the contact module" />
     <MESSAGE value="start gallery module" />
     <MESSAGE value=" gallery module" />
@@ -574,7 +588,8 @@
     <MESSAGE value="dynamic social link" />
     <MESSAGE value="dynamic downloadbox and tags" />
     <MESSAGE value="pagination homePage and edit &amp; delete post" />
-    <option name="LAST_COMMIT_MESSAGE" value="pagination homePage and edit &amp; delete post" />
+    <MESSAGE value="start django unicorn" />
+    <option name="LAST_COMMIT_MESSAGE" value="start django unicorn" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

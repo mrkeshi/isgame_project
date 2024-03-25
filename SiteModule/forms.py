@@ -85,7 +85,7 @@ class SettingForm(forms.ModelForm):
         return x
     class Meta:
         model=PublicSettings
-        fields=["title","description","url","email","logoIcon","logoSite","post_per_homePage","post_per_cat","is_Register","is_Comment"]
+        fields=["title","description","url","email","logoIcon","logoSite","post_per_homePage","post_per_cat","is_Register","is_Comment","information"]
 
         widgets={
             'title':TextInput(attrs={
@@ -123,7 +123,13 @@ class SettingForm(forms.ModelForm):
                 'id': 'description',
                 'placeholder': 'توضیحات کوتاه در مورد سایت',
                 'class': 'form-control',
-                'rows':4,
+                'rows':2,
+            }),
+            'information': forms.Textarea(attrs={
+                'id': 'information',
+                'placeholder': 'اطلاعات در مورد سایت',
+                'class': 'form-control',
+                'rows': 4,
             }),
             'is_Register': forms.CheckboxInput(attrs={
                 'id': 'is_Register',

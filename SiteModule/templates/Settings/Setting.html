@@ -108,7 +108,7 @@
                                           {% if form1.logoSite.errors %}
                                                                         <div class="text-danger text-red mt-2">{{form1.logoSite.errors}}</div>
                                                                         {% endif %}
-                                        <div class="row mt-2" style="height:200px">
+                                        <div class="row mt-2">
                                             <div class="col-md-3 " style="height:200px;">
 
                                                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
@@ -144,7 +144,21 @@
                                                                 لوگوی هدر</p>
                                                         </div>
                                                     </div>
+                        <div style="text-align:center" class="row mx-auto flex-column" >
+                                                        <div class="n-chk block">
+                                                <label class="new-control new-checkbox checkbox-success">
+                                                  {{form1.is_Register}}
+                                                  <span class="new-control-indicator"></span>قابلیت ثبت نام
+                                                </label>
+                                            </div>
 
+                                                    <div class="n-chk block ">
+                                                <label class="new-control new-checkbox checkbox-success">
+                                                    {{form1.is_Comment}}
+                                                  <span class="new-control-indicator"></span>  ارسال کامنت فعال باشد
+                                                </label>
+                                            </div>
+                                        </div>
 
                                             </div>
                                             <div class="col-md-8 ">
@@ -155,7 +169,13 @@
                                                                         <div class="text-danger text-red mt-2">{{form1.description.errors}}</div>
                                                                         {% endif %}
                                                     </div>
-
+     <div class="form-group">
+                                                    <label for="information">توضیحات اصلی</label>
+                                                        {{form1.information}}
+                                                          {% if form1.information.errors %}
+                                                                        <div class="text-danger text-red mt-2">{{form1.information.errors}}</div>
+                                                                        {% endif %}
+                                                    </div>
                                                         <div class="row">
                                                                  <div class="col-sm-6">
                                                                     <div class="form-group">
@@ -181,21 +201,7 @@
                                             </div>
 
                                         </div>
-                                        <div class="row mx-auto flex-column" >
-                                                        <div class="n-chk block">
-                                                <label class="new-control new-checkbox checkbox-success">
-                                                  {{form1.is_Register}}
-                                                  <span class="new-control-indicator"></span>قابلیت ثبت نام
-                                                </label>
-                                            </div>
 
-                                                    <div class="n-chk block ">
-                                                <label class="new-control new-checkbox checkbox-success">
-                                                    {{form1.is_Comment}}
-                                                  <span class="new-control-indicator"></span>  ارسال کامنت فعال باشد
-                                                </label>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

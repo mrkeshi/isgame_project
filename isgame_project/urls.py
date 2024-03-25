@@ -29,9 +29,11 @@ urlpatterns = [
                   path('myadmin/',include('User.urls')),
     path('dashbaord/',include('admin_panel.urls')),
     path('user/resetpassword',UserView.ResetPassword.as_view(),name="resetpassword"),
+    path("unicorn/", include("django_unicorn.urls")),
     path('user/resetpassword/<token>', UserView.ResetPasswordConfirm.as_view(), name="resetpassword_confirm"),
     path('',include('UserProfile.urls')),
     path('',include("Home.urls")),
+
 
 
 ]
