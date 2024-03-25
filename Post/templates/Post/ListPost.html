@@ -10,10 +10,8 @@
 <!-- BEGIN PAGE LEVEL CUSTOM STYLES -->
 <link rel="stylesheet" type="text/css" href="{% static 'admin_panel/plugins/table/datatable/datatables.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'admin_panel/assets/css/forms/theme-checkbox-radio.css' %}">
-<link rel="stylesheet" type="text/css"
-      href="{% static 'admin_panel/plugins/table/datatable/dt-global_style.css' %}">
-<link rel="stylesheet" type="text/css"
-      href="{% static 'admin_panel/plugins/table/datatable/custom_dt_custom.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'admin_panel/plugins/table/datatable/dt-global_style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'admin_panel/plugins/table/datatable/custom_dt_custom.css' %}">
 <!-- END PAGE LEVEL CUSTOM STYLES -->
 <link rel="stylesheet" href="{% static 'admin_panel/plugins/sweetalerts/sweetalert2.min.css' %}">
 <link rel="stylesheet" href="{% static 'admin_panel/plugins/loaders/custom-loader.css' %}">
@@ -21,7 +19,7 @@
 
 {% block content %}
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -31,7 +29,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p class="modal-text">آیا شما برای حذف این پست()\پست ها مطمئن هستید؟ در صورت تایید این پست/پست ها در پایگاه داده پاک
+                <p class="modal-text">آیا شما برای حذف این پست()\پست ها مطمئن هستید؟ در صورت تایید این پست/پست ها در
+                    پایگاه داده پاک
                     می گردد. </p>
             </div>
             <div class="modal-footer">
@@ -39,8 +38,8 @@
                 <button type="button" class="btn btn-danger text-center" id="btn_confirm_delete">
                     <span>تایید</span>
                     <svg style="display: none" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                         stroke-linecap="round" stroke-linejoin="round" class="feather feather-loader spin ">
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-loader spin ">
                         <line x1="12" y1="2" x2="12" y2="6"></line>
                         <line x1="12" y1="18" x2="12" y2="22"></line>
                         <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
@@ -80,44 +79,49 @@
                                     <div class="dataTables_length col-lg-12 col-2xl-4 " id="style-1_length">
                                         <label>
                                             <select id="selectRun" style="width: 260px;cursor: pointer"
-                                                    name="style-1_length" aria-controls="style-1"
-                                                    class="form-control">
+                                                name="style-1_length" aria-controls="style-1" class="form-control">
                                                 <option value="5">همه کارهای دسته جمعی</option>
                                                 <option value="delete">حذف گروهی</option>
                                                 <option value="draft">تبدیل به پیش نویس</option>
                                                 <option value="post">تبدیل به منتشر شده</option>
                                             </select>
                                             <input id="runBtn" type="submit" value="اجرا" name="txt"
-                                                   class=" btn btn-danger mx-2 " style="height: 43px">
+                                                class=" btn btn-danger mx-2 " style="height: 43px">
                                         </label>
                                     </div>
 
 
                                     <div class="dataTables_length col-lg-12 col-2xl-4" id="style-2_length">
                                         <label>
-                                            <select style="width: 210px;cursor: pointer"
-                                                    name="style-1_length" aria-controls="style-1"
-                                                    class="form-control" id="category">
-                                                <option value="null">دسته بندی ها</option>
+
+                                            <select style="width: 210px;cursor: pointer" name="style-1_length"
+                                                aria-controls="style-1" class="form-control" id="category">
+                                                <option value="all">همه دسته ها</option>
+
+
+
                                                 {% for cat in cats %}
-                                                <option value="{{ cat.id }}">{{ cat.title }}</option>
+
+                                                <option value="{{ cat.id }}">{{ cat.title }}({{cat.num_article_count}})
+                                                </option>
                                                 {% endfor %}
 
 
                                             </select>
                                             <select style="width: 230px;cursor: pointer;margin-right: 5px"
-                                                    name="style-1_length" aria-controls="style-1"
-                                                    class="form-control" id="date">
-                                                <option value="null">تاریخ</option>
+                                                name="style-1_length" aria-controls="style-1" class="form-control"
+                                                id="date">
+                                                <option value="all">همه تاریخ ها</option>
+
                                                 {% for time in times %}
-                                                <option value="{{ time }}">{{ time.date | jalali_date_month }}
+                                                <option value="{{ time.date |date:'Ymd'  }}">{{ time.date | jalali_date_month }}
                                                     ({{ time.count }})
                                                 </option>
                                                 {% endfor %}
 
                                             </select>
                                             <input id="filter" type="submit" value="فیلتر" name="txt"
-                                                   class=" btn btn-warning mx-2" style="height: 43px">
+                                                class=" btn btn-warning mx-2" style="height: 43px">
                                         </label>
                                     </div>
                                 </div>
@@ -127,16 +131,15 @@
 
                             <div class="col-sm-12 col-md-3 col-xl-4 col-2xl-3 ">
                                 <div id="style-1_filter" class="dataTables_filter"><label>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                         stroke-linecap="round" stroke-linejoin="round"
-                                         class="feather feather-search">
-                                        <circle cx="11" cy="11" r="8"></circle>
-                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                    </svg>
-                                    <input type="search" id="search_query" style="width: 270px" class="form-control"
-                                           placeholder="جستجو کنید..."
-                                           aria-controls="style-1"></label></div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-search">
+                                            <circle cx="11" cy="11" r="8"></circle>
+                                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        </svg>
+                                        <input type="search" id="search_query" style="width: 270px" class="form-control"
+                                            placeholder="جستجو کنید..." aria-controls="style-1"></label></div>
                             </div>
                         </div>
                         <div class="results" id="result_list_post">
@@ -157,19 +160,19 @@
 <script src="{% static 'admin_panel/plugins/table/datatable/datatables.js' %}"></script>
 <script src="{% static 'assets/webpack_bundles/axious_main_bundler.js' %}"></script>
 <script>
-    var myurl="{% url 'post_delete_admin' %}"
-    var url_draft="{% url 'post_draft_request' %}"
+    var myurl = "{% url 'post_delete_admin' %}"
+    var url_draft = "{% url 'post_draft_request' %}"
 </script>
 <script src="{% static 'assets/js/PostList.js' %}"></script>
 
 <script>
-//     function removeItemOnce(arr, value) {
-// var index = arr.indexOf(value);
-// if (index > -1) {
-// arr.splice(index, 1);
-// }
-// return arr;
-// }
+    //     function removeItemOnce(arr, value) {
+    // var index = arr.indexOf(value);
+    // if (index > -1) {
+    // arr.splice(index, 1);
+    // }
+    // return arr;
+    // }
     axios.defaults.xsrfCookieName = 'csrftoken'
     axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
     // class DeleteItem {
@@ -270,91 +273,151 @@
 
     // const deleteItems = new DeleteItem();
 
-//     class Select{
-//         selectRun=document.getElementById('selectRun')
-//         runbtn=document.getElementById('run')
-//         checks=document.querySelectorAll('.customer-all-info')
-//         constructor(){
+    //     class Select{
+    //         selectRun=document.getElementById('selectRun')
+    //         runbtn=document.getElementById('run')
+    //         checks=document.querySelectorAll('.customer-all-info')
+    //         constructor(){
 
-//             this.checks.forEach((el)=>{
-//                 el.addEventListener('click',()=>{
-//                    if(!el.checked){
-//                     console.log(deleteItems.items)
-//                     removeItemOnce(deleteItems.items,Number(el.getAttribute('data-check-id')))
-//                    }else{
-//                     deleteItems.items.push(el.getAttribute('data-check-id'))
-//                    }
-//                    console.log(deleteItems.items)
+    //             this.checks.forEach((el)=>{
+    //                 el.addEventListener('click',()=>{
+    //                    if(!el.checked){
+    //                     console.log(deleteItems.items)
+    //                     removeItemOnce(deleteItems.items,Number(el.getAttribute('data-check-id')))
+    //                    }else{
+    //                     deleteItems.items.push(el.getAttribute('data-check-id'))
+    //                    }
+    //                    console.log(deleteItems.items)
 
-//                 })
-//             })
-//         }
+    //                 })
+    //             })
+    //         }
 
-//         selecttion(){
-//             switch (selectRun.value) {
-//                 case 'delete':
-//                     alert("delete")
-//                     break;
+    //         selecttion(){
+    //             switch (selectRun.value) {
+    //                 case 'delete':
+    //                     alert("delete")
+    //                     break;
 
-//                 default:
-//                     break;
-//             }
-//         }
-//     }
-//     new Select()
+    //                 default:
+    //                     break;
+    //             }
+    //         }
+    //     }
+    //     new Select()
 
-    class FilterQuery{
-        search=document.getElementById('search_query');
-        filterBtn=document.getElementById('filter');
+    class FilterQuery {
+        search = document.getElementById('search_query');
+        filterBtn = document.getElementById('filter');
         category;
         date;
         constructor() {
 
-        this.filterBtn.addEventListener('click',()=>{
-        this.Filter()
-        })
-        this.search.addEventListener('keyup',()=>{
-            this.Search()
+            this.filterBtn.addEventListener('click', () => {
 
-        })
+                this.Filter()
+            })
+            this.search.addEventListener('keyup', () => {
+                this.Search()
+
+            })
+            this.getAndSetQuery()
         }
 
-        Filter(){
-             this.int+=1;
-        this.category=document.getElementById('category').value;
-        this.date=document.getElementById('date').value;
+        Filter() {
+
+            this.category = document.getElementById('category').value;
+            this.date = document.getElementById('date').value;
+            if (true) {
+
+                this.SendAxois(this.date, this.category, this.search.value.trim())
+
+            }
+
         }
 
-        Search(){
-        this.SendAxois(null,null,this.search.value.trim())
+        Search() {
+            this.category = document.getElementById('category').value;
+            this.date = document.getElementById('date').value;
+            this.SendAxois(this.date, this.category, this.search.value.trim())
         }
 
-        SendAxois(date,category,search){
-                      var self = this;
-                axios({
-                    method: 'post',
-                    url: "{% url 'filter_article_admin' %}",
-                    data: {
-                        title:search,
-                        date:date,
-                        category:category
-                    },
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded",
-                        Accept: "application/json",
-                    }
-                }).then(function (response) {
-                        self.SetData(response.data)
+        SendAxois(date, category, search) {
+            let data = {
+                title: search,
+                date: date,
+                category: category
+            }
+            var self = this;
+            axios.get("{% url 'filter_article_admin' %}", {
+                params: data
 
-                }).catch(function (error) {
-                    console.log(error)
-                })
-        }
+            }).then(function (response) {
+                self.SetData(response.data)
+                console.log("sucess")
+                let queryParams = '';
 
-        SetData(response){
-            console.log(response)
-            document.getElementById('result_list_post').innerHTML=response
+                if (data.title.trim() !== "") {
+                    queryParams += 'title=' + encodeURIComponent(data.title) + '&';
+                }
+
+                if (data.date !== "all") {
+                    queryParams += 'date=' + encodeURIComponent(data.date) + '&';
+                }
+
+                if (data.category !== "all") {
+                    queryParams += 'category=' + encodeURIComponent(data.category) + '&';
+                }
+
+                queryParams = queryParams.slice(0, -1);
+                self.Pagin(queryParams)
+                let newUrl = "{% url 'post_admin' %}?" + queryParams;
+           
+                window.history.pushState(null, '', newUrl);
+            }).catch(function (error) {
+                console.log(error)
+            })
         }
+    Pagin(query) {
+           
+            document.querySelectorAll('.pagination li a').forEach((a) => {
+                a.setAttribute('href', a.getAttribute('href') + "&" + query)
+            })
+        }
+        SetData(response) {
+            document.getElementById('result_list_post').innerHTML = response
+        }
+    getAndSetQuery(){
+        const urlParams = new URLSearchParams(window.location.search);
+        console.log(urlParams)
+        const title = urlParams.get('title');
+        const category = urlParams.get('category');
+        const date = urlParams.get('date');
+        let queryParams = '';
+        if(title!= null){
+            queryParams += 'title=' + encodeURIComponent(title) ;
+                this.search.value=title
+        }
+        if(category != null){
+                      let el1= document.getElementById('category').querySelector(`option[value="${category}"]`)
+
+        if(el1 != null){
+            queryParams += 'category=' + encodeURIComponent(category) ;
+
+            el1.selected=true
+        }
+        }
+        if(date != null){
+          
+          let el1= document.getElementById('date').querySelector(`option[value="${date}"]`)
+          if(el1 != null){
+            queryParams += 'date=' + encodeURIComponent(date) ;
+              el1.selected=true
+          }
+          }
+   this.Pagin(queryParams)
+        }
+       
     }
     new FilterQuery()
 </script>

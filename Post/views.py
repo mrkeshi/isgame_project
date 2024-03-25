@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 from django.db.models import Count
 from django.db.models.functions import TruncMonth
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
@@ -31,25 +33,41 @@ def FindOrCreateTag(tags):
 
 class PostManger(TemplateView):
     template_name = 'Post/ListPost.html'
-
+    def get_context_data(self, **kwargs):
+        myarticles:Articles=None
+        con=super().get_context_data(**kwargs)
+        con['cats']= ArticleCategories.objects.annotate(num_article_count=Count('articles')).filter(num_article_count__gt=0)
+        con['times']=Articles.objects.all().annotate(date=TruncMonth('created_date')).values('date').annotate(
+            count=Count('id')).order_by('-date')
+        return con
 
 def ListPost(request):
+    myArticles: Articles = None
     page: int = 1
     if (request.GET.get('page')):
         page: int = request.GET.get('page')
-    myArticles = Articles.objects.order_by('-id')
+    myArticles = Articles.objects
+    if (request.GET.get('title')):
+        if(request.GET.get('title')!="all"):
+            myArticles=myArticles.filter(title__icontains=request.GET.get('title'))
 
-    if (request.POST.get('title')):
-        myArticles = myArticles.filter(title__icontains=request.POST.get('title')).all()
+    if(request.GET.get('category')):
 
-    paginator = Paginator(myArticles, 1)
+        if (request.GET.get('category') != "all"):
+            myArticles=myArticles.filter(categories__id=request.GET.get('category'))
+
+    if(request.GET.get('date')):
+        if(request.GET.get('date')!='all'):
+            ti=request.GET.get('date')
+            start = datetime.strptime(ti, '%Y%m%d')
+            next_month_start = (start.replace(day=28) + timedelta(days=4))
+            myArticles=Articles.objects.filter(created_date__range=(start, next_month_start))
+
+    paginator = Paginator(myArticles.all().order_by('-id'), 10)
     myArticles = paginator.page(page)
 
     return render(request, 'Post/includes/ListPostsComponents.html', {
         'Articles': myArticles,
-        'cats': ArticleCategories.objects.annotate(num_article_count=Count('articles')).filter(num_article_count__gt=0),
-        'times': Articles.objects.all().annotate(date=TruncMonth('created_date')).values('date').annotate(
-            count=Count('id')).order_by('-date'),
         'paginator': paginator
     })
 
