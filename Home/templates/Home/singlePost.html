@@ -246,8 +246,35 @@
         <!-- Start Comment -->
         <section>
           <div class="bg-white p-8 max-lg:mt-6 rounded  max-md:p-4">
+            <div class="transition hover:bg-indigo-500  ">
+              <!-- header -->
+              <div
+                class="accordion-header  transition flex space-x-5 px-5 max-sm:px-0  items-center h-[60PX]  justify-between mb-4 ">
+
+                <div class="header flex max-sm:mt-2 justify-between items-center w-full ">
+                  <h4 class="text-gold-500 text-2xl mx-3 max-sm:mx-0 max-2xl:text-[19px] max-md:text-lxl">3 دیدگاه</h4>
+                  <a id="add_circle"
+                    class="text-gold-500 text-mxl cursor-pointer read_more_btn   bg-none w-[160px] max-sm:w-36 flex justify-center   py-[11px]  border border-gold-500 text-center font-medium rounded  items-center">
+                    <span class="material-symbols-outlined  text-[18px] mb-[2px]">
+                      add_circle
+
+                    </span>
+                    <span class="mx-2 flex items-center ">
+                      افزودن دیدگاه
+
+                    </span>
+
+
+                  </a>
+                </div>
+              </div>
+              <!-- Content -->
+              <div class="accordion-content  pt-0 overflow-hidden max-h-0">
 
 {% unicorn 'addcomment' %}
+
+              </div>
+            </div>
             <!-- peoples comment -->
             <div class="comment-person relative">
               <div
@@ -683,7 +710,7 @@
 
     const accordionHeader = document.querySelectorAll(".accordion-header");
     accordionHeader.forEach((header) => {
-      header.addEventListener("click", function () {
+      header.querySelector('#add_circle').addEventListener("click", function () {
         const accordionContent = header.parentElement.querySelector(".accordion-content");
         let accordionMaxHeight = accordionContent.style.maxHeight;
 

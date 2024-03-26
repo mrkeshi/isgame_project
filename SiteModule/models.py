@@ -47,3 +47,10 @@ class Widget(models.Model):
     urladbaner=models.URLField(max_length=200,null=True,blank=True)
     imageurladbaner=models.URLField(max_length=200,null=True,blank=True)
     statusadbaner=models.BooleanField(default=False)
+
+
+class Newsletter(models.Model):
+    name=models.CharField(max_length=50,null=True,blank=True)
+    email=models.EmailField(max_length=60)
+    ip=models.CharField(max_length=20)
+    created=models.DateTimeField(auto_now_add=True)

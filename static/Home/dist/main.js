@@ -202,7 +202,7 @@ class FormComment{
         this.cancelbtn.classList.remove('hidden')
         this.replays.forEach((replay) => {
             replay.addEventListener('click', () => {
-                console.log()
+    
                 replay.parentElement.parentElement.parentElement.appendChild(this.clone)
                 this.clone.querySelector('textarea').focus()
 

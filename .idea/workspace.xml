@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="dynamic footerone and authorBox">
+    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="تکمیل ماژول لیست مطالب | پاره شدم ولی توانستم">
+      <change afterPath="$PROJECT_DIR$/Home/templates/Search/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/templates/Post/ListPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/ListPost.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comment/components/addcomment.py" beforeDir="false" afterPath="$PROJECT_DIR$/Comment/components/addcomment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comment/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Comment/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comment/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Comment/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comment/templates/Comment/Component/addComment.html" beforeDir="false" afterPath="$PROJECT_DIR$/Comment/templates/Comment/Component/addComment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comment/templates/unicorn/addcomment.html" beforeDir="false" afterPath="$PROJECT_DIR$/Comment/templates/unicorn/addcomment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/templates/Home/singlePost.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/templates/Home/singlePost.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SiteModule/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/Home/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/Home/dist/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -445,7 +451,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711369229500</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="تکمیل ماژول لیست مطالب | پاره شدم ولی توانستم">
+      <option name="closed" value="true" />
+      <created>1711391082196</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1711391082196</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -556,7 +570,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="start gallery module" />
     <MESSAGE value=" gallery module" />
     <MESSAGE value="Completing the gallery uploader" />
     <MESSAGE value="Start Pages Module" />
@@ -581,7 +594,8 @@
     <MESSAGE value="pagination homePage and edit &amp; delete post" />
     <MESSAGE value="start django unicorn" />
     <MESSAGE value="dynamic footerone and authorBox" />
-    <option name="LAST_COMMIT_MESSAGE" value="dynamic footerone and authorBox" />
+    <MESSAGE value="تکمیل ماژول لیست مطالب | پاره شدم ولی توانستم" />
+    <option name="LAST_COMMIT_MESSAGE" value="تکمیل ماژول لیست مطالب | پاره شدم ولی توانستم" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
