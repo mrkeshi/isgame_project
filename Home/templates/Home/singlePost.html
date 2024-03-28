@@ -271,7 +271,7 @@
               <!-- Content -->
               <div class="accordion-content  pt-0 overflow-hidden max-h-0">
 
-{% unicorn 'addcomment' %}
+{% unicorn 'addcomment' post.id %}
 
               </div>
             </div>
@@ -703,7 +703,7 @@
 
 {% block custom_footer_references %}
 
-  <script src="../dist/main.js"></script>
+
   <script>
     
     new FormComment()
@@ -760,5 +760,8 @@
 
     }
 
+    function closse(event){
+    event.target.remove()
+    }
   </script>
 {% endblock %}

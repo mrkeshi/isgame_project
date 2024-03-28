@@ -24,7 +24,7 @@
           </h3>
           <ul class="mt-2">
                        {% for cat in categories %}
-                        <li class="my-5 list-disc text-gray-100"><a href="{{cat.get_absolute.url}}.html" class="text-black-500  text-mxl font-light">{{cat.title}}</a></li>
+                        <li class="my-5 list-disc text-gray-100"><a href="{{cat.get_absolute.url}}" class="text-black-500  text-mxl font-light">{{cat.title}}</a></li>
 
             {% endfor %}
 

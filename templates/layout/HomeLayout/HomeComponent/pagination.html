@@ -1,4 +1,5 @@
 {% load poll_extras %}
+   {% if articles.has_previous or articles.has_next   %}
 <div class="pagination my-8 mt-5 flex justify-center items-center">
     {% if articles.has_previous %}
             <a href="?page={{ page_obj.previous_page_number }}" class="material-symbols-outlined rotate-[180deg] text-2xl">
@@ -34,7 +35,7 @@
 </div>
 
 
-
+{% endif %}
 
 
 

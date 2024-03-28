@@ -1645,6 +1645,26 @@ body {
   height: 100vh;
 }
 
+.h-72 {
+  height: 18rem;
+}
+
+.h-96 {
+  height: 24rem;
+}
+
+.h-80 {
+  height: 20rem;
+}
+
+.h-60 {
+  height: 15rem;
+}
+
+.h-\[260px\] {
+  height: 260px;
+}
+
 .max-h-0 {
   max-height: 0px;
 }
@@ -1856,6 +1876,9 @@ body {
 .w-\[275px\] {
   width: 275px;
 }
+.w-\[285px\] {
+  width: 285px;
+}
 
 .w-\[27px\] {
   width: 27px;
@@ -1977,6 +2000,10 @@ body {
   width: 100%;
 }
 
+.w-32 {
+  width: 8rem;
+}
+
 .min-w-0 {
   min-width: 0px;
 }
@@ -2060,6 +2087,10 @@ body {
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.content-center {
+  align-content: center;
 }
 
 .items-start {
@@ -2253,6 +2284,10 @@ body {
   border-top-width: 4px;
 }
 
+.border-r {
+  border-right-width: 1px;
+}
+
 .border-solid {
   border-style: solid;
 }
@@ -2302,6 +2337,11 @@ body {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.border-t-green {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(59 168 74 / var(--tw-border-opacity));
 }
 
 .border-opacity-40 {
@@ -2389,6 +2429,14 @@ body {
 
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
+}
+
+.bg-opacity-50 {
+  --tw-bg-opacity: 0.5;
+}
+
+.bg-opacity-70 {
+  --tw-bg-opacity: 0.7;
 }
 
 .bg-gradient-to-br {
@@ -2509,6 +2557,10 @@ body {
 
 .p-\[6px\] {
   padding: 6px;
+}
+
+.p-7 {
+  padding: 1.75rem;
 }
 
 .px-1 {
@@ -2875,6 +2927,10 @@ body {
 
 .font-normal {
   font-weight: 400;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .uppercase {
@@ -4325,6 +4381,14 @@ body {
     width: 100%;
   }
 
+  .max-md\:w-\[360px\] {
+    width: 360px;
+  }
+
+  .max-md\:w-\[350px\] {
+    width: 350px;
+  }
+
   .max-md\:flex-row {
     flex-direction: row;
   }
@@ -4512,6 +4576,10 @@ body {
 
   .max-md\:text-xl {
     font-size: 16px;
+  }
+
+  .max-md\:text-\[22px\] {
+    font-size: 22px;
   }
 
   .max-md\:text-gold-100 {
@@ -5164,7 +5232,9 @@ body {
   .xl\:w-\[73\%\] {
     width: 73%;
   }
-
+  .xl\:w-\[75\%\] {
+    width: 75%;
+  }
   .xl\:p-8 {
     padding: 2rem;
   }
@@ -5185,6 +5255,7 @@ body {
     margin-top: 1rem;
   }
 }
+
 .border-error{
 border: 2px solid #DE4A4A;
 }
@@ -5193,3 +5264,277 @@ border-color:#BE0F0F
 }
 .error-br{
     outline-color: red;}
+    .fade-in {
+    animation: fadeIn ease 1s;
+    -webkit-animation: fadeIn ease 1s;
+    -moz-animation: fadeIn ease 1s;
+    -o-animation: fadeIn ease 1s;
+    -ms-animation: fadeIn ease 1s;
+  }
+
+
+  @keyframes fadeIn{
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  @-o-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  .dummy-positioning {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .success-icon {
+    display: inline-block;
+    width: 8em;
+    height: 8em;
+    font-size: 11px;
+    border-radius: 50%;
+    border: 4px solid #96df8f;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    transform-origin: center;
+    animation: showSuccess 180ms ease-in-out;
+    transform: scale(1);
+  }
+
+  .success-icon__tip, .success-icon__long {
+    display: block;
+    position: absolute;
+    height: 3px;
+    background-color: #96df8f;
+    border-radius: 10px;
+  }
+  .success-icon__tip {
+    width: 2.4em;
+    top: 4.3em;
+    left: 1.4em;
+    transform: rotate(45deg);
+    animation: tipInPlace 300ms ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 180ms;
+    visibility: hidden;
+  }
+  .success-icon__long {
+    width: 4em;
+    transform: rotate(-45deg);
+    top: 3.7em;
+    left: 2.75em;
+    animation: longInPlace 140ms ease-in-out;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+    animation-delay: 440ms;
+  }
+
+  @keyframes showSuccess {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  @keyframes tipInPlace {
+    from {
+      width: 0em;
+      top: 0em;
+      left: -1.6em;
+    }
+    to {
+      width: 2.4em;
+      top: 4.3em;
+      left: 1.4em;
+      visibility: visible;
+    }
+  }
+  @keyframes longInPlace {
+    from {
+      width: 0em;
+      top: 5.1em;
+      left: 3.2em;
+    }
+    to {
+      width: 4em;
+      top: 3.7em;
+      left: 2.75em;
+      visibility: visible;
+    }
+  }
+  .fade-in {
+    animation: fadeIn ease 1s;
+    -webkit-animation: fadeIn ease 1s;
+    -moz-animation: fadeIn ease 1s;
+    -o-animation: fadeIn ease 1s;
+    -ms-animation: fadeIn ease 1s;
+  }
+
+
+  @keyframes fadeIn{
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  @-o-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  .dummy-positioning {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .success-icon {
+    display: inline-block;
+    width: 8em;
+    height: 8em;
+    font-size: 11px;
+    border-radius: 50%;
+    border: 4px solid #96df8f;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    transform-origin: center;
+    animation: showSuccess 180ms ease-in-out;
+    transform: scale(1);
+  }
+
+  .success-icon__tip, .success-icon__long {
+    display: block;
+    position: absolute;
+    height: 3px;
+    background-color: #96df8f;
+    border-radius: 10px;
+  }
+  .success-icon__tip {
+    width: 2.4em;
+    top: 4.3em;
+    left: 1.4em;
+    transform: rotate(45deg);
+    animation: tipInPlace 300ms ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 180ms;
+    visibility: hidden;
+  }
+  .success-icon__long {
+    width: 4em;
+    transform: rotate(-45deg);
+    top: 3.7em;
+    left: 2.75em;
+    animation: longInPlace 140ms ease-in-out;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+    animation-delay: 440ms;
+  }
+
+  @keyframes showSuccess {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  @keyframes tipInPlace {
+    from {
+      width: 0em;
+      top: 0em;
+      left: -1.6em;
+    }
+    to {
+      width: 2.4em;
+      top: 4.3em;
+      left: 1.4em;
+      visibility: visible;
+    }
+  }
+  @keyframes longInPlace {
+    from {
+      width: 0em;
+      top: 5.1em;
+      left: 3.2em;
+    }
+    to {
+      width: 4em;
+      top: 3.7em;
+      left: 2.75em;
+      visibility: visible;
+    }
+  }

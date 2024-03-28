@@ -33,11 +33,16 @@ def HeaderOne(request):
 
 
 def HeaderTwo(request):
-    Objects = Menu.objects.filter(place_menu="MN1", is_active=True).all()
+    Objects = Menu.objects.filter(place_menu="MN2", is_active=True).all()
     return render(request, 'layout/HomeLayout/HomeComponent/header2.html', {
         'menus': Objects
     })
 
+def HeaderTree(request):
+    Objects = Menu.objects.filter(place_menu="MN3", is_active=True).all()
+    return render(request, 'layout/HomeLayout/HomeComponent/header3.html', {
+        'menus': Objects
+    })
 
 def FooterOne(request):
     return render(request, 'layout/HomeLayout/HomeComponent/footer1.html', {
