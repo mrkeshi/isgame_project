@@ -9,6 +9,27 @@
 {% block header %} {% render_partial 'Home.views.HeaderOne' %} {% endblock %}
 
 {% block main %}
+    <!-- search box -->
+    <div class="fixed w-full h-screen bg-black-700  search-modal  lg:h	 top-0 z-[9999] right-0"
+      style="background-color: rgba(0,0,0,0);">
+      <div class="bg-white shadow-lg rounded w-[450px] p-5 h-auto box box-show transition ease-in" id="formsea">
+        <div class="w-full md:w-full flex flex-col mt-2  ">
+
+          <input
+            class="appearance-none block w-full  bg-gray-200 text-black-700 bg-gray-300    rounded py-3 transition ease-in px-4 leading-tight focus:outline-gold-100 h-14 focus:bg-white  text-base"
+            id="grid-first-name" type="text" placeholder="لطفا چیزی را برای جستجو وارد نمایید.">
+          <a href="#"
+            class="bg-gold-500 hover:bg-blue-700 text-center  text-white mt-5  py-[10px] px-4 rounded  w-full text-base">
+            جستجو
+          </a>
+          <span onclick="closeSearch()"
+            class="material-symbols-outlined transition-all ease-in   cursor-pointer shadow-sm text-gold-500 absolute text-[18px] bg-gray-300 p-[4px] -top-[10px] -right-[8px] rounded-full hover:bg-black-700 hover:text-white">
+            close
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- end search box -->
 <div class="max-lg:mt-4  h-2">  </div>
 <section>
     <!-- Social Icom Box Start -->
@@ -110,8 +131,29 @@
     {% if messages %}
 
     {% for message in messages %}
-    <h1 class="text-green text-2xl max-lg:text-xl mx-auto text-center text-bold">{{ message }}<h1/>
+      <div class="z-40 w-full  h-full fixed top-0 right-0 backdrop-filter bg-opacity-70 bg-[#2f3c53]" onclick="closse(event)" id="filter-overflow2">
+        <div class="center max-md:w-[350px] w-96 h-[260px] rounded-lg p-7 px-5 bg-white border-r-2 shadow-lg border-t-green fade-in flex flex-col  " id="modal">
+            <div class="icon">
+              <div class="dummy-positioning text-center d-flex">
+
+                <div class="success-icon">
+                  <div class="success-icon__tip"></div>
+                  <div class="success-icon__long"></div>
+                </div>
+
+              </div>
+            </div>
+            <div class="text-center">
+              <h2 class="text-3xl max-md:text-[22px] text-black-300 font-semibold my-2">تماس با ما</h2>
+              <p class="text-black-700">دیدگاه شما با موفقیت برای ما ارسال شد. بزودی پاسخگو شما خواهیم بود.</p>
+            </div>
+
+        </div>
+      </div>
         {% endfor %}
+
+
+
 
         {% endif %}
 
@@ -192,26 +234,46 @@
 
 {% block custom_footer_references %}
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<script src="../dist/main.js"></script>
+
 
 <script>
+  function closse(event){
+    event.target.remove()
+    }
 
 
-    let Mobi=new MobileMenu()
-    let Boxes=new MangeBoxDropDown()
-        window.addEventListener('click', (event) => {
-          if(!Boxes.personBox.contains(event.target) && event.target.contains(filterBody)){
-            Boxes.closePersonBox()
-          }
-          if(!Boxes.cardBox.contains(event.target) && event.target.contains(filterBody)){
-            Boxes.closeCardBox()
-          }
-          // toggle menu mobile when click out:
-          if (!Mobi.SiteMenu.contains(event.target)  && Mobi.StatusMobile && !Mobi.hamber.contains(event.target)){
-            Mobi.close()
+let seatcrmodal = document.querySelector('.search-modal');
+    let formsearch = seatcrmodal.querySelector('#formsea');
+    let btnsearch = document.getElementById('btnsearch');
+    let checkopenedsearc=false
+    function closeSearch() {
+      seatcrmodal.classList.remove('search-modal_show')
+      filterBody.classList.add('hidden')
+       checkopenedsearc=false
 
-          }
-        })
+    }
+    btnsearch.addEventListener('click', () => {
+      seatcrmodal.classList.add('search-modal_show')
+      filterBody.classList.remove('hidden')
+      checkopenedsearc=true
+
+    })
+
+    const Boxes=new MangeBoxDropDown()
+    const mobilemenu=new MobileMenu()
+
+    window.addEventListener('click', (event) => {
+      if(!Boxes.personBox.contains(event.target) && event.target.contains(filterBody)){
+        Boxes.closePersonBox()
+      }
+      if(!formsearch.contains(event.target) && !event.target.classList.contains('material-symbols-outlined') && checkopenedsearc==true){
+        closeSearch()
+      }
+      if(!mobilemenu.SiteMenu.contains(event.target) && mobilemenu.StatusMobile && event.target.contains(filterBody)){
+        mobilemenu.close()
+      }
+
+    })
 
 
 </script>

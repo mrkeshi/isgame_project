@@ -12,7 +12,7 @@ class Comment(models.Model):
    created = models.DateTimeField(auto_now_add=True)
    come=models.ForeignKey('self',null=True,blank=True,on_delete=models.CASCADE)
    updated = models.DateTimeField(auto_now=True)
-   active = models.BooleanField(default=True)
+   active = models.BooleanField(default=False)
    class Meta:
       ordering = ('created',)
 

@@ -61,7 +61,7 @@ def ListPost(request):
             ti=request.GET.get('date')
             start = datetime.strptime(ti, '%Y%m%d')
             next_month_start = (start.replace(day=28) + timedelta(days=4))
-            myArticles=Articles.objects.filter(created_date__range=(start, next_month_start))
+            myArticles=myArticles.filter(created_date__range=(start, next_month_start))
 
     paginator = Paginator(myArticles.all().order_by('-id'), 10)
     myArticles = paginator.page(page)

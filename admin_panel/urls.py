@@ -13,6 +13,6 @@ urlpatterns=[
     path('delete/delete',SiteModule.DeletedItems,name="delete_gallery"),
     path('gallery/add',SiteModule.Add,name="gallery_add"),
     path('Pages/',include('Pages.urls')),
-    path('shop/',include('Shop.urls'))
-
+    path('shop/',include('Shop.urls')),
+    path('', include('Comment.urls'))
 ]

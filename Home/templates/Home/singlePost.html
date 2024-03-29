@@ -252,7 +252,9 @@
                 class="accordion-header  transition flex space-x-5 px-5 max-sm:px-0  items-center h-[60PX]  justify-between mb-4 ">
 
                 <div class="header flex max-sm:mt-2 justify-between items-center w-full ">
-                  <h4 class="text-gold-500 text-2xl mx-3 max-sm:mx-0 max-2xl:text-[19px] max-md:text-lxl">3 دیدگاه</h4>
+                  <h4 class="text-gold-500 text-2xl mx-3 max-sm:mx-0 max-2xl:text-[19px] max-md:text-lxl">
+                    {% if post.comments.count > 0 %} {{post.comments.count}} دیدگاه {% else %} بدون دیدگاه {% endif %}
+                  </h4>
                   <a id="add_circle"
                     class="text-gold-500 text-mxl cursor-pointer read_more_btn   bg-none w-[160px] max-sm:w-36 flex justify-center   py-[11px]  border border-gold-500 text-center font-medium rounded  items-center">
                     <span class="material-symbols-outlined  text-[18px] mb-[2px]">
@@ -760,7 +762,7 @@
 
     }
 
-    function closse(event){
+  function closse(event){
     event.target.remove()
     }
   </script>

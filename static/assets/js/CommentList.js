@@ -29,7 +29,14 @@ class Selector {
         runbtn.addEventListener('click', () => {
             this.swManage()
         })
+        document.querySelectorAll('.posted_btn').forEach((el)=>{
+
+            el.addEventListener('click',()=>{
+                alert(el.getAttribute('data-id'))
+            })
+        })
         checkallbtn.addEventListener('click',()=>{
+         
             if(checkallbtn.checked==true){
                 ids=[]
                 posts.querySelectorAll('tbody tr').forEach(el=>{
@@ -85,7 +92,7 @@ const draftOrpost = (key) => {
             if (response.data['status']) {
                if(key=='draft'){
                 response.data['ids'].forEach(id=>{
-                    posts.querySelector(`tbody tr[data-field-number='${id}'] td .badge`).parentElement.innerHTML='<span class="badge badge-info">پیش نویس</span>'
+                    posts.querySelector(`tbody tr[data-field-number='${id}'] td .badge`).parentElement.innerHTML='<span class="badge badge-danger">منتظر تایید</span>'
                 })
                }else{
                   response.data['ids'].forEach(id=>{
@@ -113,11 +120,12 @@ function oncheck(ids){
     ids.forEach(id => {
         posts.querySelector(`tbody tr[data-field-number='${id}'] .new-control-input`).checked=true
     });
-  
+
 }
 // off check
 function offcheck(ids){
     ids.forEach(id => {
+
         if(id!=null){
         posts.querySelector(`tbody tr[data-field-number='${id}'] .new-control-input`).checked=false}
     });

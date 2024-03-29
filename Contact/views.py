@@ -6,9 +6,11 @@ from django.views.generic.list import ListView
 from django.views.generic import FormView, DetailView
 
 from Contact.forms import ContactForm
+from utils import Http_service
 from .models import Contact
 
 # Create your views here.
+from SiteModule.models import Newsletter as news
 class ContactView(FormView):
 
     template_name = 'Contact/contact.html'
@@ -20,8 +22,14 @@ class ContactView(FormView):
         con = Contact(
             name=form.cleaned_data['name'],
             email=form.cleaned_data['email'],
-            description=form.cleaned_data['description']
+            description=form.cleaned_data['desc'
+                                          'ription']
         )
+        try:
+            news.objects.get(email=self.email)
+        except Exception:
+            ne = news(email=con.email, ip=Http_service.get_client_ip(self.request), name=con.name)
+            ne.save()
         con.save()
         return response
 

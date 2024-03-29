@@ -2,6 +2,7 @@ from django.shortcuts import render
 from User.models import User, incorrect_attempts
 from SiteModule.models import PublicSettings
 from Contact.models import Contact
+from Comment.models import Comment
 def header_component(request):
     user = request.user
     con=Contact.objects.filter(is_Displayed=False).count()
@@ -16,7 +17,8 @@ def header_component(request):
 def aside_component(request):
     user = request.user
     return  render(request, 'component/sidebar_component.html',{
-        'user': user
+        'user': user,
+        'CommentCount':Comment.objects.filter(active=False).count
     })
 def siteName(request):
     return

@@ -3,7 +3,7 @@
 {% load render_partial %}
 {% load poll_extras %}
 {% block title %}
-مدیریت مقالات
+مدیریت نظرات
 {% endblock %}
 
 {% block header_reference %}
@@ -29,7 +29,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p class="modal-text">آیا شما برای حذف این پست\پست ها مطمئن هستید؟ در صورت تایید این پست/پست ها در
+                <p class="modal-text">آیا شما برای حذف این کامنت()\کامنت ها مطمئن هستید؟ در صورت تایید این کامنت/کامنت ها در
                     پایگاه داده پاک
                     می گردد. </p>
             </div>
@@ -61,13 +61,9 @@
             <div class="widget-header">
                 <div class="row">
                     <div class="col-md-8 m-4">
-                        <h3>مدیریت نوشته ها</h3>
+                        <h3>مدیریت نظرات</h3>
                     </div>
-                    <div class="col-md-3" style="text-align: left">
-                        <a target="_blank" href="{% url 'post_add_admin' %}" class="btn btn-primary  m-4"> افزودن
-                            نوشته جدید
-                        </a>
-                    </div>
+
                 </div>
             </div>
             <div class="widget-content widget-content-area">
@@ -82,32 +78,17 @@
                                                 name="style-1_length" aria-controls="style-1" class="form-control">
                                                 <option value="5">همه کارهای دسته جمعی</option>
                                                 <option value="delete">حذف گروهی</option>
-                                                <option value="draft">تبدیل به پیش نویس</option>
+                                                <option value="draft">تبدیل به انتظار تایید </option>
                                                 <option value="post">تبدیل به منتشر شده</option>
                                             </select>
                                             <input id="runBtn" type="submit" value="اجرا" name="txt"
                                                 class=" btn btn-danger mx-2 " style="height: 43px">
                                         </label>
                                     </div>
-
-
-                                    <div class="dataTables_length col-lg-12 col-2xl-4" id="style-2_length">
+   <div class="dataTables_length col-lg-12 col-2xl-4" id="style-2_length">
                                         <label>
 
-                                            <select style="width: 210px;cursor: pointer" name="style-1_length"
-                                                aria-controls="style-1" class="form-control" id="category">
-                                                <option value="all">همه دسته ها</option>
 
-
-
-                                                {% for cat in cats %}
-
-                                                <option value="{{ cat.id }}">{{ cat.title }}({{cat.num_article_count}})
-                                                </option>
-                                                {% endfor %}
-
-
-                                            </select>
                                             <select style="width: 230px;cursor: pointer;margin-right: 5px"
                                                 name="style-1_length" aria-controls="style-1" class="form-control"
                                                 id="date">
@@ -124,6 +105,8 @@
                                                 class=" btn btn-warning mx-2" style="height: 43px">
                                         </label>
                                     </div>
+
+
                                 </div>
 
                             </div>
@@ -143,7 +126,7 @@
                             </div>
                         </div>
                         <div class="results" id="result_list_post">
-                            {% render_partial 'Post.views.ListPost' %}
+                            {% render_partial 'Comment.views.ListComment' %}
                         </div>
                     </div>
                 </div>
@@ -155,156 +138,21 @@
 {% endblock %}
 {% block script %}
 
-{% include 'layout/component/swalmeesage.html' with title="مدیریت پست" %}
+{% include 'layout/component/swalmeesage.html' with title="مدیریت نظرات" %}
 
 <script src="{% static 'admin_panel/plugins/table/datatable/datatables.js' %}"></script>
 <script src="{% static 'assets/webpack_bundles/axious_main_bundler.js' %}"></script>
 <script>
-    var myurl = "{% url 'post_delete_admin' %}"
-    var url_draft = "{% url 'post_draft_request' %}"
+    var myurl = "{% url 'comment_delete_admin' %}"
+    var url_draft = "{% url 'comment_draft_request' %}"
 </script>
-<script src="{% static 'assets/js/PostList.js' %}"></script>
+<script src="{% static 'assets/js/CommentList.js' %}"></script>
 
 <script>
-    //     function removeItemOnce(arr, value) {
-    // var index = arr.indexOf(value);
-    // if (index > -1) {
-    // arr.splice(index, 1);
-    // }
-    // return arr;
-    // }
+
     axios.defaults.xsrfCookieName = 'csrftoken'
     axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
-    // class DeleteItem {
-    //     //  properties
-    //     CheckAllBtn = 
-    //     items = []
-    //     single=0
-    //     status = false
-    //     ConfirmBtn = document.getElementById('btn_confirm_delete')
-    //     AllElement = document.querySelectorAll("[data-field-number]")
-    //     constructor() {
-    //         this.AllElement.forEach((el) => {
-    //             el.querySelector('.deleteBtn').addEventListener('click', () => {
-    //                 this.reset()
-    //                 this.getId(el.getAttribute('data-field-number'))
-    //             })
-    //         })
-    //         this.ConfirmBtn.addEventListener('click', (e) => {
 
-
-    //             if (!this.status) {
-    //                 this.ConfirmDeleted()
-    //             }
-    //         })
-    //         this.CheckAllBtn.addEventListener('change', () => {
-    //             this.checkedAll()
-    //         })
-    //     }
-    //     // methods
-    //     getId(id) {
-    //         this.status = false
-    //         this.single = Number(id)
-    //     }
-    //     pushId(id){
-    //         this.items.push(Number(id))
-    //     }
-    //     ConfirmDeleted() {
-    //         if (this.status == false) {
-    //             this.status = true
-    //             this.ConfirmBtn.querySelector('span').style.display = 'none'
-    //             this.ConfirmBtn.querySelector('svg').style.display = "block";
-    //             var self = this;
-    //             axios({
-    //                 method: 'post',
-    //                 url: "{% url 'post_delete_admin' %}",
-    //                 data: {
-    //                     id: [this.single],
-    //                 },
-    //                 headers: {
-    //                     "Content-Type": "application/x-www-form-urlencoded",
-    //                     Accept: "application/json",
-    //                 }
-    //             }).then(function (response) {
-
-    //                 if (response.data['status']) {
-    //                     self.Finnish(response.data['ids'])
-    //                 }
-    //             }).catch(function (error) {
-    //                 this.ConfirmBtn.querySelector('span').innerHTML = "خطا در حذف، لطفا مجددا امتحان کنید."
-    //             }).finally(()=>{
-
-    //             })
-    //         }
-    //     }
-    //     reset(){
-    //         if(this.ConfirmBtn.classList.contains('btn-success')){
-    //             this.ConfirmBtn.classList.remove('btn-success')
-    //             this.ConfirmBtn.classList.add('btn-danger')
-    //             this.ConfirmBtn.querySelector('span').innerHTML = "حذف"
-    //             items=[]
-    //         }
-    //     }
-    //     Finnish(items) {
-    //         this.ConfirmBtn.querySelector('svg').style.display = "none";
-    //         this.ConfirmBtn.classList.add('btn-success');
-    //         this.ConfirmBtn.querySelector('span').style.display = 'block'
-    //         this.ConfirmBtn.querySelector('span').innerHTML = "حذف شد!"
-
-    //         document.querySelectorAll(`[data-field-number='${items}']`).forEach((el) => {
-    //             el.remove()
-    //         })
-    //     }
-
-    //     checkedAll() {
-    //     if (this.CheckAllBtn.checked===true){
-    //         this.AllElement.forEach((el)=>{
-    //             this.items.push(el.getAttribute('data-check-id'))
-    //             el.querySelector('.inputchecked').checked=true
-    //         })
-    //     }else{
-    //               this.items=[]
-    //              this.AllElement.forEach((el)=>{
-    //             el.querySelector('.inputchecked').checked=false
-    //         })
-    //     }
-    //     }
-    // }
-
-    // const deleteItems = new DeleteItem();
-
-    //     class Select{
-    //         selectRun=document.getElementById('selectRun')
-    //         runbtn=document.getElementById('run')
-    //         checks=document.querySelectorAll('.customer-all-info')
-    //         constructor(){
-
-    //             this.checks.forEach((el)=>{
-    //                 el.addEventListener('click',()=>{
-    //                    if(!el.checked){
-    //                     console.log(deleteItems.items)
-    //                     removeItemOnce(deleteItems.items,Number(el.getAttribute('data-check-id')))
-    //                    }else{
-    //                     deleteItems.items.push(el.getAttribute('data-check-id'))
-    //                    }
-    //                    console.log(deleteItems.items)
-
-    //                 })
-    //             })
-    //         }
-
-    //         selecttion(){
-    //             switch (selectRun.value) {
-    //                 case 'delete':
-    //                     alert("delete")
-    //                     break;
-
-    //                 default:
-    //                     break;
-    //             }
-    //         }
-    //     }
-    //     new Select()
 
     class FilterQuery {
         search = document.getElementById('search_query');
@@ -326,30 +174,28 @@
 
         Filter() {
 
-            this.category = document.getElementById('category').value;
             this.date = document.getElementById('date').value;
             if (true) {
 
-                this.SendAxois(this.date, this.category, this.search.value.trim())
+                this.SendAxois(this.date, this.search.value.trim())
 
             }
 
         }
 
         Search() {
-            this.category = document.getElementById('category').value;
+
             this.date = document.getElementById('date').value;
-            this.SendAxois(this.date, this.category, this.search.value.trim())
+            this.SendAxois(this.date, this.search.value.trim())
         }
 
-        SendAxois(date, category, search) {
+        SendAxois(date, search) {
             let data = {
                 title: search,
                 date: date,
-                category: category
             }
             var self = this;
-            axios.get("{% url 'filter_article_admin' %}", {
+            axios.get("{% url 'filter_comment_admin' %}", {
                 params: data
 
             }).then(function (response) {
@@ -365,13 +211,10 @@
                     queryParams += 'date=' + encodeURIComponent(data.date) + '&';
                 }
 
-                if (data.category !== "all") {
-                    queryParams += 'category=' + encodeURIComponent(data.category) + '&';
-                }
 
                 queryParams = queryParams.slice(0, -1);
                 self.Pagin(queryParams)
-                let newUrl = "{% url 'post_admin' %}?" + queryParams;
+                let newUrl = "{% url 'comment_admin' %}?" + queryParams;
            
                 window.history.pushState(null, '', newUrl);
             }).catch(function (error) {
@@ -391,21 +234,11 @@
         const urlParams = new URLSearchParams(window.location.search);
         console.log(urlParams)
         const title = urlParams.get('title');
-        const category = urlParams.get('category');
         const date = urlParams.get('date');
         let queryParams = '';
         if(title!= null){
             queryParams += 'title=' + encodeURIComponent(title) ;
                 this.search.value=title
-        }
-        if(category != null){
-                      let el1= document.getElementById('category').querySelector(`option[value="${category}"]`)
-
-        if(el1 != null){
-            queryParams += 'category=' + encodeURIComponent(category) ;
-
-            el1.selected=true
-        }
         }
         if(date != null){
           

@@ -1,4 +1,5 @@
 import enum
+from datetime import timedelta
 
 from django import template
 from django.core.paginator import Paginator
@@ -42,6 +43,7 @@ def getPlace(val):
             break
 @register.filter
 def jalali_date_month(value):
+    value = value + timedelta(days=30)
     return datetime2jalali(value).strftime(' %B %Y')
 
 @register.simple_tag
@@ -49,3 +51,11 @@ def get_proper_elided_page_range(p,number):
     paginator = Paginator(p.object_list, p.per_page)
     return paginator.get_elided_page_range(number=number,on_each_side=1,on_ends=1,
                                            )
+
+@register.simple_tag
+def get_avatar(email):
+    user=User.objects.filter(email=email).first()
+    if( user != None):
+        if(user.avatar):
+            return user.avatar.url
+    return  False
