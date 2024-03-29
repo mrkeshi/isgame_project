@@ -4,34 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="ساخت و تکمیل صفحه دسته بندی ها">
-      <change afterPath="$PROJECT_DIR$/Comment/templates/Comment/ListComment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Comment/templates/Comment/includes/ListCommentsComponents.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/Articles/۲۰۲۰۱۲۰۳_۱۳۱۱۲۰_MQnVou8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/770137_man_512x512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medias/gallery/۲۰۲۳۱۱۱۱_۱۷۵۹۳۴_vgfFCsO.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/polls/templatetags/poll_helper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/Home/images/userP.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/CommentList.js" afterDir="false" />
+    <list default="true" id="d1f63e97-832c-42d3-a7ff-9bfd3a1d2210" name="Changes" comment="حذف و ویرایش نظر">
+      <change afterPath="$PROJECT_DIR$/Comment/templates/Comment/ReplayComment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Comment/components/addcomment.py" beforeDir="false" afterPath="$PROJECT_DIR$/Comment/components/addcomment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Comment/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Comment/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Comment/templates/Comment/Component/addComment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comment/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Comment/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comment/templates/Comment/includes/ListCommentsComponents.html" beforeDir="false" afterPath="$PROJECT_DIR$/Comment/templates/Comment/includes/ListCommentsComponents.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Comment/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Comment/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Comment/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Comment/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contact/templates/Contact/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/Contact/templates/Contact/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contact/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Contact/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/templates/Home/singlePost.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/templates/Home/singlePost.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/templates/Post/ListPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/Post/templates/Post/ListPost.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Post/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiteModule/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiteModule/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_panel/items/partial.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/items/partial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_panel/templates/component/sidebar_component.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/templates/component/sidebar_component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_panel/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/polls/templatetags/poll_extras.py" beforeDir="false" afterPath="$PROJECT_DIR$/polls/templatetags/poll_extras.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Home/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/Home/dist/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/PostList.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/PostList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/js/CommentList.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/CommentList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -492,7 +474,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711617985273</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="حذف و ویرایش نظر">
+      <option name="closed" value="true" />
+      <created>1711725816340</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1711725816340</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -603,7 +593,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Start Pages Module" />
     <MESSAGE value="add swal and modal component" />
     <MESSAGE value="Completion of pages" />
     <MESSAGE value="add component pagination.html" />
@@ -628,7 +617,8 @@
     <MESSAGE value="تکمیل ماژول لیست مطالب | پاره شدم ولی توانستم" />
     <MESSAGE value="شروع ساخت ماژول خبرنامه و تکمیل قسمت ارسال نظر" />
     <MESSAGE value="ساخت و تکمیل صفحه دسته بندی ها" />
-    <option name="LAST_COMMIT_MESSAGE" value="ساخت و تکمیل صفحه دسته بندی ها" />
+    <MESSAGE value="حذف و ویرایش نظر" />
+    <option name="LAST_COMMIT_MESSAGE" value="حذف و ویرایش نظر" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -640,6 +630,10 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Home/urls.py</url>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Comment/views.py</url>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

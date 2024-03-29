@@ -1,3 +1,4 @@
+from copy import copy
 from datetime import datetime, timedelta
 
 from django.core.paginator import Paginator
@@ -5,9 +6,13 @@ from django.db.models import Count, Q
 from django.db.models.functions import TruncMonth
 from django.http import JsonResponse
 from django.shortcuts import render
-from django.views.generic import ListView, TemplateView
-from .models import Comment
+from django.urls import reverse_lazy
+from django.views.generic import ListView, TemplateView, FormView
 
+from utils import Http_service
+from .forms import ReplayCommentForm
+from .models import Comment
+from django.contrib import messages
 
 # Create your views here.
 class CommentManger(TemplateView):
@@ -23,6 +28,28 @@ class CommentManger(TemplateView):
         return con
 
 
+class ReplayComment(FormView):
+    template_name = "Comment/ReplayComment.html"
+    form_class = ReplayCommentForm
+    success_url = reverse_lazy('comment_admin')
+    def get_context_data(self, **kwargs):
+        content = super().get_context_data(**kwargs)
+        content['c'] = Comment.objects.filter(id=self.kwargs['id']).first()
+        return content
+    def form_valid(self, form):
+
+        user = self.request.user
+
+        comment = Comment(name=user.get_full_name(), email=user.email, message=form.cleaned_data.get('message'),
+                          ip=Http_service.get_client_ip(self.request), come_id=self.kwargs['id'],post_id=self.get_context_data()['c'].post.id,active=True)
+        comment.save()
+        s:Comment=Comment.objects.filter(id=self.get_context_data()['c'].id).first()
+        s.active=True
+        s.save()
+
+
+        messages.success(self.request,"نظر با موفقیت پاسخ داده شد.")
+        return super().form_valid(form)
 def ListComment(request):
     myComment: Comment = None
     page: int = 1
@@ -56,12 +83,12 @@ def CommentDelete(request):
         deleteditem = Comment.objects.filter(id__in=id)
 
         try:
-            if (deleteditem.count() > 0):
-
-                row = deleteditem.delete()
+            if (deleteditem.count() > 0):   
+                ali = list(deleteditem.values_list('id', flat=True))
+                deleteditem.delete()
                 return JsonResponse({
                     'status': True,
-                    'ids': list(deleteditem.values_list('id', flat=True).all())
+                    'ids': ali
                 })
 
             else:
@@ -79,13 +106,12 @@ def CommentOrDraft(request):
 
         try:
             if (deleteditem.count() > 0):
-                if(request.POST['key']=="draft"):
+                if (request.POST['key'] == "draft"):
 
                     deleteditem.update(active=False)
 
                 else:
                     deleteditem.update(active=True)
-
 
                 # row = deleteditem.delete()
                 return JsonResponse({

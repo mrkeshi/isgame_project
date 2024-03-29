@@ -30,9 +30,11 @@ class Selector {
             this.swManage()
         })
         document.querySelectorAll('.posted_btn').forEach((el)=>{
-
+        
             el.addEventListener('click',()=>{
-                alert(el.getAttribute('data-id'))
+                ids=[]
+                ids.push(el.getAttribute('data-id'))
+                draftOrpost('post')
             })
         })
         checkallbtn.addEventListener('click',()=>{
@@ -194,6 +196,7 @@ class DeleteItem {
                     Accept: "application/json",
                 }
             }).then(function (response) {
+                console.log(response)
                 if (response.data['status']) {
                     self.Finnish(response.data['ids'])  
                 }else{
@@ -218,12 +221,15 @@ class DeleteItem {
           
         
     }
+    
     Finnish(items) {
+   
         this.ConfirmBtn.querySelector('svg').style.display = "none";
         this.ConfirmBtn.classList.add('btn-success');
         this.ConfirmBtn.querySelector('span').style.display = 'block'
         this.ConfirmBtn.querySelector('span').innerHTML = "حذف شد!"
         items.forEach((it)=>{
+            
             document.querySelector(`[data-field-number='${it}']`).remove()
         })
       ids=[]

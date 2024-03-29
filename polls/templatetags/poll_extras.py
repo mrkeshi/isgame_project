@@ -59,3 +59,10 @@ def get_avatar(email):
         if(user.avatar):
             return user.avatar.url
     return  False
+@register.simple_tag
+def is_admin(email):
+    user = User.objects.filter(email=email).first()
+    if (user != None):
+        if(user.is_staff):
+            return True
+    return False
